@@ -1,9 +1,14 @@
+import { GlobalStyle } from './styles/global'
+
 function App() {
 
   return (
-    <div className="App">
+    <>
+    <main >
       <h1>Hello World ! This is Star Wars fan Site</h1>
-    </div>
+    </main>
+    <GlobalStyle />
+    </>
   )
 }
 
