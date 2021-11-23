@@ -1,12 +1,11 @@
+import { SideBar } from './components/SideBar'
 import { GlobalStyle } from './styles/global'
 
 function App() {
 
   return (
     <>
-    <main >
-      <h1>Hello World ! This is Star Wars fan Site</h1>
-    </main>
+    <SideBar />
     <GlobalStyle />
     </>
   )
