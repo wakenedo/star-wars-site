@@ -1,14 +1,15 @@
 import { SideBar } from './components/SideBar'
 import { GlobalStyle } from './styles/global'
+import { BrowserRouter as Router } from 'react-router-dom';
 
 function App() {
 
-  return (
-    <>
-    <SideBar />
-    <GlobalStyle />
-    </>
-  )
-}
+    return (
+      <Router>
+        <SideBar />
+        <GlobalStyle />
+      </Router>
+    )
+  }
 
 export default App
