@@ -1,11 +1,23 @@
-import { SidebarContainer, SidebarLink, SidebarMenu } from './styles';
 import SidebarLogo from '../../assets/StarWarsLogo.png'
 import TieFighterIcon from '../../assets/tie_fighter_by_radiusss.svg'
+
+import {
+    SidebarContainer,
+    Icon,
+    CloseIcon,
+    SidebarLink,
+    SidebarMenu
+} from './styles';
+
 
 
 export const SideBar = () => {
     return (
-        <SidebarContainer>
+        <SidebarContainer >
+            <Icon>
+                <CloseIcon />
+            </Icon>
+
             <div className="sideBarLogo">
                 <img src={SidebarLogo} alt="" />
             </div>

@@ -1,5 +1,6 @@
 import styled from 'styled-components';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import { AiOutlineClose } from 'react-icons/ai'
 
 export const SidebarContainer = styled.aside`
     position: fixed;
@@ -12,17 +13,22 @@ export const SidebarContainer = styled.aside`
     align-items: center;
     top: 0;
     transition: 0.3s ease-in-out;
+    right: 0;
+    // right: ${({ isOpen }) => (isOpen ? '0' : '-1000px')};
     
+    .sideBarLogo {
+        margin-top: 4.5rem
+    }
 
     img {
-        width: 300px;
-        margin: 1.5rem;
+        width: 250px;
     }
     
     @media screen and (max-width:400px) {
         width: 100%;
     }
 `
+
 
 export const SidebarMenu = styled.div`
     margin-top: 8.5rem;
@@ -52,8 +58,42 @@ export const SidebarLink = styled(Link)`
 
     img {
         width: 40px;
+        margin-right: 0.5rem;
         
                 
     }
-    
 `;
+
+export const CloseIcon = styled(AiOutlineClose)`
+    color: #000;
+`
+
+export const Icon = styled.div`
+    position: absolute;
+    top: 1.2rem;
+    right: 1.5rem;
+    background: transparent;
+    border: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+    outline: none;
+`
+
+export const SidebarRoute = styled.div`
+    background: #e31837;
+    white-space: nowrap;
+    padding: 16px 64px;
+    color: #fff;
+    font-size: 16px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
+    text-decoration: none;
+
+    &:hover {
+        transition: 0.2s ease-in-out;
+        background: #fff;
+        color: #010606;
+    }
+`
