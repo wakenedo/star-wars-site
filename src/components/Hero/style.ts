@@ -1,8 +1,10 @@
 import styled from 'styled-components'
+import BackgroundImg from '../../assets/BackgroundImg.jpg'
 
 export const HeroContainer = styled.div`
     background: linear-gradient(to right, rgba(0,0,0,0.7),
-    rgba(0,0,0,0.1)); 
+    rgba(0,0,0,0.1)),
+    url(${BackgroundImg}); 
     height: 100vh;
     background-position: center;
     background-size: cover;
@@ -14,7 +16,6 @@ export const HeroContent = styled.div`
     width: 100vw;
     padding: 0rem calc((100vw - 1300px) /2);
 `
-
 export const HeroItems = styled.div`
     display: flex;
     flex-direction: column;
@@ -33,3 +34,16 @@ export const HeroItems = styled.div`
         width: 100%;
     }
 `
+
+export const HeroH1 = styled.div`
+    font-size: clamp(2.5rem, 10vw, 5rem);
+    margin-bottom: 1rem;
+    box-shadow: 3px 5px #e9ba23;
+    letter-spacing: 3px;
+`
+
+export const HeroP = styled.div`
+    font-size: clamp(2rem, 2.5vw, 3rem);
+    margin-bottom: 2rem;
+`
+
