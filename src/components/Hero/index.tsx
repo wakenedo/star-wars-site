@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import { NavBar } from '../NavBar';
 import { SideBar } from '../SideBar';
 import {
     HeroContainer,
-    HeroContent,
-    HeroItems,
 } from './style'
 
-export interface HeroProps {
+
+export interface SideBarProps {
     isOpen: boolean;
     toggle: () => void;
 }
@@ -22,7 +21,7 @@ export const Hero = () => {
     return (
         <HeroContainer>
             <NavBar toggle={toggle} />
-            <SideBar />
+            <SideBar isOpen={isOpen} toggle={toggle}/>
         </HeroContainer>
     );
 };

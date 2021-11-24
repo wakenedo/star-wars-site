@@ -1,5 +1,7 @@
 import SidebarLogo from '../../assets/StarWarsLogo.png'
 import TieFighterIcon from '../../assets/tie_fighter_by_radiusss.svg'
+import { SideBarProps } from '../Hero';
+
 
 import {
     SidebarContainer,
@@ -11,9 +13,10 @@ import {
 
 
 
-export const SideBar = () => {
+
+export const SideBar = ({ isOpen, toggle } : SideBarProps) => {
     return (
-        <SidebarContainer >
+        <SidebarContainer isOpen={isOpen} onClick={toggle}>
             <Icon>
                 <CloseIcon />
             </Icon>

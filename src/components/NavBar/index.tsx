@@ -1,4 +1,3 @@
-import React from 'react';
 import {
     Bars,
     Nav,
@@ -6,7 +5,12 @@ import {
     NavLink
 } from './style'
 
-export const NavBar = ({ toggle }) => {
+interface NavBarProps {
+    toggle: () => void;
+}
+
+export const NavBar = ({ toggle } : NavBarProps ) => {
+    console.log(toggle, 'this is toggle log')
     return (
         <>
             <Nav>
