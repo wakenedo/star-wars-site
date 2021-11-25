@@ -10,14 +10,17 @@ import {
 } from './style'
 
 import StormTrooperIcon from '../../assets/storm_trooper_by_radiusss.svg'
-import { PeoplePage } from '../Pages/People/PeoplePage';
+
 
 
 export interface SideBarProps {
     isOpen: boolean;
     onClick?: () => void;
     toggle?: () => void;
+    
 }
+
+
 
 export const Hero = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -35,7 +38,6 @@ export const Hero = () => {
                     <HeroH1><img src={StormTrooperIcon} />Welcome to the world StarWars </HeroH1>
                     <HeroP>Using https://swapi.dev/</HeroP>
                 </HeroItems>
-                <PeoplePage />
             </HeroContent>
         </HeroContainer>
 

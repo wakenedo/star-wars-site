@@ -11,8 +11,7 @@ function App() {
       <Routes>
         <Route path='/PeoplePage' element={ <PeoplePage />} />
         <Route path='/' element={ <Hero /> } />
-        
-        
+                
       </Routes>
 
       <GlobalStyle />

@@ -35,8 +35,6 @@ export const HeroItems = styled.div`
     }
 `
 
-
-
 export const HeroH1 = styled.div`
     font-size: clamp(2.5rem, 10vw, 5rem);
     margin-bottom: 1rem;
