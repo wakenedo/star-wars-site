@@ -14,7 +14,7 @@ export const HeroContent = styled.div`
     height: calc(100vh - 80px);
     max-height: 100%;
     width: 100vw;
-    padding: 0rem calc((100vw - 1300px) /2);
+    padding: 0rem calc((100vw - 1000px) /2);
 `
 export const HeroItems = styled.div`
     display: flex;
@@ -24,7 +24,7 @@ export const HeroItems = styled.div`
     height: 100vh;
     max-height: 100%;
     padding: 0 2rem;
-    width: 650px;
+    width: 1050px;
     color: #fff;
     text-transform: uppercase;
     line-height: 1;
@@ -35,15 +35,27 @@ export const HeroItems = styled.div`
     }
 `
 
+
+
 export const HeroH1 = styled.div`
     font-size: clamp(2.5rem, 10vw, 5rem);
     margin-bottom: 1rem;
-    box-shadow: 3px 5px #e9ba23;
+    box-shadow: 5px 10px var(--yellow);
     letter-spacing: 3px;
+    display: flex;
+
+    img {
+        width: 150px;
+        margin-right: 1.5rem;
+    }
+
+    @media screen and (max-width: 650px) {
+        
+    }
 `
 
 export const HeroP = styled.div`
-    font-size: clamp(2rem, 2.5vw, 3rem);
+    font-size: clamp(1rem, 2.5vw, 2rem);
     margin-bottom: 2rem;
 `
 

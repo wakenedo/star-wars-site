@@ -1,5 +1,5 @@
 import SidebarLogo from '../../assets/StarWarsLogo.png'
-import TieFighterIcon from '../../assets/tie_fighter_by_radiusss.svg'
+import DeathStarIcon from '../../assets/death_star_by_radiusss.svg'
 import { SideBarProps } from '../Hero';
 
 
@@ -26,21 +26,21 @@ export const SideBar = ({ isOpen, toggle } : SideBarProps) => {
             </div>
             <SidebarMenu>
                 <SidebarLink to='/'>
-                    <img src={TieFighterIcon} alt="" />
+                    <img src={DeathStarIcon} alt="" />
                     <p>
                         People
                     </p>
                 </SidebarLink>
 
                 <SidebarLink to='/'>
-                    <img src={TieFighterIcon} alt="" />
+                    <img src={DeathStarIcon} alt="" />
                     <p>
                         Planets
                     </p>
                 </SidebarLink>
 
                 <SidebarLink to='/'>
-                    <img src={TieFighterIcon} alt="" />
+                    <img src={DeathStarIcon} alt="" />
                     <p>
                         Films
                     </p>
@@ -48,21 +48,21 @@ export const SideBar = ({ isOpen, toggle } : SideBarProps) => {
                 </SidebarLink>
 
                 <SidebarLink to='/'>
-                    <img src={TieFighterIcon} alt="" />
+                    <img src={DeathStarIcon} alt="" />
                     <p>
                         Species
                     </p>
 
                 </SidebarLink>
                 <SidebarLink to='/'>
-                    <img src={TieFighterIcon} alt="" />
+                    <img src={DeathStarIcon} alt="" />
                     <p>
                         Vehicles
                     </p>
 
                 </SidebarLink>
                 <SidebarLink to='/'>
-                    <img src={TieFighterIcon} alt="" />
+                    <img src={DeathStarIcon} alt="" />
                     <p>
                         Starships
                     </p>

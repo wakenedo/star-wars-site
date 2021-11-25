@@ -2,8 +2,15 @@ import { useState } from 'react'
 import { NavBar } from '../NavBar';
 import { SideBar } from '../SideBar';
 import {
-    HeroContainer, HeroContent, HeroH1, HeroItems, HeroP,
+    HeroContainer, 
+    HeroContent, 
+    HeroH1, 
+    HeroItems, 
+    HeroP, 
 } from './style'
+
+import StormTrooperIcon from '../../assets/storm_trooper_by_radiusss.svg'
+import { PeoplePage } from '../Pages/People/PeoplePage';
 
 
 export interface SideBarProps {
@@ -21,13 +28,14 @@ export const Hero = () => {
     return (
         <HeroContainer>
             <NavBar toggle={toggle} />
-            <SideBar isOpen={isOpen} toggle={toggle}/>
+            <SideBar isOpen={isOpen} toggle={toggle} />
             <HeroContent>
-            <HeroItems>
-                <HeroH1>This is StarWars FanSite</HeroH1>
-                <HeroP>Using https://swapi.dev/</HeroP>
-            </HeroItems>
-        </HeroContent>
+                <HeroItems>
+                    <HeroH1><img src={StormTrooperIcon} />Welcome to the world StarWars </HeroH1>
+                    <HeroP>Using https://swapi.dev/</HeroP>
+                </HeroItems>
+                <PeoplePage />
+            </HeroContent>
         </HeroContainer>
 
     );
