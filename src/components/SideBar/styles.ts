@@ -1,11 +1,7 @@
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { AiOutlineClose } from 'react-icons/ai'
-
-export interface SideBarContainerProps {
-    isOpen: boolean;
-    onClick: {toggle: () => void};
-}
+import { SideBarProps } from '../Hero';
 
 
 export const SidebarContainer = styled.aside`
@@ -19,7 +15,7 @@ export const SidebarContainer = styled.aside`
     align-items: center;
     top: 0;
     transition: 0.3s ease-in-out;   
-    right: ${({ isOpen }) => (isOpen ? '0' : '-1000px')};
+    right: ${({ isOpen } : SideBarProps) => (isOpen ? '0' : '-1000px')};
     
     .sideBarLogo {
         margin-top: 4.5rem

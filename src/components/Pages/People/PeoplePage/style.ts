@@ -6,3 +6,19 @@ export const PeoplePageContainer = styled.div`
     align-items: center;
     color: var(--yellow);
 `
+
+export const DescriptionContainer = styled.div`
+`
+
+export const HomeWorldContainer = styled.div`
+`
+
+export const FilmsContainer = styled.div`
+`
+
+export const SpeciesContainer = styled.div`
+`
+export const VehiclesContainer = styled.div`
+`
+export const StarShipsContainer = styled.div`
+`

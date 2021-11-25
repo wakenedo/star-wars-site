@@ -12,8 +12,6 @@ import {
 } from './styles';
 
 
-
-
 export const SideBar = ({ isOpen, toggle } : SideBarProps) => {
     return (
         <SidebarContainer isOpen={isOpen} onClick={toggle}>

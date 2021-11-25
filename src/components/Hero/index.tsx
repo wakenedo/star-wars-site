@@ -15,7 +15,8 @@ import { PeoplePage } from '../Pages/People/PeoplePage';
 
 export interface SideBarProps {
     isOpen: boolean;
-    toggle: () => void;
+    onClick?: () => void;
+    toggle?: () => void;
 }
 
 export const Hero = () => {
