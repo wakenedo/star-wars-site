@@ -7,7 +7,6 @@ export const PeoplePageContainer = styled.div`
     display: flex;
     flex-direction: column;
 `
-
 export const Title = styled.h1`
     color: var(--yellow);
     padding: 1rem;
@@ -18,7 +17,6 @@ export const Title = styled.h1`
     font-size: clamp(1.5rem, 10vw, 2.5rem);
     box-shadow: 1.5px 1.5px var(--yellow);
 `
-
 export const TextTitle = styled.h4`
     font-size: clamp(0.75rem, 10vw, 0.75rem);
     margin-bottom: 1.5rem;
@@ -33,7 +31,16 @@ export const Content = styled.div`
     align-items: center;
     margin-top: 3.50rem;
 `
+export const BadgeText = styled.p`
+    font-size: clamp(0.5rem, 10vw, 1rem);
+    font-weight: 100;
+    margin-left: 0.75rem;
+    padding: 0.1rem;
 
+    &:last-child {
+        margin-bottom: 1.5rem;
+    }
+`
 export const TextContainerRight = styled.div`
     color: var(--text-body);
     background: var(--background-light);
@@ -54,7 +61,6 @@ export const TextContainerLeft = styled.div`
     display: flex;
     flex-direction: column;
 `
-
 export const TextContainerLarge = styled.div`
     color: var(--text-body);
     background: var(--background-light);
@@ -62,7 +68,6 @@ export const TextContainerLarge = styled.div`
     display: flex;
     flex-direction: column;
 `
-
 export const DescriptionContainer = styled.div`
     background: linear-gradient(to right, rgba(0,0,0,0.7),
     rgba(0,0,0,0.1)),
@@ -109,7 +114,6 @@ export const HomeWorldImage = styled.img`
     padding: 1rem;
     margin-left: 1.5rem;
 `
-
 export const SpeciesContainer = styled.div`
     background: linear-gradient(to right, rgba(0,0,0,0.7),
     rgba(0,0,0,0.1)),
@@ -118,13 +122,11 @@ export const SpeciesContainer = styled.div`
     background-position: center;
     background-size: cover; 
 `
-
 export const SpeciesContent = styled.div`
     display: flex;
     align-items: center;
     margin-top: 2.5rem;
 `
-
 export const SpeciesText = styled.p`
     font-size: clamp(1rem, 10vw, 1.25rem);
     font-weight: 100;
@@ -135,7 +137,6 @@ export const SpeciesText = styled.p`
         margin-bottom: 1.5rem;
     }
 `
-
 export const FilmsContainer = styled.div`
     height: 50vh;
 `
@@ -147,7 +148,32 @@ export const StarShipsContainer = styled.div`
     background-position: center;
     background-size: cover; 
 `
-
+export const StarShipsContent = styled.div`
+    display: flex;
+    align-items: center;
+    margin-top: 2.5rem;
+`
+export const StarShipsBadge = styled.div`
+    color: var(--text-body);
+    background: var(--background-light);
+    width: 300px;
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+`
 export const VehiclesContainer = styled.div`
     height: 50vh;
+`
+export const VehiclesContent = styled.div`
+    display: flex;
+    align-items: center;
+    margin-top: 2.5rem;
+`
+export const VehiclesBadge = styled.div`
+    color: var(--text-body);
+    background: var(--background-light);
+    width: 300px;
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
 `

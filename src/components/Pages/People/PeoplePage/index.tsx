@@ -22,7 +22,13 @@ import {
     HomeWorldImage,
     TextContainerLarge,
     SpeciesContent,
-    SpeciesText
+    SpeciesText,
+    StarShipsContent,
+    StarShipsBadge,
+    TextContainerBadge,
+    BadgeText,
+    VehiclesContent,
+    VehiclesBadge
 } from './style'
 
 import CharacterImg from '../../../../assets/CharacterImg.png'
@@ -135,7 +141,7 @@ export const PeoplePage = () => {
                             Classification : Mammal
                         </SpeciesText>
                         <SpeciesText>
-                            Designation : Sentient 
+                            Designation : Sentient
                         </SpeciesText>
                         <SpeciesText>
                             Average Height : 180 cm
@@ -170,12 +176,179 @@ export const PeoplePage = () => {
                 <Title>
                     Star Ships :
                 </Title>
-                
+                <StarShipsContent>
+                    <StarShipsBadge>
+                        <TextTitle>
+                            Characteristics :
+                        </TextTitle>                        
+                            <BadgeText>
+                                Name : X-Wing
+                            </BadgeText>
+                            <BadgeText>
+                                Model : T-65 X-Wing
+                            </BadgeText>
+                            <BadgeText>
+                                Manufacturer : Incom Corporation
+                            </BadgeText>
+                            <BadgeText>
+                                Cost in credits : 149.999
+                            </BadgeText>
+                            <BadgeText>
+                                Length : 12.5 Meters
+                            </BadgeText>
+                            <BadgeText>
+                                Max atmosphering speed : 1050
+                            </BadgeText>
+                            <BadgeText>
+                                Crew : 1
+                            </BadgeText>
+                            <BadgeText>
+                                Passengers : 0
+                            </BadgeText>
+                            <BadgeText>
+                                Cargo capacity : 110
+                            </BadgeText>
+                            <BadgeText>
+                                Consumables : 1 weeek
+                            </BadgeText>
+                            <BadgeText>
+                                Hyperdrive rating : 1.0
+                            </BadgeText>
+                            <BadgeText>
+                                MGLT : 100
+                            </BadgeText>
+                            <BadgeText>
+                                Starship class : Starfighter
+                            </BadgeText>             
+                    </StarShipsBadge>
+                    <StarShipsBadge>
+                        <TextTitle>
+                            Characteristics :
+                        </TextTitle>
+                        <BadgeText>
+                                Name : X-Wing
+                            </BadgeText>
+                            <BadgeText>
+                                Model : T-65 X-Wing
+                            </BadgeText>
+                            <BadgeText>
+                                Manufacturer : Incom Corporation
+                            </BadgeText>
+                            <BadgeText>
+                                Cost in credits : 149.999
+                            </BadgeText>
+                            <BadgeText>
+                                Length : 12.5 Meters
+                            </BadgeText>
+                            <BadgeText>
+                                Max atmosphering speed : 1050
+                            </BadgeText>
+                            <BadgeText>
+                                Crew : 1
+                            </BadgeText>
+                            <BadgeText>
+                                Passengers : 0
+                            </BadgeText>
+                            <BadgeText>
+                                Cargo capacity : 110
+                            </BadgeText>
+                            <BadgeText>
+                                Consumables : 1 weeek
+                            </BadgeText>
+                            <BadgeText>
+                                Hyperdrive rating : 1.0
+                            </BadgeText>
+                            <BadgeText>
+                                MGLT : 100
+                            </BadgeText>
+                            <BadgeText>
+                                Starship class : Starfighter
+                            </BadgeText>
+                    </StarShipsBadge>
+                </StarShipsContent>
             </StarShipsContainer>
             <VehiclesContainer>
                 <Title>
                     Vehicles :
                 </Title>
+                <VehiclesContent>
+                    <VehiclesBadge>
+                        <TextTitle>
+                            Characteristics : 
+                        </TextTitle>
+                        <BadgeText>
+                                Name : Snowspeeder
+                            </BadgeText>
+                            <BadgeText>
+                                Model : T-47 Airspeeder
+                            </BadgeText>
+                            <BadgeText>
+                                Manufacturer : Incom Corporation
+                            </BadgeText>
+                            <BadgeText>
+                                Cost in credits : Unknown
+                            </BadgeText>
+                            <BadgeText>
+                                Length : 4.5 Meters
+                            </BadgeText>
+                            <BadgeText>
+                                Max atmosphering speed : 650
+                            </BadgeText>
+                            <BadgeText>
+                                Crew : 2
+                            </BadgeText>
+                            <BadgeText>
+                                Passengers : 0
+                            </BadgeText>
+                            <BadgeText>
+                                Cargo capacity : 10
+                            </BadgeText>
+                            <BadgeText>
+                                Consumables : None
+                            </BadgeText>
+                            <BadgeText>
+                                Vehicle class : Airspeeder
+                            </BadgeText>
+                    </VehiclesBadge>
+                    <VehiclesBadge>
+                        <TextTitle>
+                            Characteristics : 
+                        </TextTitle>
+                        <BadgeText>
+                                Name : Snowspeeder
+                            </BadgeText>
+                            <BadgeText>
+                                Model : T-47 Airspeeder
+                            </BadgeText>
+                            <BadgeText>
+                                Manufacturer : Incom Corporation
+                            </BadgeText>
+                            <BadgeText>
+                                Cost in credits : Unknown
+                            </BadgeText>
+                            <BadgeText>
+                                Length : 4.5 Meters
+                            </BadgeText>
+                            <BadgeText>
+                                Max atmosphering speed : 650
+                            </BadgeText>
+                            <BadgeText>
+                                Crew : 2
+                            </BadgeText>
+                            <BadgeText>
+                                Passengers : 0
+                            </BadgeText>
+                            <BadgeText>
+                                Cargo capacity : 10
+                            </BadgeText>
+                            <BadgeText>
+                                Consumables : None
+                            </BadgeText>
+                            <BadgeText>
+                                Vehicle class : Airspeeder
+                            </BadgeText>
+                    </VehiclesBadge>
+                </VehiclesContent>
             </VehiclesContainer>
         </PeoplePageContainer>
     )
