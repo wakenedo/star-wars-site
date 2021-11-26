@@ -1,5 +1,7 @@
 import styled from 'styled-components'
 import PeopleContainerImg from '../../../../assets/PeopleContainerImg.jpg'
+import SpeciesContainerImg from '../../../../assets/SpeciesContainerImg.jpg'
+import StarshipsContainerImg from '../../../../assets/StarshipsContainerImg.jpg'
 
 export const PeoplePageContainer = styled.div`
     display: flex;
@@ -9,18 +11,20 @@ export const PeoplePageContainer = styled.div`
 export const Title = styled.h1`
     color: var(--yellow);
     padding: 1rem;
+    font-weight: 300;
     margin: 0 auto;
     align-items: center;
     text-transform: uppercase;
     font-size: clamp(1.5rem, 10vw, 2.5rem);
-    box-shadow: 2.5px 3.5px var(--yellow);
+    box-shadow: 1.5px 1.5px var(--yellow);
 `
 
 export const TextTitle = styled.h4`
     font-size: clamp(0.75rem, 10vw, 0.75rem);
     margin-bottom: 1.5rem;
+    font-weight: 300;
     padding: 0.25rem;
-    border-bottom: 1px solid;
+    border-bottom: 0.5px solid;
 
     
 `
@@ -33,7 +37,6 @@ export const Content = styled.div`
 export const TextContainerRight = styled.div`
     color: var(--text-body);
     background: var(--background-light);
-    font-size: clamp(1rem, 10vw, 1.5rem);
     width: 300px;
     margin-left: 1.5rem;
     display: flex;
@@ -47,15 +50,17 @@ export const TextContainerRight = styled.div`
 export const TextContainerLeft = styled.div`
     color: var(--text-body);
     background: var(--background-light);
-    font-size: clamp(1rem, 10vw, 1.5rem);
     width: 300px;
     display: flex;
     flex-direction: column;
+`
 
-    svg {
-        margin-right: 1.5rem;
-        margin-left: 4.5rem;
-    }
+export const TextContainerLarge = styled.div`
+    color: var(--text-body);
+    background: var(--background-light);
+    width: 630px;
+    display: flex;
+    flex-direction: column;
 `
 
 export const DescriptionContainer = styled.div`
@@ -68,6 +73,7 @@ export const DescriptionContainer = styled.div`
 `
 export const DescriptionText = styled.p`
     font-size: clamp(1rem, 10vw, 1.5rem);
+    font-weight: 100;
 
     &:last-child {
         margin-bottom: 1.5rem;
@@ -79,39 +85,69 @@ export const DescriptionImage = styled.img`
     background: var(--background-light);
     padding: 1rem;
 `
-
 export const HomeWorldContainer = styled.div` 
-    height: 50vh;
-    background-position: center;
-    background-size: cover; 
+    height: 50vh; 
 `
-
 export const HomeWorldContent = styled.div`
     display: flex;
     align-items: center;
-    margin-top: 3.5rem;
+    margin-top: 2.5rem;
 `
 export const HomeWorldText = styled.p`
-    font-size: clamp(1rem, 10vw, 1.5rem);
+    font-size: clamp(1.35rem, 10vw, 1.35rem);
+    font-weight: 100;
+    margin-left: 0.75rem;
+    padding: 0.1rem;
 
     &:last-child {
         margin-bottom: 1.5rem;
     }
 `
 export const HomeWorldImage = styled.img`
-    width: 312px;
-    height: 332px;
+    width: 320px;
     background: var(--background-light);
     padding: 1rem;
     margin-left: 1.5rem;
 `
 
-export const FilmsContainer = styled.div`
+export const SpeciesContainer = styled.div`
+    background: linear-gradient(to right, rgba(0,0,0,0.7),
+    rgba(0,0,0,0.1)),
+    url(${SpeciesContainerImg}); 
+    height: 50vh;
+    background-position: center;
+    background-size: cover; 
 `
 
-export const SpeciesContainer = styled.div`
+export const SpeciesContent = styled.div`
+    display: flex;
+    align-items: center;
+    margin-top: 2.5rem;
 `
-export const VehiclesContainer = styled.div`
+
+export const SpeciesText = styled.p`
+    font-size: clamp(1rem, 10vw, 1.25rem);
+    font-weight: 100;
+    margin-left: 0.75rem;
+    padding: 0.1rem;
+
+    &:last-child {
+        margin-bottom: 1.5rem;
+    }
+`
+
+export const FilmsContainer = styled.div`
+    height: 50vh;
 `
 export const StarShipsContainer = styled.div`
+    background: linear-gradient(to right, rgba(0,0,0,0.7),
+    rgba(0,0,0,0.1)),
+    url(${StarshipsContainerImg}); 
+    height: 50vh;
+    background-position: center;
+    background-size: cover; 
+`
+
+export const VehiclesContainer = styled.div`
+    height: 50vh;
 `

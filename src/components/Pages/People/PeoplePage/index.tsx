@@ -12,13 +12,17 @@ import {
     DescriptionImage,
     DescriptionText,
     HomeWorldContainer,
+    HomeWorldContent,
     FilmsContainer,
     PeoplePageContainer,
     SpeciesContainer,
     StarShipsContainer,
     VehiclesContainer,
     HomeWorldText,
-    HomeWorldImage
+    HomeWorldImage,
+    TextContainerLarge,
+    SpeciesContent,
+    SpeciesText
 } from './style'
 
 import CharacterImg from '../../../../assets/CharacterImg.png'
@@ -42,7 +46,7 @@ export const PeoplePage = () => {
             <SideBar isOpen={isOpen} toggle={toggle} />
             <DescriptionContainer>
                 <Title>
-                    Luke Skywalker
+                    Character : Luke Skywalker
                 </Title>
                 <Content>
                     <DescriptionImage src={CharacterImg} />
@@ -81,12 +85,11 @@ export const PeoplePage = () => {
                     </TextContainerRight>
                 </Content>
             </DescriptionContainer>
-
             <HomeWorldContainer>
                 <Title>
                     Planet: Tatooine
                 </Title>
-                <Content>
+                <HomeWorldContent>
                     <TextContainerLeft>
                         <TextTitle>
                             Description
@@ -117,25 +120,63 @@ export const PeoplePage = () => {
                         </HomeWorldText>
                     </TextContainerLeft>
                     <HomeWorldImage src={PlanetImg} />
-                </Content>
+                </HomeWorldContent>
             </HomeWorldContainer>
-
-            <FilmsContainer>
-                This is FilmsContainer
-            </FilmsContainer>
-
             <SpeciesContainer>
-                This is SpeciesContainer
+                <Title>
+                    Species : Human
+                </Title>
+                <SpeciesContent>
+                    <TextContainerLarge >
+                        <TextTitle>
+                            Features
+                        </TextTitle>
+                        <SpeciesText>
+                            Classification : Mammal
+                        </SpeciesText>
+                        <SpeciesText>
+                            Designation : Sentient 
+                        </SpeciesText>
+                        <SpeciesText>
+                            Average Height : 180 cm
+                        </SpeciesText>
+                        <SpeciesText>
+                            Skin Colors : Caucasian, Black, Asian, Hispanic
+                        </SpeciesText>
+                        <SpeciesText>
+                            Hair Colors : Blonde, Brown, Black, Red
+                        </SpeciesText>
+                        <SpeciesText>
+                            Eye Colors : Brown, Blue, Green, Hazel, Gray, Amber
+                        </SpeciesText>
+                        <SpeciesText>
+                            Average Lifespan : 120 years
+                        </SpeciesText>
+                        <SpeciesText>
+                            Home World : Earth
+                        </SpeciesText>
+                        <SpeciesText>
+                            Language : Galatic Basic
+                        </SpeciesText>
+                    </TextContainerLarge>
+                </SpeciesContent>
             </SpeciesContainer>
-
-            <VehiclesContainer>
-                This is VehicleContainer
-            </VehiclesContainer>
-
+            <FilmsContainer>
+                <Title>
+                    Films :
+                </Title>
+            </FilmsContainer>
             <StarShipsContainer>
-                This is StarShipsContainer
+                <Title>
+                    Star Ships :
+                </Title>
+                
             </StarShipsContainer>
+            <VehiclesContainer>
+                <Title>
+                    Vehicles :
+                </Title>
+            </VehiclesContainer>
         </PeoplePageContainer>
-
     )
 }
