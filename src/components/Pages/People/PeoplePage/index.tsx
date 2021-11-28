@@ -25,7 +25,6 @@ import {
     SpeciesText,
     StarShipsContent,
     StarShipsBadge,
-    TextContainerBadge,
     BadgeText,
     VehiclesContent,
     VehiclesBadge
@@ -46,7 +45,6 @@ export const PeoplePage = () => {
         setIsOpen(!isOpen);
     }
     return (
-
         <PeoplePageContainer>
             <NavBar toggle={toggle} />
             <SideBar isOpen={isOpen} toggle={toggle} />

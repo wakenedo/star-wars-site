@@ -23,13 +23,11 @@ export const TextTitle = styled.h4`
     font-weight: 300;
     padding: 0.25rem;
     border-bottom: 0.5px solid;
-
-    
 `
 export const Content = styled.div`
     display: flex;
     align-items: center;
-    margin-top: 3.50rem;
+    margin-top: 5.95rem;
 `
 export const BadgeText = styled.p`
     font-size: clamp(0.5rem, 10vw, 1rem);
@@ -60,6 +58,7 @@ export const TextContainerLeft = styled.div`
     width: 300px;
     display: flex;
     flex-direction: column;
+    margin-left: 45rem;
 `
 export const TextContainerLarge = styled.div`
     color: var(--text-body);
@@ -67,6 +66,8 @@ export const TextContainerLarge = styled.div`
     width: 630px;
     display: flex;
     flex-direction: column;
+    margin-left: 45.5rem;
+    margin-top: 3.5rem;
 `
 export const DescriptionContainer = styled.div`
     background: linear-gradient(to right, rgba(0,0,0,0.7),
@@ -89,6 +90,7 @@ export const DescriptionImage = styled.img`
     height: 277px;
     background: var(--background-light);
     padding: 1rem;
+    margin-left: 45.5rem;
 `
 export const HomeWorldContainer = styled.div` 
     height: 50vh; 
@@ -96,7 +98,7 @@ export const HomeWorldContainer = styled.div`
 export const HomeWorldContent = styled.div`
     display: flex;
     align-items: center;
-    margin-top: 2.5rem;
+    margin-top: 5.95rem;
 `
 export const HomeWorldText = styled.p`
     font-size: clamp(1.35rem, 10vw, 1.35rem);
@@ -151,7 +153,8 @@ export const StarShipsContainer = styled.div`
 export const StarShipsContent = styled.div`
     display: flex;
     align-items: center;
-    margin-top: 2.5rem;
+    margin-top: 4.5rem;
+    margin-left: 43.5rem;
 `
 export const StarShipsBadge = styled.div`
     color: var(--text-body);
@@ -167,7 +170,8 @@ export const VehiclesContainer = styled.div`
 export const VehiclesContent = styled.div`
     display: flex;
     align-items: center;
-    margin-top: 2.5rem;
+    margin-top: 4.5rem;
+    margin-left: 43.5rem;
 `
 export const VehiclesBadge = styled.div`
     color: var(--text-body);
