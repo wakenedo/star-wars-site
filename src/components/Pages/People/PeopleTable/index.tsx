@@ -1,11 +1,12 @@
-import { useState } from "react";
+import React, { useState } from "react";
+import { } from "../../../../services/api";
 import { NavBar } from "../../../NavBar";
 import { SideBar } from "../../../SideBar";
 import { PeopleBadge } from "./PeopleBadge";
-import { 
-    PeopleTableArray, 
-    PeopleTableContainer, 
-    PeopleTableH1 
+import {
+    PeopleTableArray,
+    PeopleTableContainer,
+    PeopleTableH1
 } from "./style";
 
 export const PeopleTable = () => {
@@ -14,6 +15,8 @@ export const PeopleTable = () => {
     const toggle = () => {
         setIsOpen(!isOpen);
     }
+
+
     return (
         <>
             <NavBar toggle={toggle} />

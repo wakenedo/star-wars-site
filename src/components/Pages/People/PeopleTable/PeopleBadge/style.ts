@@ -16,3 +16,23 @@ export const PeopleBadgeTitle = styled.h3`
     padding: 0.25rem;
     border-bottom: 0.5px solid;
 `
+export const TextContainer = styled.div`
+    color: var(--text-body);
+    background: var(--background-light);
+    width: 300px;    
+    display: flex;
+    flex-direction: column;
+
+    svg {
+        margin-right: 1.5rem;
+        margin-left: 4.5rem;
+    }
+`
+export const DescriptionText = styled.p`
+    font-size: clamp(1rem, 10vw, 1.5rem);
+    font-weight: 100;
+
+    &:last-child {
+        margin-bottom: 1.5rem;
+    }
+`
