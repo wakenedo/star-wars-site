@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { } from "../../../../services/api";
+import React, { useEffect, useState } from "react";
+import { api } from "../../../../services/api";
 import { NavBar } from "../../../NavBar";
 import { SideBar } from "../../../SideBar";
 import { PeopleBadge } from "./PeopleBadge";
@@ -10,12 +10,17 @@ import {
 } from "./style";
 
 export const PeopleTable = () => {
+    const [peopleTable, setPeopleTable] = useState([])
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => {
         setIsOpen(!isOpen);
     }
 
+    useEffect(() => {
+        api.get('people')
+            .then(response => setPeopleTable(response.data.people))
+    }, []);
 
     return (
         <>

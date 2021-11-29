@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavBar } from '../../../../components/NavBar';
 import { SideBar } from '../../../../components/SideBar';
 
@@ -37,6 +37,7 @@ import { GiBodyHeight, GiHairStrands, GiWeight } from 'react-icons/gi'
 import { HiUser } from 'react-icons/hi'
 import { FaBirthdayCake, FaRegEye } from 'react-icons/fa'
 import { BsGenderMale } from 'react-icons/bs'
+import { api } from '../../../../services/api';
 
 export const PeoplePage = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -44,6 +45,8 @@ export const PeoplePage = () => {
     const toggle = () => {
         setIsOpen(!isOpen);
     }
+
+    
     return (
         <PeoplePageContainer>
             <NavBar toggle={toggle} />
@@ -178,90 +181,90 @@ export const PeoplePage = () => {
                     <StarShipsBadge>
                         <TextTitle>
                             Characteristics :
-                        </TextTitle>                        
-                            <BadgeText>
-                                Name : X-Wing
-                            </BadgeText>
-                            <BadgeText>
-                                Model : T-65 X-Wing
-                            </BadgeText>
-                            <BadgeText>
-                                Manufacturer : Incom Corporation
-                            </BadgeText>
-                            <BadgeText>
-                                Cost in credits : 149.999
-                            </BadgeText>
-                            <BadgeText>
-                                Length : 12.5 Meters
-                            </BadgeText>
-                            <BadgeText>
-                                Max atmosphering speed : 1050
-                            </BadgeText>
-                            <BadgeText>
-                                Crew : 1
-                            </BadgeText>
-                            <BadgeText>
-                                Passengers : 0
-                            </BadgeText>
-                            <BadgeText>
-                                Cargo capacity : 110
-                            </BadgeText>
-                            <BadgeText>
-                                Consumables : 1 weeek
-                            </BadgeText>
-                            <BadgeText>
-                                Hyperdrive rating : 1.0
-                            </BadgeText>
-                            <BadgeText>
-                                MGLT : 100
-                            </BadgeText>
-                            <BadgeText>
-                                Starship class : Starfighter
-                            </BadgeText>             
+                        </TextTitle>
+                        <BadgeText>
+                            Name : X-Wing
+                        </BadgeText>
+                        <BadgeText>
+                            Model : T-65 X-Wing
+                        </BadgeText>
+                        <BadgeText>
+                            Manufacturer : Incom Corporation
+                        </BadgeText>
+                        <BadgeText>
+                            Cost in credits : 149.999
+                        </BadgeText>
+                        <BadgeText>
+                            Length : 12.5 Meters
+                        </BadgeText>
+                        <BadgeText>
+                            Max atmosphering speed : 1050
+                        </BadgeText>
+                        <BadgeText>
+                            Crew : 1
+                        </BadgeText>
+                        <BadgeText>
+                            Passengers : 0
+                        </BadgeText>
+                        <BadgeText>
+                            Cargo capacity : 110
+                        </BadgeText>
+                        <BadgeText>
+                            Consumables : 1 weeek
+                        </BadgeText>
+                        <BadgeText>
+                            Hyperdrive rating : 1.0
+                        </BadgeText>
+                        <BadgeText>
+                            MGLT : 100
+                        </BadgeText>
+                        <BadgeText>
+                            Starship class : Starfighter
+                        </BadgeText>
                     </StarShipsBadge>
                     <StarShipsBadge>
                         <TextTitle>
                             Characteristics :
                         </TextTitle>
                         <BadgeText>
-                                Name : X-Wing
-                            </BadgeText>
-                            <BadgeText>
-                                Model : T-65 X-Wing
-                            </BadgeText>
-                            <BadgeText>
-                                Manufacturer : Incom Corporation
-                            </BadgeText>
-                            <BadgeText>
-                                Cost in credits : 149.999
-                            </BadgeText>
-                            <BadgeText>
-                                Length : 12.5 Meters
-                            </BadgeText>
-                            <BadgeText>
-                                Max atmosphering speed : 1050
-                            </BadgeText>
-                            <BadgeText>
-                                Crew : 1
-                            </BadgeText>
-                            <BadgeText>
-                                Passengers : 0
-                            </BadgeText>
-                            <BadgeText>
-                                Cargo capacity : 110
-                            </BadgeText>
-                            <BadgeText>
-                                Consumables : 1 weeek
-                            </BadgeText>
-                            <BadgeText>
-                                Hyperdrive rating : 1.0
-                            </BadgeText>
-                            <BadgeText>
-                                MGLT : 100
-                            </BadgeText>
-                            <BadgeText>
-                                Starship class : Starfighter
-                            </BadgeText>
+                            Name : X-Wing
+                        </BadgeText>
+                        <BadgeText>
+                            Model : T-65 X-Wing
+                        </BadgeText>
+                        <BadgeText>
+                            Manufacturer : Incom Corporation
+                        </BadgeText>
+                        <BadgeText>
+                            Cost in credits : 149.999
+                        </BadgeText>
+                        <BadgeText>
+                            Length : 12.5 Meters
+                        </BadgeText>
+                        <BadgeText>
+                            Max atmosphering speed : 1050
+                        </BadgeText>
+                        <BadgeText>
+                            Crew : 1
+                        </BadgeText>
+                        <BadgeText>
+                            Passengers : 0
+                        </BadgeText>
+                        <BadgeText>
+                            Cargo capacity : 110
+                        </BadgeText>
+                        <BadgeText>
+                            Consumables : 1 weeek
+                        </BadgeText>
+                        <BadgeText>
+                            Hyperdrive rating : 1.0
+                        </BadgeText>
+                        <BadgeText>
+                            MGLT : 100
+                        </BadgeText>
+                        <BadgeText>
+                            Starship class : Starfighter
+                        </BadgeText>
                     </StarShipsBadge>
                 </StarShipsContent>
             </StarShipsContainer>
@@ -272,79 +275,79 @@ export const PeoplePage = () => {
                 <VehiclesContent>
                     <VehiclesBadge>
                         <TextTitle>
-                            Characteristics : 
+                            Characteristics :
                         </TextTitle>
                         <BadgeText>
-                                Name : Snowspeeder
-                            </BadgeText>
-                            <BadgeText>
-                                Model : T-47 Airspeeder
-                            </BadgeText>
-                            <BadgeText>
-                                Manufacturer : Incom Corporation
-                            </BadgeText>
-                            <BadgeText>
-                                Cost in credits : Unknown
-                            </BadgeText>
-                            <BadgeText>
-                                Length : 4.5 Meters
-                            </BadgeText>
-                            <BadgeText>
-                                Max atmosphering speed : 650
-                            </BadgeText>
-                            <BadgeText>
-                                Crew : 2
-                            </BadgeText>
-                            <BadgeText>
-                                Passengers : 0
-                            </BadgeText>
-                            <BadgeText>
-                                Cargo capacity : 10
-                            </BadgeText>
-                            <BadgeText>
-                                Consumables : None
-                            </BadgeText>
-                            <BadgeText>
-                                Vehicle class : Airspeeder
-                            </BadgeText>
+                            Name : Snowspeeder
+                        </BadgeText>
+                        <BadgeText>
+                            Model : T-47 Airspeeder
+                        </BadgeText>
+                        <BadgeText>
+                            Manufacturer : Incom Corporation
+                        </BadgeText>
+                        <BadgeText>
+                            Cost in credits : Unknown
+                        </BadgeText>
+                        <BadgeText>
+                            Length : 4.5 Meters
+                        </BadgeText>
+                        <BadgeText>
+                            Max atmosphering speed : 650
+                        </BadgeText>
+                        <BadgeText>
+                            Crew : 2
+                        </BadgeText>
+                        <BadgeText>
+                            Passengers : 0
+                        </BadgeText>
+                        <BadgeText>
+                            Cargo capacity : 10
+                        </BadgeText>
+                        <BadgeText>
+                            Consumables : None
+                        </BadgeText>
+                        <BadgeText>
+                            Vehicle class : Airspeeder
+                        </BadgeText>
                     </VehiclesBadge>
                     <VehiclesBadge>
                         <TextTitle>
-                            Characteristics : 
+                            Characteristics :
                         </TextTitle>
                         <BadgeText>
-                                Name : Snowspeeder
-                            </BadgeText>
-                            <BadgeText>
-                                Model : T-47 Airspeeder
-                            </BadgeText>
-                            <BadgeText>
-                                Manufacturer : Incom Corporation
-                            </BadgeText>
-                            <BadgeText>
-                                Cost in credits : Unknown
-                            </BadgeText>
-                            <BadgeText>
-                                Length : 4.5 Meters
-                            </BadgeText>
-                            <BadgeText>
-                                Max atmosphering speed : 650
-                            </BadgeText>
-                            <BadgeText>
-                                Crew : 2
-                            </BadgeText>
-                            <BadgeText>
-                                Passengers : 0
-                            </BadgeText>
-                            <BadgeText>
-                                Cargo capacity : 10
-                            </BadgeText>
-                            <BadgeText>
-                                Consumables : None
-                            </BadgeText>
-                            <BadgeText>
-                                Vehicle class : Airspeeder
-                            </BadgeText>
+                            Name : Snowspeeder
+                        </BadgeText>
+                        <BadgeText>
+                            Model : T-47 Airspeeder
+                        </BadgeText>
+                        <BadgeText>
+                            Manufacturer : Incom Corporation
+                        </BadgeText>
+                        <BadgeText>
+                            Cost in credits : Unknown
+                        </BadgeText>
+                        <BadgeText>
+                            Length : 4.5 Meters
+                        </BadgeText>
+                        <BadgeText>
+                            Max atmosphering speed : 650
+                        </BadgeText>
+                        <BadgeText>
+                            Crew : 2
+                        </BadgeText>
+                        <BadgeText>
+                            Passengers : 0
+                        </BadgeText>
+                        <BadgeText>
+                            Cargo capacity : 10
+                        </BadgeText>
+                        <BadgeText>
+                            Consumables : None
+                        </BadgeText>
+                        <BadgeText>
+                            Vehicle class : Airspeeder
+                        </BadgeText>
                     </VehiclesBadge>
                 </VehiclesContent>
             </VehiclesContainer>
