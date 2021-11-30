@@ -27,7 +27,7 @@ export const TextTitle = styled.h4`
 export const Content = styled.div`
     display: flex;
     align-items: center;
-    margin-top: 5.95rem;
+    margin-top: 4.5rem;
 `
 export const BadgeText = styled.p`
     font-size: clamp(0.5rem, 10vw, 1rem);
@@ -67,7 +67,7 @@ export const TextContainerLarge = styled.div`
     display: flex;
     flex-direction: column;
     margin-left: 45.5rem;
-    margin-top: 3.5rem;
+    margin-top: 1.15rem;
 `
 export const DescriptionContainer = styled.div`
     background: linear-gradient(to right, rgba(0,0,0,0.7),
@@ -98,7 +98,7 @@ export const HomeWorldContainer = styled.div`
 export const HomeWorldContent = styled.div`
     display: flex;
     align-items: center;
-    margin-top: 5.95rem;
+    margin-top: 3.85rem;
 `
 export const HomeWorldText = styled.p`
     font-size: clamp(1.35rem, 10vw, 1.35rem);
@@ -153,7 +153,7 @@ export const StarShipsContainer = styled.div`
 export const StarShipsContent = styled.div`
     display: flex;
     align-items: center;
-    margin-top: 4.5rem;
+    margin-top: 2.15rem;
     margin-left: 43.5rem;
 `
 export const StarShipsBadge = styled.div`
@@ -170,7 +170,7 @@ export const VehiclesContainer = styled.div`
 export const VehiclesContent = styled.div`
     display: flex;
     align-items: center;
-    margin-top: 4.5rem;
+    margin-top: 3.5rem;
     margin-left: 43.5rem;
 `
 export const VehiclesBadge = styled.div`

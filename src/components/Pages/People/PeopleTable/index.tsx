@@ -9,25 +9,18 @@ import {
     PeopleTableH1
 } from "./style";
 
-export const PeopleTable = () => {
-    const [peopleTable, setPeopleTable] = useState([])
+export const PeopleTable = () => {    
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => {
         setIsOpen(!isOpen);
     }
 
-    useEffect(() => {
-        api.get('people')
-            .then(response => setPeopleTable(response.data.people))
-    }, []);
-
     return (
         <>
             <NavBar toggle={toggle} />
             <SideBar isOpen={isOpen} toggle={toggle} />
-
-            <PeopleTableContainer>
+                <PeopleTableContainer>
                 <PeopleTableH1>
                     People :
                 </PeopleTableH1>
@@ -35,6 +28,8 @@ export const PeopleTable = () => {
                     <PeopleBadge />
                 </PeopleTableArray>
             </PeopleTableContainer>
+            ))
+            
         </>
     )
 }

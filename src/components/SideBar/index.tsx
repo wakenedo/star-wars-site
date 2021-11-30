@@ -23,21 +23,21 @@ export const SideBar = ({ isOpen, toggle } : SideBarProps) => {
                 <img src={SidebarLogo} alt="" />
             </div>
             <SidebarMenu>
-                <SidebarLink to='/'>
+                <SidebarLink to='/People'>
                     <img src={DeathStarIcon} alt="" />
                     <p>
                         People
                     </p>
                 </SidebarLink>
 
-                <SidebarLink to='/'>
+                <SidebarLink to='/Planets'>
                     <img src={DeathStarIcon} alt="" />
                     <p>
                         Planets
                     </p>
                 </SidebarLink>
 
-                <SidebarLink to='/'>
+                <SidebarLink to='/Films'>
                     <img src={DeathStarIcon} alt="" />
                     <p>
                         Films
@@ -45,21 +45,21 @@ export const SideBar = ({ isOpen, toggle } : SideBarProps) => {
 
                 </SidebarLink>
 
-                <SidebarLink to='/'>
+                <SidebarLink to='/Species'>
                     <img src={DeathStarIcon} alt="" />
                     <p>
                         Species
                     </p>
 
                 </SidebarLink>
-                <SidebarLink to='/'>
+                <SidebarLink to='/Vehicles'>
                     <img src={DeathStarIcon} alt="" />
                     <p>
                         Vehicles
                     </p>
 
                 </SidebarLink>
-                <SidebarLink to='/'>
+                <SidebarLink to='/Starships'>
                     <img src={DeathStarIcon} alt="" />
                     <p>
                         Starships
