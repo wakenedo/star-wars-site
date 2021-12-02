@@ -2,7 +2,6 @@ import SidebarLogo from '../../assets/StarWarsLogo.png'
 import DeathStarIcon from '../../assets/death_star_by_radiusss.svg'
 import { SideBarProps } from '../Hero';
 
-
 import {
     SidebarContainer,
     Icon,
@@ -10,6 +9,8 @@ import {
     SidebarLink,
     SidebarMenu
 } from './styles';
+
+
 
 
 export const SideBar = ({ isOpen, toggle } : SideBarProps) => {

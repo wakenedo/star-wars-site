@@ -27,11 +27,12 @@ export const PeopleBadge = () => {
     const [peopleTable, setPeopleTable] = useState<PeopleTableBadgeProps[]>([])
 
     useEffect(() => {
-        api.get('/people/')
+        api
+        .get('people/?page=1&format=json')
         .then(response => response.data.people)
     }, []);
 
-    console.log(api)
+    
     
     return (
         <PeopleBadgeContainer>

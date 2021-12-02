@@ -142,6 +142,11 @@ export const SpeciesText = styled.p`
 export const FilmsContainer = styled.div`
     height: 50vh;
 `
+export const FilmsContent = styled.div`
+    display: flex;
+    margin-top: 0.5rem;
+    margin-left: 23rem;
+`
 export const StarShipsContainer = styled.div`
     background: linear-gradient(to right, rgba(0,0,0,0.7),
     rgba(0,0,0,0.1)),

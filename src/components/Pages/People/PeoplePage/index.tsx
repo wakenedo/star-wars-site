@@ -27,7 +27,8 @@ import {
     StarShipsBadge,
     BadgeText,
     VehiclesContent,
-    VehiclesBadge
+    VehiclesBadge,
+    FilmsContent
 } from './style'
 
 import CharacterImg from '../../../../assets/CharacterImg.png'
@@ -38,6 +39,7 @@ import { HiUser } from 'react-icons/hi'
 import { FaBirthdayCake, FaRegEye } from 'react-icons/fa'
 import { BsGenderMale } from 'react-icons/bs'
 import { api } from '../../../../services/api';
+import { FilmsBadge } from '../../Films/FilmsBadge';
 
 export const PeoplePage = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -46,7 +48,7 @@ export const PeoplePage = () => {
         setIsOpen(!isOpen);
     }
 
-    
+
     return (
         <PeoplePageContainer>
             <NavBar toggle={toggle} />
@@ -172,6 +174,12 @@ export const PeoplePage = () => {
                 <Title>
                     Films :
                 </Title>
+                <FilmsContent>
+                    <FilmsBadge />
+                    <FilmsBadge />
+                    <FilmsBadge />
+                    <FilmsBadge />
+                </FilmsContent>
             </FilmsContainer>
             <StarShipsContainer>
                 <Title>

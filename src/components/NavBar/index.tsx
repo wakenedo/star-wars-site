@@ -10,7 +10,6 @@ interface NavBarProps {
 }
 
 export const NavBar = ({ toggle } : NavBarProps ) => {
-    console.log(toggle, 'this is toggle log')
     return (
         <>
             <Nav>
