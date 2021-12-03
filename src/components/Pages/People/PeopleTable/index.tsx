@@ -27,9 +27,7 @@ export const PeopleTable = () => {
                 <PeopleTableArray>
                     <PeopleBadge />
                 </PeopleTableArray>
-            </PeopleTableContainer>
-            ))
-            
+            </PeopleTableContainer>            
         </>
     )
 }

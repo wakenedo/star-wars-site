@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Episode4 from '../../../../assets/moviescover/small/star-wars-episode-iv-a-new-hope_v2.jpg'
+
 
 export const FilmsBadgeContainer = styled.div`
     color: var(--text-body);
@@ -8,6 +8,7 @@ export const FilmsBadgeContainer = styled.div`
     margin-left: 1.5rem;
     display: flex;
     flex-direction: column;
+    margin-bottom: 1.5rem;
 `
 export const FilmsBadgeTitle = styled.h3`
     font-size: clamp(0.75rem, 10vw, 0.75rem);
@@ -15,10 +16,7 @@ export const FilmsBadgeTitle = styled.h3`
     padding: 0.25rem;
     border-bottom: 0.5px solid;
 `
-export const FilmsBadgeImg = styled.img`
-    background: linear-gradient(to right, rgba(0,0,0,0.7),
-    rgba(0,0,0,0.1)),
-    url(${Episode4}); 
+export const FilmsBadgeImg = styled.img` 
     width: 300px;
     height: 350px;
 `

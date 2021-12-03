@@ -39,7 +39,7 @@ import { HiUser } from 'react-icons/hi'
 import { FaBirthdayCake, FaRegEye } from 'react-icons/fa'
 import { BsGenderMale } from 'react-icons/bs'
 import { api } from '../../../../services/api';
-import { FilmsBadge } from '../../Films/FilmsBadge';
+import { FilmsBadge4, FilmsBadge5, FilmsBadge6, FilmsBadge7 } from '../../Films/FilmsBadge';
 
 export const PeoplePage = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -175,10 +175,10 @@ export const PeoplePage = () => {
                     Films :
                 </Title>
                 <FilmsContent>
-                    <FilmsBadge />
-                    <FilmsBadge />
-                    <FilmsBadge />
-                    <FilmsBadge />
+                    <FilmsBadge4 />
+                    <FilmsBadge5 />
+                    <FilmsBadge6 />
+                    <FilmsBadge7 />
                 </FilmsContent>
             </FilmsContainer>
             <StarShipsContainer>

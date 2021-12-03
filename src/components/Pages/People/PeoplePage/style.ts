@@ -27,7 +27,7 @@ export const TextTitle = styled.h4`
 export const Content = styled.div`
     display: flex;
     align-items: center;
-    margin-top: 4.5rem;
+    margin: 4.5rem 40.5rem auto;
 `
 export const BadgeText = styled.p`
     font-size: clamp(0.5rem, 10vw, 1rem);
@@ -58,7 +58,6 @@ export const TextContainerLeft = styled.div`
     width: 300px;
     display: flex;
     flex-direction: column;
-    margin-left: 45rem;
 `
 export const TextContainerLarge = styled.div`
     color: var(--text-body);
@@ -66,8 +65,7 @@ export const TextContainerLarge = styled.div`
     width: 630px;
     display: flex;
     flex-direction: column;
-    margin-left: 45.5rem;
-    margin-top: 1.15rem;
+    margin: 2.25rem auto;
 `
 export const DescriptionContainer = styled.div`
     background: linear-gradient(to right, rgba(0,0,0,0.7),
@@ -90,7 +88,6 @@ export const DescriptionImage = styled.img`
     height: 277px;
     background: var(--background-light);
     padding: 1rem;
-    margin-left: 45.5rem;
 `
 export const HomeWorldContainer = styled.div` 
     height: 50vh; 
@@ -98,7 +95,7 @@ export const HomeWorldContainer = styled.div`
 export const HomeWorldContent = styled.div`
     display: flex;
     align-items: center;
-    margin-top: 3.85rem;
+    margin: 3.5rem 39.5rem auto;
 `
 export const HomeWorldText = styled.p`
     font-size: clamp(1.35rem, 10vw, 1.35rem);
@@ -126,8 +123,7 @@ export const SpeciesContainer = styled.div`
 `
 export const SpeciesContent = styled.div`
     display: flex;
-    align-items: center;
-    margin-top: 2.5rem;
+    margin: 1.15rem auto;
 `
 export const SpeciesText = styled.p`
     font-size: clamp(1rem, 10vw, 1.25rem);
@@ -144,8 +140,7 @@ export const FilmsContainer = styled.div`
 `
 export const FilmsContent = styled.div`
     display: flex;
-    margin-top: 0.5rem;
-    margin-left: 23rem;
+    margin: 1.65rem 18rem auto;
 `
 export const StarShipsContainer = styled.div`
     background: linear-gradient(to right, rgba(0,0,0,0.7),
@@ -153,13 +148,11 @@ export const StarShipsContainer = styled.div`
     url(${StarshipsContainerImg}); 
     height: 50vh;
     background-position: center;
-    background-size: cover; 
+    background-size: cover;
 `
 export const StarShipsContent = styled.div`
     display: flex;
-    align-items: center;
-    margin-top: 2.15rem;
-    margin-left: 43.5rem;
+    margin: 2.15rem  39rem auto;
 `
 export const StarShipsBadge = styled.div`
     color: var(--text-body);
@@ -171,12 +164,13 @@ export const StarShipsBadge = styled.div`
 `
 export const VehiclesContainer = styled.div`
     height: 50vh;
+    align-items: center;
+    background-position: center;
+    background-size: cover;
 `
 export const VehiclesContent = styled.div`
-    display: flex;
-    align-items: center;
-    margin-top: 3.5rem;
-    margin-left: 43.5rem;
+    display: flex;    
+    margin: 2.15rem 39rem auto;
 `
 export const VehiclesBadge = styled.div`
     color: var(--text-body);

@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Hero } from './components/Hero';
 import { PeoplePage } from './components/Pages/People/PeoplePage';
 import { PeopleTable } from './components/Pages/People/PeopleTable';
+import { FilmsTable } from './components/Pages/Films/FilmsTable';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Routes>
         <Route path='/People' element={ <PeopleTable /> } />
         <Route path='/PeoplePage' element={ <PeoplePage />} />
+        <Route path='/Films' element={ <FilmsTable /> } />
         <Route path='/' element={ <Hero /> } />
                 
       </Routes>
