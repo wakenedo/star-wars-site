@@ -29,7 +29,7 @@ export const GlobalStyle = createGlobalStyle`
             font-size: 87.5%; // 15px
         }
     }
-    // REM  = 1rem =
+    // REM  = 1rem = 16px
     body {
         background: var(--background);
         -webkit-font-smoothing: antialiased;
