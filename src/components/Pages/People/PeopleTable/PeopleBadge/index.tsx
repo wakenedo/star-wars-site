@@ -24,15 +24,24 @@ interface PeopleTableBadgeProps {
 
 
 export const PeopleBadge = () => {
+    const [loading, setLoading] = useState(false)
     const [peopleTable, setPeopleTable] = useState<PeopleTableBadgeProps[]>([])
 
     useEffect(() => {
+        setLoading(true)
         api
         .get('people/?page=1&format=json')
-        .then(response => response.data.people)
+        .then(response => {
+            setLoading(false)
+            setPeopleTable(response.data.results)
+        })
     }, []);
 
-    
+    if (loading) {
+        return (
+            'Is loading'
+        )
+    }
     
     return (
         <PeopleBadgeContainer>
