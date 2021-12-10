@@ -1,12 +1,11 @@
 import styled from 'styled-components';
 
-export const PeopleBadgeContainer = styled.div`
-    color: var(--text-body);
-    background: var(--background-light);
-    width: 300px;
-    margin-left: 1.5rem;
+export const PeopleBadgeContainer = styled.div`    
+    width: 1000px;
+    margin: 1.5rem 31rem;  
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
 `
 
 export const PeopleBadgeTitle = styled.h3`
@@ -22,6 +21,8 @@ export const TextContainer = styled.div`
     width: 300px;    
     display: flex;
     flex-direction: column;
+    margin-bottom: 1.5rem;
+    margin-right: 1.5rem;
 
     svg {
         margin-right: 1.5rem;
@@ -35,4 +36,9 @@ export const DescriptionText = styled.p`
     &:last-child {
         margin-bottom: 1.5rem;
     }
+`
+
+export const IsLoadingImg = styled.img`
+    width: 300px;
+    margin: 15rem 50.5rem; 
 `

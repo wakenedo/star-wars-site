@@ -4,12 +4,15 @@ import { FaBirthdayCake, FaRegEye } from "react-icons/fa"
 import { GiBodyHeight, GiHairStrands, GiWeight } from "react-icons/gi"
 import { HiUser } from "react-icons/hi"
 import { api } from "../../../../../services/api"
-import { 
-    DescriptionText, 
-    PeopleBadgeContainer, 
-    PeopleBadgeTitle, 
-    TextContainer 
+import {
+    DescriptionText,
+    IsLoadingImg,
+    PeopleBadgeContainer,
+    PeopleBadgeTitle,
+    TextContainer
 } from "./style"
+
+import isLoadingSVG from '../../../../../assets/Loading/Spinner-1s-200px.svg';
 
 interface PeopleTableBadgeProps {
     name: string;
@@ -30,55 +33,57 @@ export const PeopleBadge = () => {
     useEffect(() => {
         setLoading(true)
         api
-        .get('people/?page=1&format=json')
-        .then(response => {
-            setLoading(false)
-            setPeopleTable(response.data.results)
-        })
+            .get('people/?page=1&format=json')
+            .then(response => {
+                setLoading(false)
+                setPeopleTable(response.data.results)
+            })
     }, []);
-
+    
     if (loading) {
         return (
-            'Is loading'
+            <>
+            <IsLoadingImg src={isLoadingSVG}/>            
+            </>
         )
     }
-    
+
     return (
         <PeopleBadgeContainer>
-            {peopleTable.map(people =>(
+            {peopleTable.map(people => (
                 <TextContainer key={people.name}>
+                    <PeopleBadgeTitle> {people.name} : </PeopleBadgeTitle>
+                    <DescriptionText>
+                        <GiBodyHeight />
+                        {people.height} cm
+                    </DescriptionText>
+                    <DescriptionText>
+                        <GiWeight />
+                        {people.mass} kg
+                    </DescriptionText>
+                    <DescriptionText>
+                        <GiHairStrands />
+                        {people.hair_color}
+                    </DescriptionText>
+                    <DescriptionText>
+                        <HiUser />
+                        {people.skin_color}
+                    </DescriptionText>
+                    <DescriptionText>
+                        <FaRegEye />
+                        {people.eye_color}
+                    </DescriptionText>
+                    <DescriptionText>
+                        <FaBirthdayCake />
+                        {people.birth_year}
+                    </DescriptionText>
+                    <DescriptionText>
+                        <BsGenderMale />
+                        {people.gender}
+                    </DescriptionText>
+                </TextContainer>
 
-                <PeopleBadgeTitle> {people.name} : </PeopleBadgeTitle>
-                            <DescriptionText>
-                                <GiBodyHeight />
-                                {people.height} cm
-                            </DescriptionText>
-                            <DescriptionText>
-                                <GiWeight />
-                                {people.mass} kg
-                            </DescriptionText>
-                            <DescriptionText>
-                                <GiHairStrands />
-                                {people.hair_color}
-                            </DescriptionText>
-                            <DescriptionText>
-                                <HiUser />
-                                {people.skin_color}
-                            </DescriptionText>
-                            <DescriptionText>
-                                <FaRegEye />
-                                {people.eye_color}
-                            </DescriptionText>
-                            <DescriptionText>
-                                <FaBirthdayCake />
-                                {people.birth_year}
-                            </DescriptionText>
-                            <DescriptionText>
-                                <BsGenderMale />
-                                {people.gender}
-                            </DescriptionText>
-                        </TextContainer>
-            ))}             
+            ))}
         </PeopleBadgeContainer>
     )
 } 

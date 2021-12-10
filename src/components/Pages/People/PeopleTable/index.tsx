@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { api } from "../../../../services/api";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import { NavBar } from "../../../NavBar";
 import { SideBar } from "../../../SideBar";
 import { PeopleBadge } from "./PeopleBadge";
@@ -9,7 +9,7 @@ import {
     PeopleTableH1
 } from "./style";
 
-export const PeopleTable = () => {    
+export const PeopleTable = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => {
@@ -20,14 +20,16 @@ export const PeopleTable = () => {
         <>
             <NavBar toggle={toggle} />
             <SideBar isOpen={isOpen} toggle={toggle} />
-                <PeopleTableContainer>
+            <PeopleTableContainer>
                 <PeopleTableH1>
                     People :
                 </PeopleTableH1>
                 <PeopleTableArray>
-                    <PeopleBadge />
+                    <Link to='/'>
+                        <PeopleBadge />
+                    </Link>
                 </PeopleTableArray>
-            </PeopleTableContainer>            
+            </PeopleTableContainer>
         </>
     )
 }
