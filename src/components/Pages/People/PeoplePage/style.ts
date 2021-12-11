@@ -22,6 +22,7 @@ export const TextTitle = styled.h4`
     margin-bottom: 1.5rem;
     font-weight: 300;
     padding: 0.25rem;
+    color: var(--yellow);
     border-bottom: 0.5px solid;
 `
 export const Content = styled.div`

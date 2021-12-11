@@ -14,6 +14,7 @@ export const FilmsBadgeTitle = styled.h3`
     font-size: clamp(0.75rem, 10vw, 0.75rem);
     font-weight: 300;
     padding: 0.25rem;
+    color:var(--yellow);
     border-bottom: 0.5px solid;
 `
 export const FilmsBadgeImg = styled.img` 

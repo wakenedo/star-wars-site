@@ -38,13 +38,15 @@ export const HeroItems = styled.div`
 export const HeroH1 = styled.div`
     font-size: clamp(2.5rem, 10vw, 5rem);
     margin-bottom: 1rem;
-    box-shadow: 5px 10px var(--yellow);
+    color: var(--yellow);
+    border-bottom: 5px solid var(--yellow);
     letter-spacing: 3px;
     display: flex;
+    align-items: center;
 
     img {
         width: 150px;
-        margin-right: 1.5rem;
+        margin: 1.5rem;
     }
 
     @media screen and (max-width: 650px) {

@@ -11,11 +11,9 @@ export const Nav = styled.nav`
 `;
 
 export const NavLink = styled(Link)`
-    color: #fff;
-    font-size: 2rem;
     display: flex;
     align-items: center;
-    text-decoration: none;
+    margin-left: 0.5rem;
     cursor: pointer;
 
     @media screen and (max-width: 400px) {
@@ -42,4 +40,8 @@ color: #fff;
 export const Bars = styled(SiOpenaigym)`
     font-size: 2rem;
     transform: translate(-50%, -15%);
+`
+export const NavBarLogo = styled.img`
+    width: 200px;
+    height: 200px
 `

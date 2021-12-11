@@ -45,6 +45,7 @@ export const TitleFilmsInfo = styled.h4`
     font-size: clamp(0.75rem, 10vw, 0.75rem);
     margin-bottom: 1.5rem;
     font-weight: 300;
+    color : var(--yellow);
     padding: 0.25rem;
     border-bottom: 0.5px solid;
 `

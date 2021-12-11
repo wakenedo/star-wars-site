@@ -1,4 +1,4 @@
-import SidebarLogo from '../../assets/StarWarsLogo.png'
+import SidebarLogo from '../../assets/StarWarsLogo/StarWarsLogo.png'
 import DeathStarIcon from '../../assets/death_star_by_radiusss.svg'
 import { SideBarProps } from '../Hero';
 
