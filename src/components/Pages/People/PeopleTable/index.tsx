@@ -25,7 +25,7 @@ export const PeopleTable = () => {
                     People :
                 </PeopleTableH1>
                 <PeopleTableArray>
-                    <Link to='/'>
+                    <Link to='/PeoplePage'>
                         <PeopleBadge />
                     </Link>
                 </PeopleTableArray>

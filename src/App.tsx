@@ -4,7 +4,7 @@ import { Hero } from './components/Hero';
 import { PeoplePage } from './components/Pages/People/PeoplePage';
 import { PeopleTable } from './components/Pages/People/PeopleTable';
 import { FilmsTable } from './components/Pages/Films/FilmsTable';
-import { FilmsPage } from './components/Pages/Films/FilmsPage';
+import { FilmPage } from './components/Pages/Films/FilmPage';
 
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
         <Route path='/People' element={ <PeopleTable /> } />
         <Route path='/PeoplePage' element={ <PeoplePage />} />
         <Route path='/Films' element={ <FilmsTable /> } />
-        <Route path='/FilmsPage' element={ <FilmsPage /> } />
+        <Route path='/FilmPage' element={ <FilmPage /> } />
         <Route path='/' element={ <Hero /> } />
                 
       </Routes>

@@ -26,35 +26,35 @@ export const FilmsTable = () => {
                     Films :
                 </FilmsTableH1>
                 <FilmsTableArray>
-                    <Link to='/'>
+                    <Link to='/FilmPage'>
                         <FilmsBadge1 />
 
                     </Link>
-                    <Link to='/'>
+                    <Link to='/FilmPage'>
                         <FilmsBadge2 />
 
                     </Link>
-                    <Link to='/'>
+                    <Link to='/FilmPage'>
                         <FilmsBadge3 />
 
                     </Link>
 
-                    <Link to='/'>
+                    <Link to='/FilmPage'>
                         <FilmsBadge4 />
 
                     </Link>
 
-                    <Link to='/'>
+                    <Link to='/FilmPage'>
                         <FilmsBadge5 />
 
                     </Link>
 
-                    <Link to='/'>
+                    <Link to='/FilmPage'>
                         <FilmsBadge6 />
 
                     </Link>
 
-                    <Link to='/'>
+                    <Link to='/FilmPage'>
                         <FilmsBadge7 />
 
                     </Link>
