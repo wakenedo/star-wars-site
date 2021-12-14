@@ -8,13 +8,27 @@ import {
     ContentFilmPage,
     DescriptionTextFilmsCrawlInfo,
     DescriptionTextFilmsInfo,
-    FilmsDescriptionContainer,
-    FilmsPageContainer,
-    FilmsPageCoverImg,
-    FilmsPageInformation,
+    FilmDescriptionContainer,
+    FilmPageCharactersColumn,
+    FilmPageCharactersContainer,
+    FilmPageCharactersContent,
+    FilmPageContainer,
+    FilmPageCoverImg,
+    FilmPageInformation,
+    FilmPagePlanetsContainer,
+    FilmPagePlanetsContent,
+    FilmPagePlanetsText,
+    FilmPagePlanetsTextContainer,
+    FilmPageSpeciesContainer,
+    FilmPageStarShipsContainer,
+    FilmPageVehiclesContainer,
+    TextTitle,
     Title,
     TitleFilmsInfo,
 } from "./style";
+import { FilmPagePlanetsBadge } from "./FilmPagePlanetsBadge";
+import { FilmPageCharactersBadge } from "./FilmPageCharactersBadge";
+
 
 
 
@@ -25,16 +39,16 @@ export const FilmPage = () => {
         setIsOpen(!isOpen);
     }
     return (
-        <FilmsPageContainer>
+        <FilmPageContainer>
             <NavBar toggle={toggle} />
             <SideBar isOpen={isOpen} toggle={toggle} />
-            <FilmsDescriptionContainer>
+            <FilmDescriptionContainer>
                 <Title>
                     Film : Episode I - A New Hope
                 </Title>
                 <ContentFilmPage>
-                    <FilmsPageCoverImg src={Episode4} />
-                    <FilmsPageInformation>
+                    <FilmPageCoverImg src={Episode4} />
+                    <FilmPageInformation>
                         <TitleFilmsInfo>
                             Characteristics
                         </TitleFilmsInfo>
@@ -60,14 +74,63 @@ export const FilmPage = () => {
                         <DescriptionTextFilmsInfo>
                             Release Date : 1977-05-25
                         </DescriptionTextFilmsInfo>
-                    </FilmsPageInformation>
-                    {/*FilmPageCharactersDiv*/}
-                    {/*FilmPagePlanetsDiv*/}
-                    {/*FilmPageVehiclesDiv*/}
-                    {/*FilmPageSpeciesDiv*/}
-
+                    </FilmPageInformation>
                 </ContentFilmPage>
-            </FilmsDescriptionContainer>
-        </FilmsPageContainer>
+                <FilmPageCharactersContainer>
+                    <Title>
+                        Characters :
+                    </Title>
+                    <FilmPageCharactersContent>
+                        <FilmPageCharactersColumn>
+                        <FilmPageCharactersBadge />
+                        <FilmPageCharactersBadge />
+                        <FilmPageCharactersBadge />
+                        <FilmPageCharactersBadge />
+                        <FilmPageCharactersBadge />
+                        <FilmPageCharactersBadge />
+                        <FilmPageCharactersBadge />
+                        <FilmPageCharactersBadge />
+                        <FilmPageCharactersBadge />
+                        </FilmPageCharactersColumn>
+                        <FilmPageCharactersColumn>
+                        <FilmPageCharactersBadge />
+                        <FilmPageCharactersBadge />
+                        <FilmPageCharactersBadge />
+                        <FilmPageCharactersBadge />
+                        <FilmPageCharactersBadge />
+                        <FilmPageCharactersBadge />
+                        <FilmPageCharactersBadge />
+                        <FilmPageCharactersBadge />
+                        <FilmPageCharactersBadge />
+                        </FilmPageCharactersColumn>
+                    </FilmPageCharactersContent>
+                </FilmPageCharactersContainer>
+                <FilmPagePlanetsContainer>
+                    <Title>
+                        Planets :
+                    </Title>
+                    <FilmPagePlanetsContent>
+                        <FilmPagePlanetsBadge />
+                        <FilmPagePlanetsBadge />
+                        <FilmPagePlanetsBadge />                        
+                    </FilmPagePlanetsContent>
+                </FilmPagePlanetsContainer>
+                <FilmPageStarShipsContainer>
+                    <Title>
+                        Starships :
+                    </Title>
+                </FilmPageStarShipsContainer>
+                <FilmPageVehiclesContainer>
+                    <Title>
+                        Vehicles :
+                    </Title>
+                </FilmPageVehiclesContainer>
+                <FilmPageSpeciesContainer>
+                    <Title>
+                        Species :
+                    </Title>
+                </FilmPageSpeciesContainer>
+            </FilmDescriptionContainer>
+        </FilmPageContainer>
     )
 }
