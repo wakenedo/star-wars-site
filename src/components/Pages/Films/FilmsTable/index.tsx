@@ -34,7 +34,6 @@ export const FilmsTable = () => {
                     <FilmsBadge4 />
                     <FilmsBadge5 />
                     <FilmsBadge6 />
-                    <FilmsBadge7 />
                 </FilmsTableArray>
             </FilmsTableContainer>
         </>

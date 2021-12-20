@@ -30,7 +30,7 @@ export const FilmsBadge2 = () => {
     return (
         <FilmsBadgeContainer>
             <FilmsBadgeTitle>  Star Wars Episode II - Attack of the Clones </FilmsBadgeTitle>
-            <Link to=''>
+            <Link to='/Films/Episode_2'>
                 <FilmsBadgeImg src={Episode2} />
             </Link>
         </FilmsBadgeContainer>
@@ -42,7 +42,7 @@ export const FilmsBadge3 = () => {
     return (
         <FilmsBadgeContainer>
             <FilmsBadgeTitle>  Star Wars Episode III - Revenge of the Sith </FilmsBadgeTitle>
-            <Link to=''>
+            <Link to='/Films/Episode_3'>
                 <FilmsBadgeImg src={Episode3} />
             </Link>
         </FilmsBadgeContainer>
@@ -66,7 +66,7 @@ export const FilmsBadge5 = () => {
     return (
         <FilmsBadgeContainer>
             <FilmsBadgeTitle>  Star Wars Episode V - The Empire Strikes Back </FilmsBadgeTitle>
-            <Link to=''>
+            <Link to='/Films/Episode_5'>
                 <FilmsBadgeImg src={Episode5} />
             </Link>
         </FilmsBadgeContainer>
@@ -78,7 +78,7 @@ export const FilmsBadge6 = () => {
     return (
         <FilmsBadgeContainer>
             <FilmsBadgeTitle>  Star Wars Episode VI - Return of Jedi </FilmsBadgeTitle>
-            <Link to=''>
+            <Link to='/Films/Episode_6'>
                 <FilmsBadgeImg src={Episode6} />
             </Link>
         </FilmsBadgeContainer>
@@ -90,7 +90,7 @@ export const FilmsBadge7 = () => {
     return (
         <FilmsBadgeContainer>
             <FilmsBadgeTitle>  Star Wars Episode VII - The Force Awakens </FilmsBadgeTitle>
-            <Link to=''>
+            <Link to='/Films/Episode_7'>
                 <FilmsBadgeImg src={Episode7} />
             </Link>
         </FilmsBadgeContainer>
