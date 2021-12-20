@@ -7,67 +7,6 @@ export const PeoplePageContainer = styled.div`
     display: flex;
     flex-direction: column;
 `
-export const Title = styled.h1`
-    color: var(--yellow);
-    padding: 1rem;
-    font-weight: 300;
-    margin: 0 auto;
-    align-items: center;
-    text-transform: uppercase;
-    font-size: clamp(1.5rem, 10vw, 2.5rem);
-    box-shadow: 1.5px 1.5px var(--yellow);
-`
-export const TextTitle = styled.h4`
-    font-size: clamp(0.75rem, 10vw, 0.75rem);
-    margin-bottom: 1.5rem;
-    font-weight: 300;
-    padding: 0.25rem;
-    color: var(--yellow);
-    border-bottom: 0.5px solid;
-`
-export const Content = styled.div`
-    display: flex;
-    align-items: center;
-    margin: 4.5rem 40.5rem auto;
-`
-export const BadgeText = styled.p`
-    font-size: clamp(0.5rem, 10vw, 1rem);
-    font-weight: 100;
-    margin-left: 0.75rem;
-    padding: 0.1rem;
-
-    &:last-child {
-        margin-bottom: 1.5rem;
-    }
-`
-export const TextContainerRight = styled.div`
-    color: var(--text-body);
-    background: var(--background-light);
-    width: 300px;
-    margin-left: 1.5rem;
-    display: flex;
-    flex-direction: column;
-
-    svg {
-        margin-right: 1.5rem;
-        margin-left: 4.5rem;
-    }
-`
-export const TextContainerLeft = styled.div`
-    color: var(--text-body);
-    background: var(--background-light);
-    width: 300px;
-    display: flex;
-    flex-direction: column;
-`
-export const TextContainerLarge = styled.div`
-    color: var(--text-body);
-    background: var(--background-light);
-    width: 630px;
-    display: flex;
-    flex-direction: column;
-    margin: 2.25rem auto;
-`
 export const DescriptionContainer = styled.div`
     background: linear-gradient(to right, rgba(0,0,0,0.7),
     rgba(0,0,0,0.1)),
@@ -85,10 +24,9 @@ export const DescriptionText = styled.p`
     }
 `
 export const DescriptionImage = styled.img`
-    width: 300px;
-    height: 277px;
+    width: 295px;
     background: var(--background-light);
-    padding: 1rem;
+    padding: 2rem;
 `
 export const HomeWorldContainer = styled.div` 
     height: 50vh; 
@@ -109,9 +47,9 @@ export const HomeWorldText = styled.p`
     }
 `
 export const HomeWorldImage = styled.img`
-    width: 320px;
+    width: 325px;
     background: var(--background-light);
-    padding: 1rem;
+    padding: 3rem;
     margin-left: 1.5rem;
 `
 export const SpeciesContainer = styled.div`

@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { NavBar } from '../../../../components/NavBar';
 import { SideBar } from '../../../../components/SideBar';
 
@@ -6,8 +6,13 @@ import {
     Title,
     TextTitle,
     Content,
-    TextContainerRight,
-    TextContainerLeft,
+    BadgeText,
+    TextContainerA,
+    TextContainerB,
+    TextContainerLarge,    
+} from '../../../../styles/global';
+
+import {
     DescriptionContainer,
     DescriptionImage,
     DescriptionText,
@@ -20,12 +25,10 @@ import {
     VehiclesContainer,
     HomeWorldText,
     HomeWorldImage,
-    TextContainerLarge,
     SpeciesContent,
     SpeciesText,
     StarShipsContent,
     StarShipsBadge,
-    BadgeText,
     VehiclesContent,
     VehiclesBadge,
     FilmsContent
@@ -38,7 +41,7 @@ import { GiBodyHeight, GiHairStrands, GiWeight } from 'react-icons/gi'
 import { HiUser } from 'react-icons/hi'
 import { FaBirthdayCake, FaRegEye } from 'react-icons/fa'
 import { BsGenderMale } from 'react-icons/bs'
-import { FilmsBadge4, FilmsBadge5, FilmsBadge6, FilmsBadge7 } from '../../Films/FilmsBadge';
+import { FilmsBadge4, FilmsBadge5, FilmsBadge6, FilmsBadge7 } from '../PeoplePageFilmBadge';
 
 
 export const PeoplePage = () => {
@@ -59,7 +62,7 @@ export const PeoplePage = () => {
                 </Title>
                 <Content>
                     <DescriptionImage src={CharacterImg} />
-                    <TextContainerRight>
+                    <TextContainerA>
                         <TextTitle>
                             Characteristics
                         </TextTitle>
@@ -91,7 +94,7 @@ export const PeoplePage = () => {
                             <BsGenderMale />
                             Male
                         </DescriptionText>
-                    </TextContainerRight>
+                    </TextContainerA>
                 </Content>
             </DescriptionContainer>
             <HomeWorldContainer>
@@ -99,7 +102,7 @@ export const PeoplePage = () => {
                     Planet: Tatooine
                 </Title>
                 <HomeWorldContent>
-                    <TextContainerLeft>
+                    <TextContainerB>
                         <TextTitle>
                             Description
                         </TextTitle>
@@ -127,7 +130,7 @@ export const PeoplePage = () => {
                         <HomeWorldText>
                             Population : 200.000
                         </HomeWorldText>
-                    </TextContainerLeft>
+                    </TextContainerB>
                     <HomeWorldImage src={PlanetImg} />
                 </HomeWorldContent>
             </HomeWorldContainer>
@@ -188,7 +191,7 @@ export const PeoplePage = () => {
                 <StarShipsContent>
                     <StarShipsBadge>
                         <TextTitle>
-                            Characteristics :
+                            Characteristics 
                         </TextTitle>
                         <BadgeText>
                             Name : X-Wing
@@ -232,7 +235,7 @@ export const PeoplePage = () => {
                     </StarShipsBadge>
                     <StarShipsBadge>
                         <TextTitle>
-                            Characteristics :
+                            Characteristics 
                         </TextTitle>
                         <BadgeText>
                             Name : X-Wing
@@ -283,7 +286,7 @@ export const PeoplePage = () => {
                 <VehiclesContent>
                     <VehiclesBadge>
                         <TextTitle>
-                            Characteristics :
+                            Characteristics 
                         </TextTitle>
                         <BadgeText>
                             Name : Snowspeeder
@@ -321,7 +324,7 @@ export const PeoplePage = () => {
                     </VehiclesBadge>
                     <VehiclesBadge>
                         <TextTitle>
-                            Characteristics :
+                            Characteristics 
                         </TextTitle>
                         <BadgeText>
                             Name : Snowspeeder

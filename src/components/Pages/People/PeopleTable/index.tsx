@@ -3,10 +3,14 @@ import { Link } from "react-router-dom";
 import { NavBar } from "../../../NavBar";
 import { SideBar } from "../../../SideBar";
 import { PeopleBadge } from "./PeopleBadge";
+
+import {
+    Title,
+} from "../../../../styles/global";
+
 import {
     PeopleTableArray,
     PeopleTableContainer,
-    PeopleTableH1
 } from "./style";
 
 export const PeopleTable = () => {
@@ -21,13 +25,13 @@ export const PeopleTable = () => {
             <NavBar toggle={toggle} />
             <SideBar isOpen={isOpen} toggle={toggle} />
             <PeopleTableContainer>
-                <PeopleTableH1>
+                <Title>
                     People :
-                </PeopleTableH1>
+                </Title>
                 <PeopleTableArray>
-                    <Link to='/PeoplePage'>
+                    
                         <PeopleBadge />
-                    </Link>
+                    
                 </PeopleTableArray>
             </PeopleTableContainer>
         </>

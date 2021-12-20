@@ -1,8 +1,12 @@
+import styled from 'styled-components';
+
 import { createGlobalStyle } from "styled-components";
+import Background from '../assets/Background/background.svg'
 
 export const GlobalStyle = createGlobalStyle`
     :root {
-        --background: #000000;
+        --background: url(${Background});
+        /* background by SVGBackgrounds.com */
         --background-light: #202020;
         --yellow: #FFE81F;
         --red: #E62E4D;
@@ -48,4 +52,66 @@ export const GlobalStyle = createGlobalStyle`
         opacity: 0.6;
         cursor: not-allowed;
     }
+`
+export const Title = styled.h1`
+    color: var(--yellow);
+    padding: 1rem;
+    font-weight: 500;
+    margin: 0 auto;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: clamp(1.5rem, 10vw, 2.5rem);
+    box-shadow: 1.5px 1.5px var(--yellow);
+`
+export const TextTitle = styled.h4`
+    font-size: clamp(1.35rem, 10vw, 1.35rem);
+    margin-bottom: 1.5rem;
+    font-weight: 500;
+    padding: 0.25rem;
+    color: var(--yellow);
+    border-bottom: 0.5px solid;
+`
+export const Content = styled.div`
+    display: flex;
+    align-items: center;
+    margin: 4.5rem 40.5rem auto;
+`
+export const BadgeText = styled.p`
+    font-size: clamp(0.5rem, 10vw, 1rem);
+    font-weight: 100;
+    margin-left: 0.75rem;
+    padding: 0.1rem;
+
+    &:last-child {
+        margin-bottom: 1.5rem;
+    }
+`
+export const TextContainerA = styled.div`
+    color: var(--text-body);
+    background: var(--background-light);
+    width: 400px;
+    margin-left: 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+    svg {
+        color: var(--yellow);
+        margin-right: 1.5rem;
+        margin-left: 4.5rem;
+    }
+`
+export const TextContainerB = styled.div`
+    color: var(--text-body);
+    background: var(--background-light);
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+`
+export const TextContainerLarge = styled.div`
+    color: var(--text-body);
+    background: var(--background-light);
+    width: 630px;
+    display: flex;
+    flex-direction: column;
+    margin: 2.25rem auto;
 `
