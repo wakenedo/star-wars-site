@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { NavBar } from "../../../NavBar";
 import { SideBar } from "../../../SideBar";
-import { FilmsBadge1, FilmsBadge2, FilmsBadge3, FilmsBadge4, FilmsBadge5, FilmsBadge6, FilmsBadge7 } from "../FilmsBadge";
+import {
+    FilmsBadge1,
+    FilmsBadge2,
+    FilmsBadge3,
+    FilmsBadge4,
+    FilmsBadge5,
+    FilmsBadge6,
+} from "../FilmsBadge";
 
 import {
     Title,

@@ -20,7 +20,7 @@ function App() {
     <Router>
       <Routes>
         <Route path='/People' element={ <PeopleTable /> } />
-        <Route path='/PeoplePage' element={ <PeoplePage />} />
+        <Route path='/PeoplePage/:url' element={ <PeoplePage />} />
         <Route path='/Films' element={ <FilmsTable /> } />
         <Route path='/Films/Episode_1' element={ <FilmPageEP1 /> } />
         <Route path='/Films/Episode_2' element={ <FilmPageEP2 /> } />
@@ -28,7 +28,6 @@ function App() {
         <Route path='/Films/Episode_4' element={ <FilmPageEP4 /> } />
         <Route path='/Films/Episode_5' element={ <FilmPageEP5 /> } />
         <Route path='/Films/Episode_6' element={ <FilmPageEP6 /> } />
-        <Route path='/Films/Episode_7' element={ <FilmPage /> } />
         <Route path='/' element={ <Hero /> } />
                 
       </Routes>

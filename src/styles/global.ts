@@ -115,3 +115,7 @@ export const TextContainerLarge = styled.div`
     flex-direction: column;
     margin: 2.25rem auto;
 `
+export const IsLoadingImg = styled.img`
+    width: 300px;
+    margin: 15rem 50.5rem; 
+`

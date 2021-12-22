@@ -1,6 +1,26 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
+
+import { api } from "../../../../services/api";
+
+import { GiBodyHeight, GiHairStrands, GiWeight } from 'react-icons/gi'
+import { HiUser } from 'react-icons/hi'
+import { FaBirthdayCake, FaRegEye } from 'react-icons/fa'
+import { BsGenderMale } from 'react-icons/bs'
+
 import { NavBar } from '../../../../components/NavBar';
 import { SideBar } from '../../../../components/SideBar';
+
+import isLoadingSVG from '../../../../assets/Loading/Spinner-1s-200px.svg';
+
+import CharacterImg from '../../../../assets/CharacterImg.png'
+import PlanetImg from '../../../../assets/PlanetImg.png'
+
+import {
+    FilmsBadge4,
+    FilmsBadge5,
+    FilmsBadge6,
+} from '../PeoplePageFilmBadge';
 
 import {
     Title,
@@ -9,7 +29,8 @@ import {
     BadgeText,
     TextContainerA,
     TextContainerB,
-    TextContainerLarge,    
+    TextContainerLarge,
+    IsLoadingImg,
 } from '../../../../styles/global';
 
 import {
@@ -33,19 +54,51 @@ import {
     VehiclesBadge,
     FilmsContent
 } from './style'
+import axios from 'axios';
 
-import CharacterImg from '../../../../assets/CharacterImg.png'
-import PlanetImg from '../../../../assets/PlanetImg.png'
 
-import { GiBodyHeight, GiHairStrands, GiWeight } from 'react-icons/gi'
-import { HiUser } from 'react-icons/hi'
-import { FaBirthdayCake, FaRegEye } from 'react-icons/fa'
-import { BsGenderMale } from 'react-icons/bs'
-import { FilmsBadge4, FilmsBadge5, FilmsBadge6, FilmsBadge7 } from '../PeoplePageFilmBadge';
-
+interface CharacterProps {
+    name: string;
+    height: string;
+    mass: string;
+    hair_color: string;
+    skin_color: string;
+    eye_color: string;
+    birth_year: string;
+    gender: string;
+}
 
 export const PeoplePage = () => {
+    const [loading, setLoading] = useState(false)
+    const [character, setCharacter] = useState<CharacterProps>()
+
+    const { url } = useParams()
+
     const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        if (!url) return
+        setLoading(true)
+        api
+            .get(
+                `people/${url}`
+
+            )
+            .then(response => {
+                setLoading(false)
+                setCharacter(response.data)
+
+
+            })
+    }, []);
+
+    if (loading) {
+        return (
+            <>
+                <IsLoadingImg src={isLoadingSVG} />
+            </>
+        )
+    }
 
     const toggle = () => {
         setIsOpen(!isOpen);
@@ -56,47 +109,47 @@ export const PeoplePage = () => {
         <PeoplePageContainer>
             <NavBar toggle={toggle} />
             <SideBar isOpen={isOpen} toggle={toggle} />
-            <DescriptionContainer>
-                <Title>
-                    Character : Luke Skywalker
-                </Title>
-                <Content>
-                    <DescriptionImage src={CharacterImg} />
-                    <TextContainerA>
-                        <TextTitle>
-                            Characteristics
-                        </TextTitle>
-                        <DescriptionText>
-                            <GiBodyHeight />
-                            172 cm
-                        </DescriptionText>
-                        <DescriptionText>
-                            <GiWeight />
-                            72 kg
-                        </DescriptionText>
-                        <DescriptionText>
-                            <GiHairStrands />
-                            Blond
-                        </DescriptionText>
-                        <DescriptionText>
-                            <HiUser />
-                            Fair
-                        </DescriptionText>
-                        <DescriptionText>
-                            <FaRegEye />
-                            Blue
-                        </DescriptionText>
-                        <DescriptionText>
-                            <FaBirthdayCake />
-                            19 BBY
-                        </DescriptionText>
-                        <DescriptionText>
-                            <BsGenderMale />
-                            Male
-                        </DescriptionText>
-                    </TextContainerA>
-                </Content>
-            </DescriptionContainer>
+                <DescriptionContainer key={character?.name}>
+                    <Title>
+                        Character : {character?.name}
+                    </Title>
+                    <Content>
+                        <DescriptionImage src={CharacterImg} />
+                        <TextContainerA>
+                            <TextTitle>
+                                Characteristics
+                            </TextTitle>
+                            <DescriptionText>
+                                <GiBodyHeight />
+                                {character?.height} cm
+                            </DescriptionText>
+                            <DescriptionText>
+                                <GiWeight />
+                                {character?.mass} kg
+                            </DescriptionText>
+                            <DescriptionText>
+                                <GiHairStrands />
+                                {character?.hair_color}
+                            </DescriptionText>
+                            <DescriptionText>
+                                <HiUser />
+                                {character?.skin_color}
+                            </DescriptionText>
+                            <DescriptionText>
+                                <FaRegEye />
+                                {character?.eye_color}
+                            </DescriptionText>
+                            <DescriptionText>
+                                <FaBirthdayCake />
+                                {character?.birth_year}
+                            </DescriptionText>
+                            <DescriptionText>
+                                <BsGenderMale />
+                                {character?.gender}
+                            </DescriptionText>
+                        </TextContainerA>
+                    </Content>
+                </DescriptionContainer>
             <HomeWorldContainer>
                 <Title>
                     Planet: Tatooine
@@ -181,7 +234,6 @@ export const PeoplePage = () => {
                     <FilmsBadge4 />
                     <FilmsBadge5 />
                     <FilmsBadge6 />
-                    <FilmsBadge7 />
                 </FilmsContent>
             </FilmsContainer>
             <StarShipsContainer>
@@ -191,7 +243,7 @@ export const PeoplePage = () => {
                 <StarShipsContent>
                     <StarShipsBadge>
                         <TextTitle>
-                            Characteristics 
+                            Characteristics
                         </TextTitle>
                         <BadgeText>
                             Name : X-Wing
@@ -235,7 +287,7 @@ export const PeoplePage = () => {
                     </StarShipsBadge>
                     <StarShipsBadge>
                         <TextTitle>
-                            Characteristics 
+                            Characteristics
                         </TextTitle>
                         <BadgeText>
                             Name : X-Wing
@@ -286,7 +338,7 @@ export const PeoplePage = () => {
                 <VehiclesContent>
                     <VehiclesBadge>
                         <TextTitle>
-                            Characteristics 
+                            Characteristics
                         </TextTitle>
                         <BadgeText>
                             Name : Snowspeeder
@@ -324,7 +376,7 @@ export const PeoplePage = () => {
                     </VehiclesBadge>
                     <VehiclesBadge>
                         <TextTitle>
-                            Characteristics 
+                            Characteristics
                         </TextTitle>
                         <BadgeText>
                             Name : Snowspeeder
