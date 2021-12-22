@@ -5,13 +5,14 @@ import {
     FilmsBadgeTitle,
 } from "./style"
 
-import Episode1 from '../../../../assets/moviescover/small/star-wars-episode-i-the-phantom-menace_v2.jpg'
-import Episode2 from '../../../../assets/moviescover/small/star-wars-episode-ii-attack-of-the-clones_v2.jpg'
-import Episode3 from '../../../../assets/moviescover/small/star-wars-episode-iii-revenge-of-the-sith_v2.jpg'
-import Episode4 from '../../../../assets/moviescover/small/star-wars-episode-iv-a-new-hope_v2.jpg'
-import Episode5 from '../../../../assets/moviescover/small/star-wars-episode-v-the-empire-strikes-back_v2.jpg'
-import Episode6 from '../../../../assets/moviescover/small/star-wars-episode-vi-return-of-the-jedi_v2.jpg'
-import Episode7 from '../../../../assets/moviescover/small/star-wars-episode-vii-the-force-awakens_v2.jpg'
+
+import Episode1 from '../../assets/moviescover/small/star-wars-episode-i-the-phantom-menace_v2.jpg'
+import Episode2 from '../../assets/moviescover/small/star-wars-episode-ii-attack-of-the-clones_v2.jpg'
+import Episode3 from '../../assets/moviescover/small/star-wars-episode-iii-revenge-of-the-sith_v2.jpg'
+import Episode4 from '../../assets/moviescover/small/star-wars-episode-iv-a-new-hope_v2.jpg'
+import Episode5 from '../../assets/moviescover/small/star-wars-episode-v-the-empire-strikes-back_v2.jpg'
+import Episode6 from '../../assets/moviescover/small/star-wars-episode-vi-return-of-the-jedi_v2.jpg'
+import Episode7 from '../../assets/moviescover/small/star-wars-episode-vii-the-force-awakens_v2.jpg'
 import { Link } from "react-router-dom"
 
 export const FilmsBadge1 = () => {

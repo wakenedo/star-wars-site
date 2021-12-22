@@ -81,10 +81,7 @@ export const FilmPageCharactersContainer = styled.div`
     background-position: center;
     background-size: cover; 
 `
-export const FilmPageCharactersContent = styled.div`
-    display: flex;
-    flex-direction: column;
-`
+
 export const FilmPageCharactersColumn = styled.div`
     display: flex;
 `
@@ -92,11 +89,7 @@ export const FilmPageCharactersColumn = styled.div`
 export const FilmPagePlanetsContainer = styled.div` 
     height: 50vh; 
 `
-export const FilmPagePlanetsContent = styled.div`
-    display: flex;
-    align-items: center;
-    margin: 1.5rem;
-`
+
 export const FilmPagePlanetsTextContainer = styled.div`
     color: var(--text-body);
     background: var(--background-light);

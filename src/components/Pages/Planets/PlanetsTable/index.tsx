@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { NavBar } from "../../../NavBar";
 import { SideBar } from "../../../SideBar";
-import { PeopleBadge } from "./PeopleBadge";
+import { PlanetBadge } from "./PlanetBadge";
 
 import {
     Title,
@@ -10,7 +10,7 @@ import {
 } from "../../../../styles/global";
 
 
-export const PeopleTable = () => {
+export const PlanetsTable = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggle = () => {
@@ -23,11 +23,11 @@ export const PeopleTable = () => {
             <SideBar isOpen={isOpen} toggle={toggle} />
             <TableContainer>
                 <Title>
-                    People :
+                    Planets :
                 </Title>
                 <TableArray>
 
-                    <PeopleBadge />
+                    <PlanetBadge />
 
                 </TableArray>
             </TableContainer>

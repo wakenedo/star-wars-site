@@ -5,29 +5,32 @@ import { SideBar } from "../../../SideBar";
 import Episode4 from '../../../../assets/moviescover/star-wars-episode-iv-a-new-hope_v2.jpg'
 
 import {
-    ContentFilmPage,
+    Title,
+    Content,
+
+    //IsLoadingImg,
+} from '../../../../styles/global';
+
+import {
     DescriptionTextFilmsCrawlInfo,
     DescriptionTextFilmsInfo,
     FilmDescriptionContainer,
     FilmPageCharactersColumn,
     FilmPageCharactersContainer,
-    FilmPageCharactersContent,
     FilmPageContainer,
     FilmPageCoverImg,
     FilmPageInformation,
     FilmPagePlanetsContainer,
-    FilmPagePlanetsContent,
     FilmPagePlanetsText,
     FilmPagePlanetsTextContainer,
     FilmPageSpeciesContainer,
     FilmPageStarShipsContainer,
     FilmPageVehiclesContainer,
-    TextTitle,
-    Title,
     TitleFilmsInfo,
 } from "./style";
-import { FilmPagePlanetsBadge } from "./FilmPagePlanetsBadge";
+
 import { FilmPageCharactersBadge } from "./FilmPageCharactersBadge";
+import { PlanetBadge } from "../../Planets/PlanetsTable/PlanetBadge";
 
 
 
@@ -46,7 +49,7 @@ export const FilmPage = () => {
                 <Title>
                     Film : Episode I - A New Hope
                 </Title>
-                <ContentFilmPage>
+                <Content>
                     <FilmPageCoverImg src={Episode4} />
                     <FilmPageInformation>
                         <TitleFilmsInfo>
@@ -75,45 +78,28 @@ export const FilmPage = () => {
                             Release Date : 1977-05-25
                         </DescriptionTextFilmsInfo>
                     </FilmPageInformation>
-                </ContentFilmPage>
+                </Content>
                 <FilmPageCharactersContainer>
                     <Title>
                         Characters :
                     </Title>
-                    <FilmPageCharactersContent>
+                    <Content>
                         <FilmPageCharactersColumn>
-                        <FilmPageCharactersBadge />
-                        <FilmPageCharactersBadge />
-                        <FilmPageCharactersBadge />
-                        <FilmPageCharactersBadge />
-                        <FilmPageCharactersBadge />
-                        <FilmPageCharactersBadge />
-                        <FilmPageCharactersBadge />
-                        <FilmPageCharactersBadge />
-                        <FilmPageCharactersBadge />
+                            <FilmPageCharactersBadge />
+
                         </FilmPageCharactersColumn>
                         <FilmPageCharactersColumn>
-                        <FilmPageCharactersBadge />
-                        <FilmPageCharactersBadge />
-                        <FilmPageCharactersBadge />
-                        <FilmPageCharactersBadge />
-                        <FilmPageCharactersBadge />
-                        <FilmPageCharactersBadge />
-                        <FilmPageCharactersBadge />
-                        <FilmPageCharactersBadge />
-                        <FilmPageCharactersBadge />
+                            <FilmPageCharactersBadge />
                         </FilmPageCharactersColumn>
-                    </FilmPageCharactersContent>
+                    </Content>
                 </FilmPageCharactersContainer>
                 <FilmPagePlanetsContainer>
                     <Title>
                         Planets :
                     </Title>
-                    <FilmPagePlanetsContent>
-                        <FilmPagePlanetsBadge />
-                        <FilmPagePlanetsBadge />
-                        <FilmPagePlanetsBadge />                        
-                    </FilmPagePlanetsContent>
+                    <Content>
+                        <PlanetBadge />
+                    </Content>
                 </FilmPagePlanetsContainer>
                 <FilmPageStarShipsContainer>
                     <Title>

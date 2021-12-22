@@ -11,18 +11,19 @@ import { HiUser } from "react-icons/hi"
 
 import isLoadingSVG from '../../../../../assets/Loading/Spinner-1s-200px.svg';
 
-import {
-    IsLoadingImg,
-} from '../../../../../styles/global'
 
 import {
-    DescriptionText,
-    DescriptionTextContainer,
-    PeopleBadgeContainer,
-    PeopleBadgeTitle,
-    PeopleBadgeTitleContainer,
-    TextContainer
-} from "./style"
+    DefaultTextP,
+    BadgeTextContainerDiv,
+    BadgeContainer,
+    BadgeTitle,
+    BadgeTitleContainer,
+    BadgeTextContainer,
+
+    //Loading SVG
+    IsLoadingImg,
+} from "../../../../../styles/global"
+
 
 interface PeopleTableBadgeProps {
     name: string;
@@ -91,51 +92,51 @@ export const PeopleBadge = () => {
     }
 
     return (
-        <PeopleBadgeContainer>
+        <BadgeContainer>
             {peopleTable.map((people) => (
-                <TextContainer key={people.name}>
-                    <PeopleBadgeTitleContainer>
-                        <PeopleBadgeTitle> {people.name}  </PeopleBadgeTitle>
+                <BadgeTextContainer key={people.name}>
+                    <BadgeTitleContainer>
+                        <BadgeTitle> {people.name}  </BadgeTitle>
                         <Link to={`/PeoplePage/${getNextUrl(people.url)}`} key={people.name}>
                             <IoMdArrowRoundForward />
                         </Link>
-                    </PeopleBadgeTitleContainer>
-                    <DescriptionTextContainer>
-                        <DescriptionText>
+                    </BadgeTitleContainer>
+                    <BadgeTextContainerDiv>
+                        <DefaultTextP >
                             <GiBodyHeight />
                             {people.height} cm
-                        </DescriptionText>
-                        <DescriptionText>
+                        </DefaultTextP >
+                        <DefaultTextP >
                             <GiWeight />
                             {people.mass} kg
-                        </DescriptionText>
-                        <DescriptionText>
+                        </DefaultTextP >
+                        <DefaultTextP >
                             <GiHairStrands />
                             {people.hair_color}
-                        </DescriptionText>
-                        <DescriptionText>
+                        </DefaultTextP >
+                        <DefaultTextP >
                             <HiUser />
                             {people.skin_color}
-                        </DescriptionText>
-                        <DescriptionText>
+                        </DefaultTextP >
+                        <DefaultTextP >
                             <FaRegEye />
                             {people.eye_color}
-                        </DescriptionText>
-                        <DescriptionText>
+                        </DefaultTextP >
+                        <DefaultTextP >
                             <FaBirthdayCake />
                             {people.birth_year}
-                        </DescriptionText>
-                        <DescriptionText>
+                        </DefaultTextP >
+                        <DefaultTextP >
                             <BsGenderMale />
                             {people.gender}
-                        </DescriptionText>
-                    </DescriptionTextContainer>
-                </TextContainer>
+                        </DefaultTextP >
+                    </BadgeTextContainerDiv>
+                </BadgeTextContainer>
 
 
             ))
             }
-        </PeopleBadgeContainer >
+        </BadgeContainer >
 
     )
 } 

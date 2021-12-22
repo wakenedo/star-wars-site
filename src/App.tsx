@@ -1,10 +1,16 @@
 import { GlobalStyle } from './styles/global'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+
 import { Hero } from './components/Hero';
+
 import { PeoplePage } from './components/Pages/People/PeoplePage';
+import { PlanetsPage } from './components/Pages/Planets/PlanetsPage';
+
 import { PeopleTable } from './components/Pages/People/PeopleTable';
 import { FilmsTable } from './components/Pages/Films/FilmsTable';
-import { FilmPage } from './components/Pages/Films/FilmPage';
+import { PlanetsTable } from './components/Pages/Planets/PlanetsTable';
+
+
 import { FilmPageEP1 } from './components/Pages/Films/FilmPageEP1';
 import { FilmPageEP4 } from './components/Pages/Films/FilmPageEP4';
 import { FilmPageEP2 } from './components/Pages/Films/FilmPageEP2';
@@ -20,8 +26,13 @@ function App() {
     <Router>
       <Routes>
         <Route path='/People' element={ <PeopleTable /> } />
-        <Route path='/PeoplePage/:url' element={ <PeoplePage />} />
+        <Route path='/Planets' element={ <PlanetsTable /> } />
         <Route path='/Films' element={ <FilmsTable /> } />
+
+        <Route path='/PeoplePage/:url' element={ <PeoplePage />} />
+        <Route path='/PlanetsPage/:url' element={ <PlanetsPage />} />
+
+
         <Route path='/Films/Episode_1' element={ <FilmPageEP1 /> } />
         <Route path='/Films/Episode_2' element={ <FilmPageEP2 /> } />
         <Route path='/Films/Episode_3' element={ <FilmPageEP3 /> } />

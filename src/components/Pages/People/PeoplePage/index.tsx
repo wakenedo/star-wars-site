@@ -20,41 +20,36 @@ import {
     FilmsBadge4,
     FilmsBadge5,
     FilmsBadge6,
-} from '../PeoplePageFilmBadge';
+} from '../../../PagesFilmBadge';
 
 import {
+    //Default Styles
+    SectionNoBackground,
+    SectionBackground1,
+    SectionBackground2,
+    SectionBackground3,
     Title,
     TextTitle,
+    DefaultTextP,
+    PageContainer,
     Content,
     BadgeText,
-    TextContainerA,
-    TextContainerB,
-    TextContainerLarge,
+    
+
+    //Loading SVG
     IsLoadingImg,
 } from '../../../../styles/global';
 
 import {
-    DescriptionContainer,
-    DescriptionImage,
-    DescriptionText,
-    HomeWorldContainer,
-    HomeWorldContent,
-    FilmsContainer,
-    PeoplePageContainer,
-    SpeciesContainer,
-    StarShipsContainer,
-    VehiclesContainer,
-    HomeWorldText,
-    HomeWorldImage,
-    SpeciesContent,
-    SpeciesText,
-    StarShipsContent,
+    CharacterPlaceholderImg,
+    HomeWorldPlaceholderImage,
     StarShipsBadge,
-    VehiclesContent,
     VehiclesBadge,
-    FilmsContent
+    TextContainerA,
+    TextContainerB,
+    TextContainerLarge,
 } from './style'
-import axios from 'axios';
+
 
 
 interface CharacterProps {
@@ -68,9 +63,13 @@ interface CharacterProps {
     gender: string;
 }
 
+
+
+
 export const PeoplePage = () => {
     const [loading, setLoading] = useState(false)
     const [character, setCharacter] = useState<CharacterProps>()
+    
 
     const { url } = useParams()
 
@@ -87,6 +86,7 @@ export const PeoplePage = () => {
             .then(response => {
                 setLoading(false)
                 setCharacter(response.data)
+                
 
 
             })
@@ -106,141 +106,141 @@ export const PeoplePage = () => {
 
 
     return (
-        <PeoplePageContainer>
+        <PageContainer>
             <NavBar toggle={toggle} />
             <SideBar isOpen={isOpen} toggle={toggle} />
-                <DescriptionContainer key={character?.name}>
-                    <Title>
-                        Character : {character?.name}
-                    </Title>
-                    <Content>
-                        <DescriptionImage src={CharacterImg} />
-                        <TextContainerA>
-                            <TextTitle>
-                                Characteristics
-                            </TextTitle>
-                            <DescriptionText>
-                                <GiBodyHeight />
-                                {character?.height} cm
-                            </DescriptionText>
-                            <DescriptionText>
-                                <GiWeight />
-                                {character?.mass} kg
-                            </DescriptionText>
-                            <DescriptionText>
-                                <GiHairStrands />
-                                {character?.hair_color}
-                            </DescriptionText>
-                            <DescriptionText>
-                                <HiUser />
-                                {character?.skin_color}
-                            </DescriptionText>
-                            <DescriptionText>
-                                <FaRegEye />
-                                {character?.eye_color}
-                            </DescriptionText>
-                            <DescriptionText>
-                                <FaBirthdayCake />
-                                {character?.birth_year}
-                            </DescriptionText>
-                            <DescriptionText>
-                                <BsGenderMale />
-                                {character?.gender}
-                            </DescriptionText>
-                        </TextContainerA>
-                    </Content>
-                </DescriptionContainer>
-            <HomeWorldContainer>
+            <SectionBackground1 key={character?.name}>
+                <Title>
+                    Character : {character?.name}
+                </Title>
+                <Content>
+                    <CharacterPlaceholderImg src={CharacterImg} />
+                    <TextContainerA>
+                        <TextTitle>
+                            Characteristics
+                        </TextTitle>
+                        <DefaultTextP>
+                            <GiBodyHeight />
+                            {character?.height} cm
+                        </DefaultTextP>
+                        <DefaultTextP>
+                            <GiWeight />
+                            {character?.mass} kg
+                        </DefaultTextP>
+                        <DefaultTextP>
+                            <GiHairStrands />
+                            {character?.hair_color}
+                        </DefaultTextP>
+                        <DefaultTextP>
+                            <HiUser />
+                            {character?.skin_color}
+                        </DefaultTextP>
+                        <DefaultTextP>
+                            <FaRegEye />
+                            {character?.eye_color}
+                        </DefaultTextP>
+                        <DefaultTextP>
+                            <FaBirthdayCake />
+                            {character?.birth_year}
+                        </DefaultTextP>
+                        <DefaultTextP>
+                            <BsGenderMale />
+                            {character?.gender}
+                        </DefaultTextP>
+                    </TextContainerA>
+                </Content>
+            </SectionBackground1>
+            <SectionNoBackground>
                 <Title>
                     Planet: Tatooine
                 </Title>
-                <HomeWorldContent>
+                <Content>
                     <TextContainerB>
                         <TextTitle>
                             Description
                         </TextTitle>
-                        <HomeWorldText>
+                        <DefaultTextP>
                             Rotation Period : 23 Hours
-                        </HomeWorldText>
-                        <HomeWorldText>
+                        </DefaultTextP>
+                        <DefaultTextP>
                             Orbital Period : 304 Days
-                        </HomeWorldText>
-                        <HomeWorldText>
+                        </DefaultTextP>
+                        <DefaultTextP>
                             Diameter : 10465 Kilometers
-                        </HomeWorldText>
-                        <HomeWorldText>
+                        </DefaultTextP>
+                        <DefaultTextP>
                             Climate : Arid
-                        </HomeWorldText>
-                        <HomeWorldText>
+                        </DefaultTextP>
+                        <DefaultTextP>
                             Gravity : 1 Standard
-                        </HomeWorldText>
-                        <HomeWorldText>
+                        </DefaultTextP>
+                        <DefaultTextP>
                             Terrain : Desert
-                        </HomeWorldText>
-                        <HomeWorldText>
+                        </DefaultTextP>
+                        <DefaultTextP>
                             Surface Water : 1 %
-                        </HomeWorldText>
-                        <HomeWorldText>
+                        </DefaultTextP>
+                        <DefaultTextP>
                             Population : 200.000
-                        </HomeWorldText>
+                        </DefaultTextP>
                     </TextContainerB>
-                    <HomeWorldImage src={PlanetImg} />
-                </HomeWorldContent>
-            </HomeWorldContainer>
-            <SpeciesContainer>
+                    <HomeWorldPlaceholderImage src={PlanetImg} />
+                </Content>
+            </SectionNoBackground>
+            <SectionBackground2>
                 <Title>
                     Species : Human
                 </Title>
-                <SpeciesContent>
+                <Content>
                     <TextContainerLarge >
                         <TextTitle>
                             Features
                         </TextTitle>
-                        <SpeciesText>
+                        <DefaultTextP>
                             Classification : Mammal
-                        </SpeciesText>
-                        <SpeciesText>
+                        </DefaultTextP>
+                        <DefaultTextP>
                             Designation : Sentient
-                        </SpeciesText>
-                        <SpeciesText>
+                        </DefaultTextP>
+                        <DefaultTextP>
                             Average Height : 180 cm
-                        </SpeciesText>
-                        <SpeciesText>
+                        </DefaultTextP>
+                        <DefaultTextP>
                             Skin Colors : Caucasian, Black, Asian, Hispanic
-                        </SpeciesText>
-                        <SpeciesText>
+                        </DefaultTextP>
+                        <DefaultTextP>
                             Hair Colors : Blonde, Brown, Black, Red
-                        </SpeciesText>
-                        <SpeciesText>
+                        </DefaultTextP>
+                        <DefaultTextP>
                             Eye Colors : Brown, Blue, Green, Hazel, Gray, Amber
-                        </SpeciesText>
-                        <SpeciesText>
+                        </DefaultTextP>
+                        <DefaultTextP>
                             Average Lifespan : 120 years
-                        </SpeciesText>
-                        <SpeciesText>
+                        </DefaultTextP>
+                        <DefaultTextP>
                             Home World : Earth
-                        </SpeciesText>
-                        <SpeciesText>
+                        </DefaultTextP>
+                        <DefaultTextP>
                             Language : Galatic Basic
-                        </SpeciesText>
+                        </DefaultTextP>
                     </TextContainerLarge>
-                </SpeciesContent>
-            </SpeciesContainer>
-            <FilmsContainer>
+                </Content>
+            </SectionBackground2>
+            <SectionNoBackground>
                 <Title>
                     Films :
                 </Title>
-                <FilmsContent>
+                <Content>
                     <FilmsBadge4 />
                     <FilmsBadge5 />
                     <FilmsBadge6 />
-                </FilmsContent>
-            </FilmsContainer>
-            <StarShipsContainer>
+                </Content>
+            </SectionNoBackground>
+            <SectionBackground3>
                 <Title>
                     Star Ships :
                 </Title>
-                <StarShipsContent>
+                <Content>
                     <StarShipsBadge>
                         <TextTitle>
                             Characteristics
@@ -329,13 +329,13 @@ export const PeoplePage = () => {
                             Starship class : Starfighter
                         </BadgeText>
                     </StarShipsBadge>
-                </StarShipsContent>
-            </StarShipsContainer>
-            <VehiclesContainer>
+                </Content>
+            </SectionBackground3>
+            <SectionNoBackground>
                 <Title>
                     Vehicles :
                 </Title>
-                <VehiclesContent>
+                <Content>
                     <VehiclesBadge>
                         <TextTitle>
                             Characteristics
@@ -412,8 +412,8 @@ export const PeoplePage = () => {
                             Vehicle class : Airspeeder
                         </BadgeText>
                     </VehiclesBadge>
-                </VehiclesContent>
-            </VehiclesContainer>
-        </PeoplePageContainer>
+                </Content>
+            </SectionNoBackground>
+        </PageContainer>
     )
 }
