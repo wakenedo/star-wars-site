@@ -1,8 +1,6 @@
 import styled from 'styled-components'
 
-export const FilmsTableContainer = styled.div`
-    
-     
+export const FilmsTableContainer = styled.div`    
 `
 export const FilmsTableH1 = styled.div`
     color: var(--yellow);
@@ -18,6 +16,6 @@ export const FilmsTableH1 = styled.div`
 export const FilmsTableArray = styled.div`
     display: flex;
     flex-wrap: wrap;
-    width: 1180px;
-    margin: 1.5rem 29.5rem auto;
+    width: 975px;
+    margin: 1.5rem auto;
 `

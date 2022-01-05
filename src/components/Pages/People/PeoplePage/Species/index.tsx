@@ -58,7 +58,7 @@ export const Species = ({ data }: PeoplePageProps) => {
         )
     }, []);
 
-    useEffect(async() => {
+    useEffect(() => {
         axios
             .get(
                 `${species?.homeworld}`
