@@ -15,6 +15,8 @@ import Episode6 from '../../assets/moviescover/small/star-wars-episode-vi-return
 import Episode7 from '../../assets/moviescover/small/star-wars-episode-vii-the-force-awakens_v2.jpg'
 import { Link } from "react-router-dom"
 
+
+
 export const FilmsBadge1 = () => {
     return (
         <FilmsBadgeContainer>

@@ -38,6 +38,8 @@ interface PeopleTableBadgeProps {
 }
 
 
+
+
 export const PeopleBadge = () => {
     const [loading, setLoading] = useState(false)
     const [peopleTable, setPeopleTable] = useState<PeopleTableBadgeProps[]>([])
@@ -55,13 +57,13 @@ export const PeopleBadge = () => {
         setLoading(true)
 
         let page = 1
-        let arr = []
-
+        let arr  = []
+        
         const fetchItems = () => {
-
+            
             api
-                .get(
-                    `people/?page=${page}&format=json`
+            .get(
+                `people/?page=${page}&format=json`
                 )
                 .then(response => {
                     arr.push(...response.data.results)
@@ -104,11 +106,11 @@ export const PeopleBadge = () => {
                     <BadgeTextContainerDiv>
                         <DefaultTextP >
                             <GiBodyHeight />
-                            {people.height} cm
+                            {people.height} Cm
                         </DefaultTextP >
                         <DefaultTextP >
                             <GiWeight />
-                            {people.mass} kg
+                            {people.mass} Kg
                         </DefaultTextP >
                         <DefaultTextP >
                             <GiHairStrands />
@@ -132,10 +134,7 @@ export const PeopleBadge = () => {
                         </DefaultTextP >
                     </BadgeTextContainerDiv>
                 </BadgeTextContainer>
-
-
-            ))
-            }
+            ))}
         </BadgeContainer >
 
     )

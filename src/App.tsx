@@ -30,7 +30,7 @@ function App() {
         <Route path='/Films' element={ <FilmsTable /> } />
 
         <Route path='/PeoplePage/:url' element={ <PeoplePage />} />
-        <Route path='/PlanetsPage/:url' element={ <PlanetsPage />} />
+        <Route path='/PlanetsPage/:PlanetsUrl' element={ <PlanetsPage />} />
 
 
         <Route path='/Films/Episode_1' element={ <FilmPageEP1 /> } />

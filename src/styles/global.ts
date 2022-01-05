@@ -91,19 +91,18 @@ export const DefaultTextP = styled.p`
         margin-bottom: 1.5rem;
     }
 `
-//-----------------------------------------------//
-
-
-export const BadgeText = styled.p`
-    font-size: clamp(0.5rem, 10vw, 1rem);
+export const SmallDefaultTextP = styled.p`
+    font-size: clamp(1.05rem, 10vw, 1.05rem);
+    padding: 0.25rem;
     font-weight: 100;
-    margin-left: 0.75rem;
-    padding: 0.1rem;
+    text-decoration: none;
+    margin-left: 0.5rem;
 
     &:last-child {
         margin-bottom: 1.5rem;
     }
 `
+//-----------------------------------------------//
 
 //Pages Sections Default Styles and img imports 
 
@@ -120,10 +119,16 @@ export const PageContainer = styled.div`
 export const Content = styled.div`
     display: flex;
     align-items: center;
-    margin: 1.5rem auto;
+    margin: 0.85rem auto;
+    
 `
 //
 // Sections
+export const DefaultSectionDiv = styled.div`
+    display: flex;
+    margin: 0 auto;
+`
+
 // NoBackground 
 export const SectionNoBackground = styled.div` 
     height: 50vh; 
@@ -227,5 +232,13 @@ export const BadgeTextP = styled.p`
 export const IsLoadingImg = styled.img`
     width: 300px;
     margin: 15rem 50.5rem; 
+`
+//-----------------------------------------------//
+
+// No data from api SVG
+
+export const NoDataFromApi = styled.img`
+    width: 500px;
+    margin: auto; 
 `
 //-----------------------------------------------//

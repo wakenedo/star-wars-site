@@ -56,16 +56,16 @@ export const PlanetsPage = () => {
     const [planets, setPlanets] = useState<PlanetProps>()
     
 
-    const { url } = useParams()
+    const { PlanetsUrl } = useParams()
 
     const [isOpen, setIsOpen] = useState(false);
 
     useEffect(() => {
-        if (!url) return
+        if (!PlanetsUrl) return
         setLoading(true)
         api
             .get(
-                `planets/${url}`
+                `planets/${PlanetsUrl}`
 
             )
             .then(response => {

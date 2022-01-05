@@ -19,7 +19,7 @@ export const FilmsBadgeTitle = styled.h3`
 `
 export const FilmsBadgeImg = styled.img` 
     width: 300px;
-    height: 350px;
+    height: 335px;
 `
 export const DescriptionText = styled.p`
     font-size: clamp(1rem, 10vw, 1.5rem);
