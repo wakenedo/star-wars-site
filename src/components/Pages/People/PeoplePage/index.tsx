@@ -6,24 +6,22 @@ import { api } from "../../../../services/api";
 import { NavBar } from '../../../../components/NavBar';
 import { SideBar } from '../../../../components/SideBar';
 
-import isLoadingSVG from '../../../../assets/Loading/Spinner-1s-200px.svg';
-
-import {
-    //Default Styles
-    PageContainer,
-
-
-
-    //Loading SVG
-    IsLoadingImg,
-} from '../../../../styles/global';
-
 import { HomeWorld } from './HomeWorld'
 import { Species } from './Species';
 import { Films } from './Films';
 import { StarShips } from './StarShips';
 import { Vehicles } from './Vehicles';
 import { Character } from './Character';
+
+import {
+    //Default Styles
+    PageContainer,
+    //Loading SVG
+    IsLoadingImg,
+} from '../../../../styles/global';
+
+import isLoadingSVG from '../../../../assets/Loading/Spinner-1s-200px.svg';
+
 
 
 export interface PeoplePageProps {
@@ -41,8 +39,7 @@ export interface PeoplePageProps {
         homeworld?: string;
         starships: [] | string ;
         vehicles:  [] | string ;
-        species?: string,
-        
+        species?: string,       
     }
     ;
 }
@@ -54,7 +51,6 @@ export const PeoplePage = (
     vehicles: string,
     homeworld: string,
     starships: string 
-
 ) => {
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState({
@@ -74,7 +70,6 @@ export const PeoplePage = (
     useEffect(() => {
         if (!url) return
         setLoading(true)
-
         api
             .get(
                 `people/${url}`
@@ -82,8 +77,7 @@ export const PeoplePage = (
             .then(response => {
                 setLoading(false)
                 setData(response.data)
-            })
-        setData
+            })       
     }, []);
 
     if (!data) {

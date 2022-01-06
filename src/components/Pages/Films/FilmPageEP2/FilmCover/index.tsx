@@ -1,4 +1,4 @@
-import Episode1 from '../../../../../assets/moviescover/star-wars-episode-i-the-phantom-menace_v2.jpg'
+import Episode2 from '../../../../../assets/moviescover/star-wars-episode-ii-attack-of-the-clones_v2.jpg'
 
 import {
     //Default Styles
@@ -15,7 +15,7 @@ export const FilmCover = () => {
     return (
         <Content>
             <DefaultSectionDiv>
-                <FilmImg src={Episode1} />
+                <FilmImg src={Episode2} />
                 <FilmCoverContainer>
                     <TextTitle>
                         Characteristics
@@ -30,15 +30,16 @@ export const FilmCover = () => {
                         Crawl :
                     </FilmCoverContainerTextP>
                     <CrawlTextP>
-                        "Turmoil has engulfed the Galactic Republic. The taxation of trade routes to outlying star systems
-                        is in dispute. Hoping to resolve the matter with a blockade of deadly battleships, the greedy
-                        Trade Federation has stopped all shipping to the small planet of Naboo.
-                        While the Congress of the Republic endlessly debates this alarming chain of events,
-                        the Supreme Chancellor has secretly dispatched two Jedi Knights, the guardians of peace
-                        and justice in the galaxy, to settle the conflict...."
+                        "There is unrest in the Galactic Senate.
+                        Several thousand solar systems have declared their intentions to leave the Republic.
+                        This separatist movement, under the leadership of the mysterious Count Dooku,
+                        has made it difficult for the limited number of Jedi Knights to maintain peace
+                        and order in the galaxy. Senator Amidala, the former Queen of Naboo, is returning
+                        to the Galactic Senate to vote on the critical issue of creating an ARMY OF THE REPUBLIC
+                        to assist the overwhelmed Jedi...."
                     </CrawlTextP>
                     <FilmCoverContainerTextP>
-                        Release Date : 1999/05/19
+                        Release Date : 2002/05/16
                     </FilmCoverContainerTextP>
                 </FilmCoverContainer>
             </DefaultSectionDiv>

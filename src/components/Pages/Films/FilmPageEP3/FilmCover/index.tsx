@@ -1,4 +1,4 @@
-import Episode1 from '../../../../../assets/moviescover/star-wars-episode-i-the-phantom-menace_v2.jpg'
+import Episode3 from '../../../../../assets/moviescover/star-wars-episode-iii-revenge-of-the-sith_v2.jpg'
 
 import {
     //Default Styles
@@ -15,7 +15,7 @@ export const FilmCover = () => {
     return (
         <Content>
             <DefaultSectionDiv>
-                <FilmImg src={Episode1} />
+                <FilmImg src={Episode3} />
                 <FilmCoverContainer>
                     <TextTitle>
                         Characteristics
@@ -30,15 +30,17 @@ export const FilmCover = () => {
                         Crawl :
                     </FilmCoverContainerTextP>
                     <CrawlTextP>
-                        "Turmoil has engulfed the Galactic Republic. The taxation of trade routes to outlying star systems
-                        is in dispute. Hoping to resolve the matter with a blockade of deadly battleships, the greedy
-                        Trade Federation has stopped all shipping to the small planet of Naboo.
-                        While the Congress of the Republic endlessly debates this alarming chain of events,
-                        the Supreme Chancellor has secretly dispatched two Jedi Knights, the guardians of peace
-                        and justice in the galaxy, to settle the conflict...."
+                        "War! The Republic is crumbling under attacks by the ruthless
+                        Sith Lord, Count Dooku. There are heroes on both sides. Evil is everywhere.
+                        In a stunning move, the fiendish droid leader, General Grievous, has swept
+                        into the Republic capital and kidnapped Chancellor Palpatine,
+                        leader of the Galactic Senate. As the Separatist Droid Army leader
+                        attempts to flee the besieged capital with their valuable hostage,
+                        two Jedi Knights lead desperate mission to rescue the captive
+                        Chancellor....",
                     </CrawlTextP>
                     <FilmCoverContainerTextP>
-                        Release Date : 1999/05/19
+                    Release Date : 2005/05/19
                     </FilmCoverContainerTextP>
                 </FilmCoverContainer>
             </DefaultSectionDiv>

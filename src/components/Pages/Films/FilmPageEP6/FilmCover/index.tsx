@@ -1,4 +1,4 @@
-import Episode1 from '../../../../../assets/moviescover/star-wars-episode-i-the-phantom-menace_v2.jpg'
+import Episode6 from '../../../../../assets/moviescover/star-wars-episode-vi-return-of-the-jedi_v2.jpg'
 
 import {
     //Default Styles
@@ -15,34 +15,34 @@ export const FilmCover = () => {
     return (
         <Content>
             <DefaultSectionDiv>
-                <FilmImg src={Episode1} />
+                <FilmImg src={Episode6} />
                 <FilmCoverContainer>
                     <TextTitle>
                         Characteristics
                     </TextTitle>
                     <FilmCoverContainerTextP>
-                        Director : George Lucas
+                        Director : Richard Marquand
                     </FilmCoverContainerTextP>
                     <FilmCoverContainerTextP>
-                        Producers : Rick McCallum
+                        Producers : Howard G. Kazanjian, George Lucas, Rick McCallum
                     </FilmCoverContainerTextP>
                     <FilmCoverContainerTextP>
                         Crawl :
                     </FilmCoverContainerTextP>
                     <CrawlTextP>
-                        "Turmoil has engulfed the Galactic Republic. The taxation of trade routes to outlying star systems
-                        is in dispute. Hoping to resolve the matter with a blockade of deadly battleships, the greedy
-                        Trade Federation has stopped all shipping to the small planet of Naboo.
-                        While the Congress of the Republic endlessly debates this alarming chain of events,
-                        the Supreme Chancellor has secretly dispatched two Jedi Knights, the guardians of peace
-                        and justice in the galaxy, to settle the conflict...."
+                        "Luke Skywalker has returned to his home planet of Tatooine in an attempt
+                        to rescue his friend Han Solo from the clutches of the vile gangster Jabba
+                        the Hutt. Little does Luke know that the GALACTIC EMPIRE has secretly begun
+                        construction on a new armored space station even more powerful than the first
+                        dreaded Death Star. When completed, this ultimate weapon will spell certain
+                        doom for the small band of rebels struggling to
+                        restore freedom to the galaxy..."
                     </CrawlTextP>
                     <FilmCoverContainerTextP>
-                        Release Date : 1999/05/19
+                        Release Date : 1983/05/25
                     </FilmCoverContainerTextP>
                 </FilmCoverContainer>
             </DefaultSectionDiv>
         </Content>
     )
-
 }

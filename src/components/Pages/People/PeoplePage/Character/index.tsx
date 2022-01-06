@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 
 import { GiBodyHeight, GiHairStrands, GiWeight } from 'react-icons/gi'
 import { HiUser } from 'react-icons/hi'
@@ -6,8 +5,6 @@ import { FaBirthdayCake, FaRegEye } from 'react-icons/fa'
 import { BsGenderMale } from 'react-icons/bs'
 
 import CharacterImg from '../../../../../assets/CharacterImg.png'
-
-
 
 import {
     //Default Styles
@@ -17,15 +14,14 @@ import {
     TextTitle,
     DefaultTextP,
     Content,
-
 } from '../../../../../styles/global';
 
 import {
     TextContainerA,
     CharacterPlaceholderImg,
 } from '../style'
-import { PeoplePageProps } from '..'
 
+import { PeoplePageProps } from '..'
 
 export const Character = ({ data }: PeoplePageProps) => {
 
@@ -33,7 +29,6 @@ export const Character = ({ data }: PeoplePageProps) => {
         'This is character 🤠 data :',
         data,
     )
-
 
     return (
         <SectionBackground1 >

@@ -1,4 +1,4 @@
-import Episode1 from '../../../../../assets/moviescover/star-wars-episode-i-the-phantom-menace_v2.jpg'
+import Episode5 from '../../../../../assets/moviescover/star-wars-episode-v-the-empire-strikes-back_v2.jpg'
 
 import {
     //Default Styles
@@ -15,34 +15,34 @@ export const FilmCover = () => {
     return (
         <Content>
             <DefaultSectionDiv>
-                <FilmImg src={Episode1} />
+                <FilmImg src={Episode5} />
                 <FilmCoverContainer>
                     <TextTitle>
                         Characteristics
                     </TextTitle>
                     <FilmCoverContainerTextP>
-                        Director : George Lucas
+                        Director : Irvin Kershner
                     </FilmCoverContainerTextP>
                     <FilmCoverContainerTextP>
-                        Producers : Rick McCallum
+                        Producers : Gary Kurtz, Rick McCallum
                     </FilmCoverContainerTextP>
                     <FilmCoverContainerTextP>
                         Crawl :
                     </FilmCoverContainerTextP>
                     <CrawlTextP>
-                        "Turmoil has engulfed the Galactic Republic. The taxation of trade routes to outlying star systems
-                        is in dispute. Hoping to resolve the matter with a blockade of deadly battleships, the greedy
-                        Trade Federation has stopped all shipping to the small planet of Naboo.
-                        While the Congress of the Republic endlessly debates this alarming chain of events,
-                        the Supreme Chancellor has secretly dispatched two Jedi Knights, the guardians of peace
-                        and justice in the galaxy, to settle the conflict...."
+                        "It is a dark time for the Rebellion. Although the Death Star has been destroyed,
+                        Imperial troops have driven the Rebel forces from their hidden base and pursued
+                        them across the galaxy. Evading the dreaded Imperial Starfleet, a group of freedom
+                        fighters led by Luke Skywalker has established a new secret base on the remote ice
+                        world of Hoth. The evil lord Darth Vader, obsessed with finding young Skywalker,
+                        has dispatched thousands of remote probes
+                        into the far reaches of space...."
                     </CrawlTextP>
                     <FilmCoverContainerTextP>
-                        Release Date : 1999/05/19
+                        Release Date : 1980/05/17
                     </FilmCoverContainerTextP>
                 </FilmCoverContainer>
             </DefaultSectionDiv>
         </Content>
     )
-
 }

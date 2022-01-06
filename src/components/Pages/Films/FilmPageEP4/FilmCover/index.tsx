@@ -1,4 +1,4 @@
-import Episode1 from '../../../../../assets/moviescover/star-wars-episode-i-the-phantom-menace_v2.jpg'
+import Episode4 from '../../../../../assets/moviescover/star-wars-episode-iv-a-new-hope_v2.jpg'
 
 import {
     //Default Styles
@@ -15,7 +15,7 @@ export const FilmCover = () => {
     return (
         <Content>
             <DefaultSectionDiv>
-                <FilmImg src={Episode1} />
+                <FilmImg src={Episode4} />
                 <FilmCoverContainer>
                     <TextTitle>
                         Characteristics
@@ -24,21 +24,23 @@ export const FilmCover = () => {
                         Director : George Lucas
                     </FilmCoverContainerTextP>
                     <FilmCoverContainerTextP>
-                        Producers : Rick McCallum
+                        Producers : Gary Kurtz, Rick McCallum
                     </FilmCoverContainerTextP>
                     <FilmCoverContainerTextP>
                         Crawl :
                     </FilmCoverContainerTextP>
                     <CrawlTextP>
-                        "Turmoil has engulfed the Galactic Republic. The taxation of trade routes to outlying star systems
-                        is in dispute. Hoping to resolve the matter with a blockade of deadly battleships, the greedy
-                        Trade Federation has stopped all shipping to the small planet of Naboo.
-                        While the Congress of the Republic endlessly debates this alarming chain of events,
-                        the Supreme Chancellor has secretly dispatched two Jedi Knights, the guardians of peace
-                        and justice in the galaxy, to settle the conflict...."
+                        "It is a period of civil war.
+                        Rebel spaceships, striking from a hidden base,
+                        have won their first victory against the evil Galactic Empire.
+                        During the battle, Rebel spies managed to steal secret plans to the Empire
+                        ultimate weapon, the DEATH STAR, an armored space station with enough power
+                        to destroy an entire planet. Pursued by the Empire's sinister agents,
+                        Princess Leia races home aboard her starship, custodian of the stolen
+                        plans that can save her people and restore freedom to the galaxy...."
                     </CrawlTextP>
                     <FilmCoverContainerTextP>
-                        Release Date : 1999/05/19
+                        Release Date : 1977/05/25
                     </FilmCoverContainerTextP>
                 </FilmCoverContainer>
             </DefaultSectionDiv>

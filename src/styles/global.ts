@@ -160,6 +160,44 @@ export const SectionBackground3 = styled.div`
 `
 //
 
+//FilmPageEP1-6 FilmCover Styles
+
+//Div 
+//FilmPageEP1-6 Div
+export const FilmPageDiv = styled.div`
+`
+//FilmCover Components of FilmPageEP1-6 Container
+export const FilmCoverContainer = styled.div`
+    background: var(--background-light);
+    width: 685px;
+    height: 800px;
+    margin-left: 1.5rem;
+`
+//FilmCover Components of FilmPageEP1-6 
+//Container Text P 
+export const FilmCoverContainerTextP = styled.p`
+    font-size: clamp(1rem, 10vw, 1.5rem);
+    font-weight: 100;
+    color : var(--text-body);
+    margin: 0.5rem 1.5rem;
+`
+//FilmCover Components of FilmPageEP1-6 
+//Container Text CrawP
+export const CrawlTextP = styled.p`
+    font-size: clamp(1.95rem, 10vw, 1.75rem);
+    font-weight: 100;
+    color: var(--yellow);
+    text-align: justify;
+    margin: 2.5rem;
+`
+
+//FilmCover Components of FilmPageEP1-6 
+//Image Cover
+export const FilmImg = styled.img`
+    width: 685px;
+    height: 800px;
+`
+
 //-----------------------------------------------//
 
 // Table Pages Styles
