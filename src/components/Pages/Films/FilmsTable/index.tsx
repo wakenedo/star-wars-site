@@ -1,14 +1,10 @@
 import { useState } from "react";
 import { NavBar } from "../../../NavBar";
 import { SideBar } from "../../../SideBar";
+
 import {
-    FilmsBadge1,
-    FilmsBadge2,
-    FilmsBadge3,
-    FilmsBadge4,
-    FilmsBadge5,
-    FilmsBadge6,
-} from "../FilmsBadge";
+    FilmsBadge,  
+} from "./FilmsBadge";
 
 import {
     Title,
@@ -32,15 +28,10 @@ export const FilmsTable = () => {
             <SideBar isOpen={isOpen} toggle={toggle} />
             <FilmsTableContainer>
                 <Title>
-                    Films :
+                    Films 
                 </Title>
                 <FilmsTableArray>
-                    <FilmsBadge1 />
-                    <FilmsBadge2 />
-                    <FilmsBadge3 />
-                    <FilmsBadge4 />
-                    <FilmsBadge5 />
-                    <FilmsBadge6 />
+                    <FilmsBadge />                  
                 </FilmsTableArray>
             </FilmsTableContainer>
         </>

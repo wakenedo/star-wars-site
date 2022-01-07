@@ -9,6 +9,8 @@ import { NavBar } from '../../../../components/NavBar';
 import { SideBar } from '../../../../components/SideBar';
 
 import { Planet } from './Planet'
+import { Residents } from './Residents';
+import { Films } from './Films';
 
 import {
     //Default Styles
@@ -46,18 +48,18 @@ export const PlanetsPage = (
         films,
     })
 
-    const { PlanetsUrl } = useParams()
+    const { planetsUrl } = useParams()
 
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => {
         setIsOpen(!isOpen);
     }
     useEffect(() => {
-        if (!PlanetsUrl) return
+        if (!planetsUrl) return
         setLoading(true)
         api
             .get(
-                `planets/${PlanetsUrl}`
+                `planets/${planetsUrl}`
             )
             .then(response => {
                 setLoading(false)
@@ -82,7 +84,9 @@ export const PlanetsPage = (
         <PageContainer>
             <NavBar toggle={toggle} />
             <SideBar isOpen={isOpen} toggle={toggle} />
-            <Planet />
+            <Planet data={data}/>
+            <Residents data={data} />
+            <Films />
         </PageContainer>
             
         )

@@ -11,7 +11,6 @@ import {
 
 } from '../../../../../styles/global';
 
-
 import {
     VehiclesText,
     VehiclesBadge,
@@ -69,15 +68,13 @@ export const Vehicles = ({ data }: PeoplePageProps) => {
 
     useEffect(async () => {
         var urlStrings = data?.vehicles
-        var arrayLenght = urlStrings.length
+        var arrayLength = urlStrings.length
 
-        for (var i = 0; i < arrayLenght; i++) {
+        for (var i = 0; i < arrayLength; i++) {
             axios
                 .all(
-                    urlStrings.map(
-                        (urlStrings) =>
-                            axios
-                                .get(urlStrings)
+                    urlStrings.map((urlStrings) =>
+                        axios.get(urlStrings)
                     )
                 )
 
@@ -98,7 +95,7 @@ export const Vehicles = ({ data }: PeoplePageProps) => {
             vehiclesUrl,
         )
         console.log(
-            'data : URLs :',
+            'data URLs :',
             urlStrings,
 
         )
@@ -112,9 +109,6 @@ export const Vehicles = ({ data }: PeoplePageProps) => {
                 </Title>
                 <Content>
                     <DefaultSectionDiv>
-                        {/*map the veichles response when there is 
-                        two or more results using the index based 
-                        Axios request*/}
                         <VehiclesBadge>
                             <TextTitle>
                                 {vehicles?.name}
@@ -165,42 +159,42 @@ export const Vehicles = ({ data }: PeoplePageProps) => {
                     <DefaultSectionDiv>
                         {vehiclesUrl.map((vehiclesUrl) => (
 
-                        <VehiclesBadge key={vehiclesUrl?.data.name}>
-                            <TextTitle>
-                                {vehiclesUrl?.data.name}
-                            </TextTitle>
-                            <VehiclesText>
-                                Model : {vehiclesUrl?.data.model}
-                            </VehiclesText>
-                            <VehiclesText>
-                                Manufacturer : {vehiclesUrl?.data.manufacturer}
-                            </VehiclesText>
-                            <VehiclesText>
-                                Cost in Credits : {vehiclesUrl?.data.cost_in_credits}
-                            </VehiclesText>
-                            <VehiclesText>
-                                Length : {vehiclesUrl?.data.length} Meters
-                            </VehiclesText>
-                            <VehiclesText>
-                                Max Atmosphering Speed : {vehiclesUrl?.data.max_atmosphering_speed}
-                            </VehiclesText>
-                            <VehiclesText>
-                                Crew : {vehiclesUrl?.data.crew}
-                            </VehiclesText>
-                            <VehiclesText>
-                                Passengers : {vehiclesUrl?.data.passengers}
-                            </VehiclesText>
-                            <VehiclesText>
-                                Cargo Capacity : {vehiclesUrl?.data.cargo_capacity}
-                            </VehiclesText>
-                            <VehiclesText>
-                                Consumables : {vehiclesUrl?.data.consumables}
-                            </VehiclesText>
-                            <VehiclesText>
-                                Vehicle Class : {vehiclesUrl?.data.vehicle_class}
-                            </VehiclesText>
-                        </VehiclesBadge>
-                        
+                            <VehiclesBadge key={vehiclesUrl?.data.name}>
+                                <TextTitle>
+                                    {vehiclesUrl?.data.name}
+                                </TextTitle>
+                                <VehiclesText>
+                                    Model : {vehiclesUrl?.data.model}
+                                </VehiclesText>
+                                <VehiclesText>
+                                    Manufacturer : {vehiclesUrl?.data.manufacturer}
+                                </VehiclesText>
+                                <VehiclesText>
+                                    Cost in Credits : {vehiclesUrl?.data.cost_in_credits}
+                                </VehiclesText>
+                                <VehiclesText>
+                                    Length : {vehiclesUrl?.data.length} Meters
+                                </VehiclesText>
+                                <VehiclesText>
+                                    Max Atmosphering Speed : {vehiclesUrl?.data.max_atmosphering_speed}
+                                </VehiclesText>
+                                <VehiclesText>
+                                    Crew : {vehiclesUrl?.data.crew}
+                                </VehiclesText>
+                                <VehiclesText>
+                                    Passengers : {vehiclesUrl?.data.passengers}
+                                </VehiclesText>
+                                <VehiclesText>
+                                    Cargo Capacity : {vehiclesUrl?.data.cargo_capacity}
+                                </VehiclesText>
+                                <VehiclesText>
+                                    Consumables : {vehiclesUrl?.data.consumables}
+                                </VehiclesText>
+                                <VehiclesText>
+                                    Vehicle Class : {vehiclesUrl?.data.vehicle_class}
+                                </VehiclesText>
+                            </VehiclesBadge>
+
                         ))}
                     </DefaultSectionDiv>
                 </Content>

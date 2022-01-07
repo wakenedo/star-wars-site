@@ -13,16 +13,14 @@ import { StarShips } from './StarShips';
 import { Vehicles } from './Vehicles';
 import { Character } from './Character';
 
+import isLoadingSVG from '../../../../assets/Loading/Spinner-1s-200px.svg';
+
 import {
     //Default Styles
     PageContainer,
     //Loading SVG
     IsLoadingImg,
 } from '../../../../styles/global';
-
-import isLoadingSVG from '../../../../assets/Loading/Spinner-1s-200px.svg';
-
-
 
 export interface PeoplePageProps {
     index?: number,
@@ -41,10 +39,7 @@ export interface PeoplePageProps {
         vehicles:  [] | string ;
         species?: string,       
     }
-    ;
 }
-
-
 
 export const PeoplePage = (
     species: string,
@@ -61,7 +56,7 @@ export const PeoplePage = (
     })
 
     const { url } = useParams()
-
+    
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => {
         setIsOpen(!isOpen);

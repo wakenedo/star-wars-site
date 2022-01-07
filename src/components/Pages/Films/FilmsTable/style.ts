@@ -16,6 +16,6 @@ export const FilmsTableH1 = styled.div`
 export const FilmsTableArray = styled.div`
     display: flex;
     flex-wrap: wrap;
-    width: 975px;
+    width: 68.5%;
     margin: 1.5rem auto;
 `

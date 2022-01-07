@@ -23,12 +23,10 @@ export const PeopleTable = () => {
             <SideBar isOpen={isOpen} toggle={toggle} />
             <TableContainer>
                 <Title>
-                    People :
+                    People
                 </Title>
                 <TableArray>
-
                     <PeopleBadge />
-
                 </TableArray>
             </TableContainer>
         </>

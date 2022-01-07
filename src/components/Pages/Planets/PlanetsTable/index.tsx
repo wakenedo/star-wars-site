@@ -23,7 +23,7 @@ export const PlanetsTable = () => {
             <SideBar isOpen={isOpen} toggle={toggle} />
             <TableContainer>
                 <Title>
-                    Planets :
+                    Planets 
                 </Title>
                 <TableArray>
 

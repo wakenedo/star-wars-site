@@ -122,17 +122,26 @@ export const Content = styled.div`
     margin: 0.85rem auto;
     
 `
-//
+
 // Sections
 export const DefaultSectionDiv = styled.div`
     display: flex;
     margin: 0 auto;
 `
 
+// Default Div for Sections
+export const PageDiv = styled.div`
+    
+`
+
 // NoBackground 
 export const SectionNoBackground = styled.div` 
     height: 50vh; 
 `
+//Default Section noBackground noVh
+export const SectionNoBackgroundNoVh = styled.div`    
+`
+
 // Backgrounds
 export const SectionBackground1 = styled.div`
     background: linear-gradient(to right, rgba(0,0,0,0.7),
@@ -160,12 +169,10 @@ export const SectionBackground3 = styled.div`
 `
 //
 
-//FilmPageEP1-6 FilmCover Styles
+//FilmPageEP1-6 FilmCover Component Styles
 
 //Div 
-//FilmPageEP1-6 Div
-export const FilmPageDiv = styled.div`
-`
+
 //FilmCover Components of FilmPageEP1-6 Container
 export const FilmCoverContainer = styled.div`
     background: var(--background-light);
@@ -190,7 +197,6 @@ export const CrawlTextP = styled.p`
     text-align: justify;
     margin: 2.5rem;
 `
-
 //FilmCover Components of FilmPageEP1-6 
 //Image Cover
 export const FilmImg = styled.img`
@@ -198,6 +204,37 @@ export const FilmImg = styled.img`
     height: 800px;
 `
 
+//PlanetPage Default Styles
+//Planet Page Container Text 
+export const PlanetContainerText = styled.div`
+    color: var(--text-body);
+    background: var(--background-light);
+    width: 360px;    
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    margin-left: 1.5rem;
+    min-height: 375px;
+`
+//PlanetPage Planet Component Image
+export const PlanetImage = styled.img`
+    width: 375px;
+    height: 375px;
+    background: var(--background-light);
+    padding: 2rem;
+`
+
+//PlanetPage Default Styles
+//PlanetPage Residents Component Section Div 
+export const PlanetResidentsSectionDiv = styled.div`
+    display: flex;
+    width: 66%;
+    justify-content: space-between; 
+    flex-wrap: wrap;
+    margin: 0 auto;
+    align-items: center;
+    
+`
 //-----------------------------------------------//
 
 // Table Pages Styles
@@ -263,6 +300,45 @@ export const BadgeTextP = styled.p`
         margin-bottom: 1.5rem;
     }
 `
+//PlanetPage Residents Badges Styles
+//Badge Div
+export const ResidentsBadge = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1.5rem auto;
+`
+//Badge Text Container
+export const PlanetResidentsBadgeTextContainer = styled.div`
+    background: var(--background-light);
+    margin: 1.25rem 0;
+    width: 240px;
+    border-radius : 50% 50% 0 0;
+`
+//Badge Text h2
+export const PlanetResidentsBadgeText = styled.h2`
+    font-size: clamp(1rem, 10vw, 1rem);
+    font-weight: 100;
+    color: var(--yellow);
+    text-align: center;
+    padding: 1rem;
+    font-weight: bold;   
+`
+//Badge Default Image Container 
+export const PlanetsResidentsBadgeContainerImage = styled.div`
+    width: 120px;
+    height: 120px;
+    background-color: var(--background-light);
+    border-radius: 50%;
+`
+//Badge Default Image
+export const PlanetResidentsBadgeImage = styled.img`
+    width: 110px;
+    height: 110px;
+    padding: 1.25rem;
+    margin: 0 0.25rem;
+`
+
 //-----------------------------------------------//
 
 // Loading SVG

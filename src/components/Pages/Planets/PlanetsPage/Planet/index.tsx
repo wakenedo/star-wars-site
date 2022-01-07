@@ -8,12 +8,9 @@ import {
     TextTitle,
     DefaultTextP,
     Content,
+    PlanetContainerText,
+    PlanetImage,
 } from '../../../../../styles/global';
-
-import {
-    PlanetBadgeTextContainer,
-    DescriptionImage,
-} from '../style'
 
 import { PlanetPageProps } from '..'
 
@@ -31,8 +28,8 @@ export const Planet = ({ data }: PlanetPageProps) => {
             </Title>
             <Content>
                 <DefaultSectionDiv>
-                    <DescriptionImage src={PlanetsImg} />
-                    <PlanetBadgeTextContainer>
+                    <PlanetImage src={PlanetsImg} />
+                    <PlanetContainerText>
                         <TextTitle>
                             {data?.name}
                         </TextTitle>
@@ -60,7 +57,7 @@ export const Planet = ({ data }: PlanetPageProps) => {
                         <DefaultTextP>    
                             Terrain : {data?.terrain}
                         </DefaultTextP>
-                    </PlanetBadgeTextContainer>
+                    </PlanetContainerText>
                 </DefaultSectionDiv>
             </Content>
         </SectionBackground1>
