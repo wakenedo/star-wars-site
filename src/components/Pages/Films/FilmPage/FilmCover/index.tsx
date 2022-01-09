@@ -18,7 +18,7 @@ export const FilmCover = ({ data }) => {
     return (
         <SectionNoBackgroundNoVh>
             <Title>
-                Film : Episode {data.episode_id} - {data.title}
+                Star Wars - Episode {data.episode_id} - {data.title}
             </Title>
             <Content>
                 <DefaultSectionDiv>

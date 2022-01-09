@@ -37,6 +37,7 @@ export interface PeoplePageProps {
         homeworld?: string;
         starships: [] | string ;
         vehicles:  [] | string ;
+        films: [] | string;
         species?: string,       
     }
 }
@@ -94,7 +95,7 @@ export const PeoplePage = (
                 <Character data={data} />
                 <HomeWorld data={data} />
                 <Species data={data} />
-                <Films />
+                <Films data={data} />
                 <StarShips data={data} />
                 <Vehicles data={data} />
             </PageContainer>

@@ -97,7 +97,6 @@ export const Vehicles = ({ data }: PeoplePageProps) => {
         console.log(
             'data URLs :',
             urlStrings,
-
         )
     }, []);
 

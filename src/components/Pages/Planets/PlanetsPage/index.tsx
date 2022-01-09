@@ -86,7 +86,7 @@ export const PlanetsPage = (
             <SideBar isOpen={isOpen} toggle={toggle} />
             <Planet data={data}/>
             <Residents data={data} />
-            <Films />
+            <Films data={data} />
         </PageContainer>
             
         )

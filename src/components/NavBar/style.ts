@@ -13,7 +13,7 @@ export const Nav = styled.nav`
 export const NavLink = styled(Link)`
     display: flex;
     align-items: center;
-    margin-left: 0.5rem;
+    margin: 0.5rem;
     cursor: pointer;
 
     @media screen and (max-width: 400px) {

@@ -28,28 +28,28 @@ export interface FilmsPageProps {
         title?: string;
         episode_id?: string;
         url?: string;
-        filmCharacters: [] | string;
-        filmPlanets: [] | string;
-        filmStarShips: [] | string;
-        filmVehicles: [] | string;
-        filmSpecies: [] | string
+        characters: [] | string;
+        planets: [] | string;
+        starships: [] | string;
+        vehicles: [] | string;
+        species: [] | string
     }
 }
 
 export const FilmPage = (
-    filmCharacters: string,
-    filmPlanets: string,
-    filmStarShips: string,
-    filmVehicles: string,
-    filmSpecies: string,
+    characters: string,
+    planets: string,
+    starships: string,
+    vehicles: string,
+    species: string,
 ) => {
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState({
-        filmCharacters,
-        filmPlanets,
-        filmStarShips,
-        filmVehicles,
-        filmSpecies,
+        characters,
+        planets,
+        starships,
+        vehicles,
+        species,
     })
 
     const { filmsUrl } = useParams()

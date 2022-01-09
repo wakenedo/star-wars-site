@@ -1,4 +1,3 @@
-
 import { GiBodyHeight, GiHairStrands, GiWeight } from 'react-icons/gi'
 import { HiUser } from 'react-icons/hi'
 import { FaBirthdayCake, FaRegEye } from 'react-icons/fa'

@@ -136,10 +136,11 @@ export const PageDiv = styled.div`
 
 // NoBackground 
 export const SectionNoBackground = styled.div` 
-    height: 50vh; 
+    min-height: 50vh; 
 `
 //Default Section noBackground noVh
-export const SectionNoBackgroundNoVh = styled.div`    
+export const SectionNoBackgroundNoVh = styled.div`
+    min-height: 50vh;    
 `
 
 // Backgrounds
@@ -147,7 +148,7 @@ export const SectionBackground1 = styled.div`
     background: linear-gradient(to right, rgba(0,0,0,0.7),
     rgba(0,0,0,0.1)),
     url(${PeopleContainerImg}); 
-    height: 50vh;
+    min-height: 50vh;
     background-position: center;
     background-size: cover; 
 `
@@ -155,7 +156,7 @@ export const SectionBackground2 = styled.div`
     background: linear-gradient(to right, rgba(0,0,0,0.7),
     rgba(0,0,0,0.1)),
     url(${SpeciesContainerImg}); 
-    height: 50vh;
+    min-height: 50vh;
     background-position: center;
     background-size: cover; 
 `
@@ -163,7 +164,7 @@ export const SectionBackground3 = styled.div`
     background: linear-gradient(to right, rgba(0,0,0,0.7),
     rgba(0,0,0,0.1)),
     url(${StarshipsContainerImg}); 
-    height: 50vh;
+    min-height: 50vh;
     background-position: center;
     background-size: cover;
 `
@@ -234,6 +235,16 @@ export const PlanetResidentsSectionDiv = styled.div`
     margin: 0 auto;
     align-items: center;
     
+`
+
+//PlanetPage Films Component Section Div Image
+export const PlanetFilmSectionDiv = styled.div`
+    display: flex;
+    justify-content: space-between; 
+    flex-wrap: wrap;
+    margin: 0 auto;
+    align-items: center;
+   
 `
 //-----------------------------------------------//
 
@@ -338,6 +349,47 @@ export const PlanetResidentsBadgeImage = styled.img`
     padding: 1.25rem;
     margin: 0 0.25rem;
 `
+//PlanetsPage Films Badges Styles
+export const BadgePlanetFilmsContainer = styled.div`    
+    margin: 1.5rem;  
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+
+    &:last-child {
+        margin: 0 auto;
+    }
+`
+export const FilmsBadgeContainer = styled.div`
+    color: var(--text-body);
+    background: var(--background-light);
+    width: 400px;
+    margin: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    
+
+    svg {
+        color: var(--yellow);
+        margin-right: 1.5rem;
+        margin-left: 4.5rem;
+    }
+`
+export const FilmsBadgeTitle = styled.h3`
+    font-size: clamp(0.75rem, 10vw, 0.75rem);
+    font-weight: 300;
+    padding: 0.25rem;
+    color:var(--yellow);
+    
+`
+
+export const FilmsBadgeImg = styled.img` 
+    
+`
+export const DescriptionText = styled.p`
+    font-size: clamp(1rem, 10vw, 1.5rem);
+    font-weight: 100;
+` 
 
 //-----------------------------------------------//
 
@@ -345,7 +397,7 @@ export const PlanetResidentsBadgeImage = styled.img`
 
 export const IsLoadingImg = styled.img`
     width: 300px;
-    margin: 15rem 50.5rem; 
+    margin: 15rem auto; 
 `
 //-----------------------------------------------//
 

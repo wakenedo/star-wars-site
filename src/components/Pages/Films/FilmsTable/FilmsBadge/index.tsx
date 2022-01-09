@@ -16,6 +16,7 @@ import {
     FilmsBadgeImg,
     FilmsBadgeTitle 
 } from "./style";
+
 import { IoMdArrowRoundForward } from "react-icons/io";
 
 import isLoadingSVG from '../../../../../assets/Loading/Spinner-1s-200px.svg';

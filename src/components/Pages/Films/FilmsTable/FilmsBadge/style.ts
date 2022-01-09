@@ -27,7 +27,3 @@ export const FilmsBadgeTitle = styled.h3`
 export const FilmsBadgeImg = styled.img` 
     
 `
-export const DescriptionText = styled.p`
-    font-size: clamp(1rem, 10vw, 1.5rem);
-    font-weight: 100;
-`
