@@ -60,10 +60,10 @@ export const SideBar = ({ isOpen, toggle } : SideBarProps) => {
                     </p>
 
                 </SidebarLink>
-                <SidebarLink to='/Starships'>
+                <SidebarLink to='/StarShips'>
                     <img src={DeathStarIcon} alt="" />
                     <p>
-                        Starships
+                        Star Ships
                     </p>
                 </SidebarLink>
 

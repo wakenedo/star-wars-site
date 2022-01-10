@@ -13,6 +13,8 @@ import { PeopleTable } from './components/Pages/People/PeopleTable';
 import { FilmsTable } from './components/Pages/Films/FilmsTable';
 import { PlanetsTable } from './components/Pages/Planets/PlanetsTable';
 import { SpeciesTable } from './components/Pages/Species/SpeciesTable';
+import { VehiclesTable } from './components/Pages/Vehicles/VehiclesTable';
+import { StarShipsTable } from './components/Pages/StarShips/StarShipsTable';
 
 
 
@@ -26,6 +28,8 @@ function App() {
         <Route path='/Planets' element={ <PlanetsTable /> } />
         <Route path='/Films' element={ <FilmsTable /> } />
         <Route path='/Species' element={ <SpeciesTable /> } />
+        <Route path='/Vehicles' element={ <VehiclesTable /> } />
+        <Route path='/StarShips' element={ <StarShipsTable /> } />
 
         <Route path='/PeoplePage/:url' element={ <PeoplePage />} />
         <Route path='/PlanetsPage/:planetsUrl' element={ <PlanetsPage />} />
