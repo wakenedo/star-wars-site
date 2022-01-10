@@ -61,7 +61,7 @@ export const VehiclesBadge = () => {
 
             api
                 .get(
-                    `starships/?page=${page}&format=json`
+                    `vehicles/?page=${page}&format=json`
                 )
                 .then(response => {
                     arr.push(...response.data.results)

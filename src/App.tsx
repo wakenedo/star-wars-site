@@ -8,6 +8,8 @@ import { PeoplePage } from './components/Pages/People/PeoplePage';
 import { PlanetsPage } from './components/Pages/Planets/PlanetsPage';
 import { FilmPage } from './components/Pages/Films/FilmPage';
 import { SpeciesPage } from './components/Pages/Species/SpeciesPage';
+import { VehiclesPage } from './components/Pages/Vehicles/VehiclesPage';
+import { StarShipsPage } from './components/Pages/StarShips/StarShipsPage';
 
 import { PeopleTable } from './components/Pages/People/PeopleTable';
 import { FilmsTable } from './components/Pages/Films/FilmsTable';
@@ -35,6 +37,8 @@ function App() {
         <Route path='/PlanetsPage/:planetsUrl' element={ <PlanetsPage />} />
         <Route path='/FilmsPage/:filmsUrl' element={ <FilmPage />} />
         <Route path='/SpeciesPage/:speciesUrl' element={ <SpeciesPage />} />
+        <Route path='/VehiclesPage/:vehiclesUrl' element={ <VehiclesPage />} />
+        <Route path='/StarShipsPage/:starShipsUrl' element={ <StarShipsPage />} />
     
         <Route path='/' element={ <Hero /> } />
                 

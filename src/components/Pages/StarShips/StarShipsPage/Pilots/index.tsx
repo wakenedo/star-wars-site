@@ -14,40 +14,40 @@ import {
     PlanetResidentsBadgeImage,
 } from "../../../../../styles/global"
 
-import { PlanetPageProps } from '..';
+import { StarShipsPageProps } from '..';
 
 import CharacterImg from '../../../../../assets/CharacterImg.png'
 
-interface ResidentsProps {
+interface PilotsProps {
     name: string;
 }
-interface ResidentsUrlProps {
+interface PilotsUrlProps {
     name: string;
     url: string;
     data: data;
 }
 
-export const Residents = ({ data }: PlanetPageProps) => {
-    const [residents, setResidents] = useState<ResidentsProps>()
-    const [residentsUrl, setResidentsUrl] = useState<ResidentsUrlProps[]>([])
+export const Pilots = ({ data }: StarShipsPageProps) => {
+    const [pilots, setPilots] = useState<PilotsProps>()
+    const [pilotsUrl, setPilotsUrl] = useState<PilotsUrlProps[]>([])
 
     useEffect(() => {
         axios
             .get(
-                `${data?.residents}`
+                `${data?.pilots}`
             )
             .then(response => {
-                setResidents(response.data)
+                setPilots(response.data)
             })
 
         console.log(
-            'data 😋 residents :',
-            residents,
+            'data 😋 Pilots :',
+            pilots,
         )
     }, []);
 
     useEffect(async () => {
-        var urlStrings = data?.residents
+        var urlStrings = data?.pilots
         var arrayLenght = urlStrings.length
 
         for (var i = 0; i < arrayLenght; i++) {
@@ -58,7 +58,7 @@ export const Residents = ({ data }: PlanetPageProps) => {
                     )
                 )
                 .then(
-                    (response) => setResidentsUrl(response)
+                    (response) => setPilotsUrl(response)
                 )
         }
 
@@ -67,11 +67,11 @@ export const Residents = ({ data }: PlanetPageProps) => {
                 `${urlStrings}`
             )
             .then(response => {
-                setResidentsUrl([response.data])
+                setPilotsUrl([response.data])
             })
         console.log(
-            'This is residentsUrl 😋 response Data : ',
-            residentsUrl,
+            'This is PilotsUrl 😋 response Data : ',
+            pilotsUrl,
         )
         console.log(
             'data URLs : ',
@@ -79,11 +79,11 @@ export const Residents = ({ data }: PlanetPageProps) => {
         )
     }, []);
 
-    if (residents) {
+    if (pilots) {
         return (
             <SectionNoBackground>
                 <Title>
-                    Residents
+                    Pilots
                 </Title>
                 <Content>
                     <PlanetResidentsSectionDiv>
@@ -93,7 +93,7 @@ export const Residents = ({ data }: PlanetPageProps) => {
                             </PlanetsResidentsBadgeContainerImage>
                             <PlanetResidentsBadgeTextContainer>
                                 <PlanetResidentsBadgeText>
-                                    {residents?.name}
+                                    {pilots?.name}
                                 </PlanetResidentsBadgeText>
                             </PlanetResidentsBadgeTextContainer>
                         </ResidentsBadge>
@@ -105,18 +105,18 @@ export const Residents = ({ data }: PlanetPageProps) => {
         return (
             <SectionNoBackground>
                 <Title>
-                    Residents
+                    Pilots
                 </Title>
                 <Content>
                     <PlanetResidentsSectionDiv>
-                        {residentsUrl.map((residentsUrl) => (
+                        {pilotsUrl.map((pilotsUrl) => (
                             <ResidentsBadge>
                                 <PlanetsResidentsBadgeContainerImage>
                                     <PlanetResidentsBadgeImage src={CharacterImg} />
                                 </PlanetsResidentsBadgeContainerImage>
-                                <PlanetResidentsBadgeTextContainer key={residentsUrl?.data.name}>
-                                    <PlanetResidentsBadgeText key={residentsUrl?.data.name}>
-                                        {residentsUrl?.data.name}
+                                <PlanetResidentsBadgeTextContainer key={pilotsUrl?.data.name}>
+                                    <PlanetResidentsBadgeText key={pilotsUrl?.data.name}>
+                                        {pilotsUrl?.data.name}
                                     </PlanetResidentsBadgeText>
                                 </PlanetResidentsBadgeTextContainer>
                             </ResidentsBadge>
