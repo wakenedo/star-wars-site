@@ -240,7 +240,7 @@ export const PlanetResidentsSectionDiv = styled.div`
 //PlanetPage Films Component Section Div Image
 export const PlanetFilmSectionDiv = styled.div`
     display: flex;
-    justify-content: space-between; 
+    //justify-content: space-between; 
     flex-wrap: wrap;
     margin: 0 auto;
     align-items: center;
@@ -357,7 +357,7 @@ export const BadgePlanetFilmsContainer = styled.div`
     flex-wrap: wrap;
 
     &:last-child {
-        margin: 0 auto;
+        //margin: 0 auto;
     }
 `
 export const FilmsBadgeContainer = styled.div`
