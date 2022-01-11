@@ -1,5 +1,5 @@
-import { GlobalStyle } from './styles/global'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { GlobalStyle } from './styles/global'
 
 import { Hero } from './components/Hero';
 

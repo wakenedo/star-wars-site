@@ -8,13 +8,9 @@ import {
     TextTitle,
     Content,
     DefaultSectionDiv,
-
+    DefaultTextP,
+    PlanetContainerText,
 } from '../../../../../styles/global';
-
-import {
-    VehiclesText,
-    VehiclesBadge,
-} from '../style'
 
 import { PeoplePageProps } from '..';
 
@@ -108,41 +104,41 @@ export const Vehicles = ({ data }: PeoplePageProps) => {
                 </Title>
                 <Content>
                     <DefaultSectionDiv>
-                        <VehiclesBadge>
+                        <PlanetContainerText>
                             <TextTitle>
                                 {vehicles?.name}
                             </TextTitle>
-                            <VehiclesText>
+                            <DefaultTextP>
                                 Model : {vehicles?.model}
-                            </VehiclesText>
-                            <VehiclesText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 Manufacturer : {vehicles?.manufacturer}
-                            </VehiclesText>
-                            <VehiclesText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 Cost in Credits : {vehicles?.cost_in_credits}
-                            </VehiclesText>
-                            <VehiclesText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 Length : {vehicles?.length} Meters
-                            </VehiclesText>
-                            <VehiclesText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 Max Atmosphering Speed : {vehicles?.max_atmosphering_speed}
-                            </VehiclesText>
-                            <VehiclesText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 Crew : {vehicles?.crew}
-                            </VehiclesText>
-                            <VehiclesText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 Passengers : {vehicles?.passengers}
-                            </VehiclesText>
-                            <VehiclesText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 Cargo Capacity : {vehicles?.cargo_capacity}
-                            </VehiclesText>
-                            <VehiclesText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 Consumables : {vehicles?.consumables}
-                            </VehiclesText>
-                            <VehiclesText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 Vehicle Class : {vehicles?.vehicle_class}
-                            </VehiclesText>
-                        </VehiclesBadge>
+                            </DefaultTextP>
+                        </PlanetContainerText>
                     </DefaultSectionDiv>
                 </Content>
             </SectionNoBackground>
@@ -158,41 +154,41 @@ export const Vehicles = ({ data }: PeoplePageProps) => {
                     <DefaultSectionDiv>
                         {vehiclesUrl.map((vehiclesUrl) => (
 
-                            <VehiclesBadge key={vehiclesUrl?.data.name}>
+                            <PlanetContainerText key={vehiclesUrl?.data.name}>
                                 <TextTitle>
                                     {vehiclesUrl?.data.name}
                                 </TextTitle>
-                                <VehiclesText>
+                                <DefaultTextP>
                                     Model : {vehiclesUrl?.data.model}
-                                </VehiclesText>
-                                <VehiclesText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     Manufacturer : {vehiclesUrl?.data.manufacturer}
-                                </VehiclesText>
-                                <VehiclesText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     Cost in Credits : {vehiclesUrl?.data.cost_in_credits}
-                                </VehiclesText>
-                                <VehiclesText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     Length : {vehiclesUrl?.data.length} Meters
-                                </VehiclesText>
-                                <VehiclesText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     Max Atmosphering Speed : {vehiclesUrl?.data.max_atmosphering_speed}
-                                </VehiclesText>
-                                <VehiclesText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     Crew : {vehiclesUrl?.data.crew}
-                                </VehiclesText>
-                                <VehiclesText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     Passengers : {vehiclesUrl?.data.passengers}
-                                </VehiclesText>
-                                <VehiclesText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     Cargo Capacity : {vehiclesUrl?.data.cargo_capacity}
-                                </VehiclesText>
-                                <VehiclesText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     Consumables : {vehiclesUrl?.data.consumables}
-                                </VehiclesText>
-                                <VehiclesText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     Vehicle Class : {vehiclesUrl?.data.vehicle_class}
-                                </VehiclesText>
-                            </VehiclesBadge>
+                                </DefaultTextP>
+                            </PlanetContainerText>
 
                         ))}
                     </DefaultSectionDiv>

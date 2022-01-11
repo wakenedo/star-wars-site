@@ -38,7 +38,7 @@ export interface PeoplePageProps {
         starships: [] | string ;
         vehicles:  [] | string ;
         films: [] | string;
-        species?: string,       
+        species: string,       
     }
 }
 
@@ -46,7 +46,8 @@ export const PeoplePage = (
     species: string,
     vehicles: string,
     homeworld: string,
-    starships: string 
+    starships: string,
+    films: string, 
 ) => {
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState({
@@ -54,6 +55,7 @@ export const PeoplePage = (
         vehicles,
         homeworld,
         starships,
+        films,
     })
 
     const { url } = useParams()

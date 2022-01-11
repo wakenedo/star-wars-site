@@ -7,13 +7,10 @@ import {
     TextTitle,
     Content,
     DefaultSectionDiv,
+    DefaultTextP,
+    PlanetContainerText,
 
 } from '../../../../../styles/global';
-
-import {
-    StarShipsText,
-    StarShipsBadge,
-} from '../style'
 
 import { PeoplePageProps } from '..';
 
@@ -117,47 +114,47 @@ export const StarShips = ({ data }: PeoplePageProps) => {
                 </Title>
                 <Content>
                     <DefaultSectionDiv>
-                        <StarShipsBadge>
+                        <PlanetContainerText>
                             <TextTitle>
                                 {starShips?.name}
                             </TextTitle>
-                            <StarShipsText>
+                            <DefaultTextP>
                                 Model : {starShips?.model}
-                            </StarShipsText>
-                            <StarShipsText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 Manufacturer : {starShips?.manufacturer}
-                            </StarShipsText>
-                            <StarShipsText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 Cost in credits : {starShips?.cost_in_credits}
-                            </StarShipsText>
-                            <StarShipsText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 Length : {starShips?.length} Meters
-                            </StarShipsText>
-                            <StarShipsText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 Max atmosphering speed : {starShips?.max_atmosphering_speed}
-                            </StarShipsText>
-                            <StarShipsText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 Crew : {starShips?.crew}
-                            </StarShipsText>
-                            <StarShipsText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 Passengers : {starShips?.passengers}
-                            </StarShipsText>
-                            <StarShipsText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 Cargo Capacity : {starShips?.cargo_capacity}
-                            </StarShipsText>
-                            <StarShipsText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 Consumables : {starShips?.consumables}
-                            </StarShipsText>
-                            <StarShipsText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 Hyperdrive Rating : {starShips?.hyperdrive_rating}
-                            </StarShipsText>
-                            <StarShipsText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 MGLT : {starShips?.MGLT}
-                            </StarShipsText>
-                            <StarShipsText>
+                            </DefaultTextP>
+                            <DefaultTextP>
                                 Starship Class : {starShips?.starship_class}
-                            </StarShipsText>
-                        </StarShipsBadge>
+                            </DefaultTextP>
+                        </PlanetContainerText>
                     </DefaultSectionDiv>
                 </Content>
             </SectionBackground3>
@@ -172,47 +169,47 @@ export const StarShips = ({ data }: PeoplePageProps) => {
                 <Content>
                     <DefaultSectionDiv>
                         {starShipsUrl.map((starShipsUrl) => (
-                            <StarShipsBadge key={starShipsUrl?.data.name}>
+                            <PlanetContainerText key={starShipsUrl?.data.name}>
                                 <TextTitle>
                                     {starShipsUrl?.data.name}
                                 </TextTitle>
-                                <StarShipsText>
+                                <DefaultTextP>
                                     Model : {starShipsUrl?.data.model}
-                                </StarShipsText>
-                                <StarShipsText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     Manufacturer : {starShipsUrl?.data.manufacturer}
-                                </StarShipsText>
-                                <StarShipsText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     Cost in credits : {starShipsUrl?.data.cost_in_credits}
-                                </StarShipsText>
-                                <StarShipsText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     Length : {starShipsUrl?.data.length} Meters
-                                </StarShipsText>
-                                <StarShipsText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     Max atmosphering speed : {starShipsUrl?.data.max_atmosphering_speed}
-                                </StarShipsText>
-                                <StarShipsText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     Crew : {starShipsUrl?.data.crew}
-                                </StarShipsText>
-                                <StarShipsText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     Passengers : {starShipsUrl?.data.passengers}
-                                </StarShipsText>
-                                <StarShipsText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     Cargo Capacity : {starShipsUrl?.data.cargo_capacity}
-                                </StarShipsText>
-                                <StarShipsText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     Consumables : {starShipsUrl?.data.consumables}
-                                </StarShipsText>
-                                <StarShipsText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     Hyperdrive Rating : {starShipsUrl?.data.hyperdrive_rating}
-                                </StarShipsText>
-                                <StarShipsText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     MGLT : {starShipsUrl?.data.MGLT}
-                                </StarShipsText>
-                                <StarShipsText>
+                                </DefaultTextP>
+                                <DefaultTextP>
                                     Starship Class : {starShipsUrl?.data.starship_class}
-                                </StarShipsText>
-                            </StarShipsBadge>
+                                </DefaultTextP>
+                            </PlanetContainerText>
 
                         ))}
                     </DefaultSectionDiv>

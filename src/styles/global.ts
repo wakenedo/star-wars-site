@@ -215,7 +215,7 @@ export const PlanetContainerText = styled.div`
     flex-direction: column;
     margin-bottom: 1.5rem;
     margin-left: 1.5rem;
-    min-height: 375px;
+    min-height: 485px;
 `
 //PlanetPage Planet Component Image
 export const PlanetImage = styled.img`
@@ -230,7 +230,7 @@ export const PlanetImage = styled.img`
 export const PlanetResidentsSectionDiv = styled.div`
     display: flex;
     width: 66%;
-    justify-content: space-between; 
+    //justify-content: space-between; 
     flex-wrap: wrap;
     margin: 0 auto;
     align-items: center;

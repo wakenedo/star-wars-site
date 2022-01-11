@@ -15,9 +15,7 @@ import {
 
 import CharacterImg from '../../../../../assets/CharacterImg.png'
 
-interface CharacterProps {
-    name: string;
-}
+
 interface CharacterUrlProps {
     name: string;
     url: string;
@@ -25,10 +23,9 @@ interface CharacterUrlProps {
 }
 
 export const FilmCharacters = ({ data }: FilmsPageProps) => {
-    const [characters, setCharacters] = useState<CharacterProps[]>([])
     const [charactersUrl, setCharactersUrl] = useState<CharacterUrlProps[]>([])
 
-    useEffect(() => {
+    useEffect(async () => {
         var urlStrings = data?.characters
         var arrayLenght = urlStrings.length
 
