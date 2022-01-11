@@ -35,7 +35,7 @@ export const Hero = () => {
             <SideBar isOpen={isOpen} toggle={toggle} />
             <HeroContent>
                 <HeroItems>
-                    <HeroH1><img src={StormTrooperIcon} />Welcome to the world StarWars </HeroH1>
+                    <HeroH1><img src={StormTrooperIcon} />World of Star Wars </HeroH1>
                     <HeroP>Using https://swapi.dev/</HeroP>
                 </HeroItems>
             </HeroContent>
