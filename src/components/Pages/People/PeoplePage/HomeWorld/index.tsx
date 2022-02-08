@@ -33,24 +33,26 @@ interface HomeWorldProps {
 export const HomeWorld = ({ data }: PeoplePageProps) => {
     const [homeWorld, setHomeWorld] = useState<HomeWorldProps>()
 
-    useEffect(() => {
+    if (data) {
+        useEffect(() => {
 
-        axios
-            .get(
-                `${data?.homeworld}`
+            axios
+                .get(
+                    `${data?.homeworld}`
+                )
+                .then(response => {
+                    setHomeWorld(response.data)
+                })
+
+            console.log(
+                'This is homeWorld 🌎 Data : ',
+                homeWorld,
+                'This is homeworld 🌎 URL : ',
+                data?.homeworld,
             )
-            .then(response => {
-                setHomeWorld(response.data)
-            })
 
-        console.log(
-            'This is homeWorld 🌎 Data : ',
-            homeWorld,
-            'This is homeworld 🌎 URL : ',
-            data?.homeworld,
-        )
-
-    }, []);
+        }, []);
+    }
 
     return (
         <SectionNoBackground>

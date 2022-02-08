@@ -28,11 +28,11 @@ export interface FilmsPageProps {
         title?: string;
         episode_id?: string;
         url?: string;
-        characters: [] | string;
-        planets: [] | string;
-        starships: [] | string;
-        vehicles: [] | string;
-        species: [] | string
+        characters: [] | string | Map;
+        planets: [] | string | Map;
+        starships: [] | string | Map;
+        vehicles: [] | string | Map;
+        species: [] | string | Map;
     }
 }
 

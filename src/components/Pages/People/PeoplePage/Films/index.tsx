@@ -88,12 +88,12 @@ export const Films = ({ data }: PeoplePageProps) => {
         return (
             <SectionNoBackground>
                 <Title>
-                    Films
+                    Film
                 </Title>
                 <Content>
                     <PlanetFilmSectionDiv>
                         <BadgePlanetFilmsContainer>
-                            <FilmsBadgeContainer>
+                            <FilmsBadgeContainer key={films.episode_id}>
                                 <FilmsBadgeTitle>
                                     Star Wars - Episode {films.episode_id} - {films.title}
                                 </FilmsBadgeTitle>

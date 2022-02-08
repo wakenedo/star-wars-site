@@ -110,7 +110,7 @@ export const StarShips = ({ data }: PeoplePageProps) => {
         return (
             <SectionBackground3>
                 <Title>
-                    Star Ships
+                    Star Ship
                 </Title>
                 <Content>
                     <DefaultSectionDiv>

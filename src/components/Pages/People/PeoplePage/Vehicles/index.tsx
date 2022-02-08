@@ -100,7 +100,7 @@ export const Vehicles = ({ data }: PeoplePageProps) => {
         return (
             <SectionNoBackground>
                 <Title>
-                    Vehicles
+                    Vehicle
                 </Title>
                 <Content>
                     <DefaultSectionDiv>

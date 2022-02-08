@@ -34,11 +34,11 @@ export interface PeoplePageProps {
         eye_color?: string;
         birth_year?: string;
         gender?: string;
-        homeworld?: string;
-        starships: [] | string ;
-        vehicles:  [] | string ;
+        homeworld: string;
+        starships: [] | string;
+        vehicles: [] | string;
         films: [] | string;
-        species: string,       
+        species: string,
     }
 }
 
@@ -47,7 +47,7 @@ export const PeoplePage = (
     vehicles: string,
     homeworld: string,
     starships: string,
-    films: string, 
+    films: string,
 ) => {
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState({
@@ -59,7 +59,7 @@ export const PeoplePage = (
     })
 
     const { url } = useParams()
-    
+
     const [isOpen, setIsOpen] = useState(false);
     const toggle = () => {
         setIsOpen(!isOpen);
@@ -75,12 +75,9 @@ export const PeoplePage = (
             .then(response => {
                 setLoading(false)
                 setData(response.data)
-            })       
+            })
     }, []);
 
-    if (!data) {
-        return setLoading(true)
-    }
 
     if (loading) {
         return (
@@ -89,7 +86,12 @@ export const PeoplePage = (
             </>
         )
     }
-    if (data) {
+    if (!data) {
+        return (
+            setLoading(true)
+        )
+    }
+    else {
         return (
             <PageContainer >
                 <NavBar toggle={toggle} />
