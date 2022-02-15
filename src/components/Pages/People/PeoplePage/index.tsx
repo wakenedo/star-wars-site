@@ -22,24 +22,27 @@ import {
     IsLoadingImg,
 } from '../../../../styles/global';
 
+export interface DataProps {
+    name?: string;
+    height?: string;
+    mass?: string;
+    hair_color?: string;
+    skin_color?: string;
+    eye_color?: string;
+    birth_year?: string;
+    gender?: string;
+    homeworld: string;
+    starships: [] | string;
+    vehicles: [] | string;
+    films: [] | string;
+    species: string,
+
+}
+
 export interface PeoplePageProps {
     index?: number,
-    data:
-    {
-        name?: string;
-        height?: string;
-        mass?: string;
-        hair_color?: string;
-        skin_color?: string;
-        eye_color?: string;
-        birth_year?: string;
-        gender?: string;
-        homeworld: string;
-        starships: [] | string;
-        vehicles: [] | string;
-        films: [] | string;
-        species: string,
-    }
+    data: DataProps
+
 }
 
 export const PeoplePage = (

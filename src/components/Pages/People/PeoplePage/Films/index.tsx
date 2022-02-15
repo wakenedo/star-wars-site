@@ -1,4 +1,4 @@
-import axios from 'axios';
+import axios, { AxiosResponse } from 'axios';
 import { useEffect, useState } from 'react';
 import {
     //Default Styles
@@ -15,8 +15,7 @@ import {
 
 import Episode1 from '../../../../../assets/moviescover/star-wars-episode-i-the-phantom-menace_v2.jpg'
 
-import { PeoplePageProps } from '..';
-
+import { DataProps, PeoplePageProps } from '..';
 
 
 interface FilmsProps {
@@ -27,17 +26,32 @@ interface FilmsUrlProps {
     title: string
     episode_id: string
     url: string
-    data: data;
+    data: DataProps;
 }
 
 export const Films = ({ data }: PeoplePageProps) => {
     const [films, setFilms] = useState<FilmsProps>()
     const [filmsUrl, setFilmsUrl] = useState<FilmsUrlProps[]>([])
 
+
+    // Simplified the code merging the two UseEffects into a single one, 
+    // transforming the previous UseEffect structures
+    // into functions, to be iterated by the new unique UseEffect.
     useEffect(() => {
+        if (!data || !data.films) return
+
+        if(typeof data.films === 'string') {
+            fetchSingleFilm(data.films)
+        } else {
+            fetchMultipleFilm(data.films)
+        }
+
+    },[data])
+
+    const fetchSingleFilm = (url: string) => {
         axios
             .get(
-                `${data?.films}`
+                `${url}`
             )
             .then(response => {
                 setFilms(response.data)
@@ -48,42 +62,35 @@ export const Films = ({ data }: PeoplePageProps) => {
             films,
             data?.films,
         )
-    }, []);
+    }
 
-    useEffect(async () => {
-        var urlStrings = data?.films
-        var arrayLenght = urlStrings.length
+    const fetchMultipleFilm = (urlStrings: string[]) => {
 
-        for (var i = 0; i < arrayLenght; i++) {
+        let arrayLenght = urlStrings.length
+
+        for (let i = 0; i < arrayLenght; i++) {
+            if (typeof urlStrings === 'string') return
+
             axios
                 .all(
                     urlStrings.map((urlStrings) =>
                         axios.get(urlStrings)
                     )
                 )
-
                 .then(
-                    (response) => setFilmsUrl(response)
+                    (response) => {
+                        let _response: FilmsUrlProps[] = []
+
+                        response.forEach(res => {
+                            _response.push(res.data)
+                        })
+
+                        setFilmsUrl(_response)
+                    }
                 )
         }
+    }
 
-        axios
-            .get(
-                `${urlStrings}`
-            )
-            .then(response => {
-                setFilmsUrl([response.data])
-            })
-        console.log(
-            'This is filmsUrl 🎦 response Data : ',
-            filmsUrl,
-        )
-        console.log(
-            'data URLs : ',
-            urlStrings,
-        )
-    }, []);
-    
     if (films) {
         return (
             <SectionNoBackground>
@@ -112,16 +119,18 @@ export const Films = ({ data }: PeoplePageProps) => {
                 </Title>
                 <Content>
                     <PlanetFilmSectionDiv>
-                        {filmsUrl.map((filmsUrl) => (
+                        {filmsUrl.map((filmsUrl) => {
+                            console.log("FilmsUrl", filmsUrl)
+                            return (
                             <BadgePlanetFilmsContainer>
                                 <FilmsBadgeContainer>
                                     <FilmsBadgeTitle>
-                                        Star Wars - Episode {filmsUrl.data.episode_id} - {filmsUrl.data.title}
+                                        Star Wars - Episode {filmsUrl.episode_id} - {filmsUrl.title}
                                     </FilmsBadgeTitle>
                                     <FilmsBadgeImg src={Episode1} />
                                 </FilmsBadgeContainer>
                             </BadgePlanetFilmsContainer>
-                        ))}
+                        )})}
                     </PlanetFilmSectionDiv>
                 </Content>
             </SectionNoBackground>

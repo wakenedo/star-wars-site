@@ -35,6 +35,7 @@ export const HomeWorld = ({ data }: PeoplePageProps) => {
 
     if (data) {
         useEffect(() => {
+            if(!data || !data.homeworld ) return 
 
             axios
                 .get(
@@ -51,7 +52,7 @@ export const HomeWorld = ({ data }: PeoplePageProps) => {
                 data?.homeworld,
             )
 
-        }, []);
+        }, [data]);
     }
 
     return (
