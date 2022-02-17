@@ -28,7 +28,6 @@ interface StarShipsProps {
     hyperdrive_rating: string;
     MGLT: string;
     starship_class: string;
-    url: string;
 }
 
 interface StarShipsUrlProps {
@@ -45,8 +44,6 @@ interface StarShipsUrlProps {
     hyperdrive_rating: string;
     MGLT: string;
     starship_class: string;
-    url: string;
-    data: data;
 }
 
 
@@ -56,9 +53,21 @@ export const StarShips = ({ data }: PeoplePageProps) => {
     const [starShipsUrl, setStarShipsUrl] = useState<StarShipsUrlProps[]>([])
 
     useEffect(() => {
+        if (!data || !data.starships) return
+
+        if (typeof data.starships === 'string') {
+            fetchSingleStarship(data.starships)
+        } else {
+            fetchMultipleStarship(data.starships)
+        }
+
+    }, [data])
+
+
+    const fetchSingleStarship = (url: string) => {
         axios
             .get(
-                `${data?.starships}`
+                `${url}`
             )
             .then(response => {
                 setStarShips(response.data)
@@ -66,45 +75,35 @@ export const StarShips = ({ data }: PeoplePageProps) => {
         console.log(
             'data 🚀 starShips :',
             starShips,
+            data?.starships
         )
-    }, []);
+    };
 
-    useEffect(async () => {
-        var urlStrings = data?.starships
-        var arrayLenght = urlStrings.length
+    const fetchMultipleStarship = (urlStrings: string[]) => {
 
-        for (var i = 0; i < arrayLenght; i++) {
+        var arrayLength = urlStrings.length
+
+        for (var i = 0; i < arrayLength; i++) {
+            if (typeof urlStrings === 'string') return
             axios
                 .all(
-                    urlStrings.map(
-                        (urlStrings) =>
-                            axios
-                                .get(urlStrings)
+                    urlStrings.map((urlStrings) =>
+                        axios.get(urlStrings)
                     )
                 )
-
                 .then(
-                    (response) => setStarShipsUrl(response)
+                    (response) => {
+                        let _response: StarShipsUrlProps[] = []
+
+                        response.forEach(res => {
+                            _response.push(res.data)
+                        })
+
+                        setStarShipsUrl(_response)
+                    }
                 )
         }
-
-        axios
-            .get(
-                `${urlStrings}`
-            )
-            .then(response => {
-                setStarShipsUrl([response.data])
-            })
-        console.log(
-            'This is starShipsUrl 🚀 response Data :',
-            starShipsUrl,
-        )
-        console.log(
-            'data 🚀 URLs :',
-            urlStrings,
-
-        )
-    }, []);
+    }
 
     if (starShips) {
         return (
@@ -168,50 +167,52 @@ export const StarShips = ({ data }: PeoplePageProps) => {
                 </Title>
                 <Content>
                     <DefaultSectionDiv>
-                        {starShipsUrl.map((starShipsUrl) => (
-                            <PlanetContainerText key={starShipsUrl?.data.name}>
-                                <TextTitle>
-                                    {starShipsUrl?.data.name}
-                                </TextTitle>
-                                <DefaultTextP>
-                                    Model : {starShipsUrl?.data.model}
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    Manufacturer : {starShipsUrl?.data.manufacturer}
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    Cost in credits : {starShipsUrl?.data.cost_in_credits}
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    Length : {starShipsUrl?.data.length} Meters
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    Max atmosphering speed : {starShipsUrl?.data.max_atmosphering_speed}
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    Crew : {starShipsUrl?.data.crew}
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    Passengers : {starShipsUrl?.data.passengers}
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    Cargo Capacity : {starShipsUrl?.data.cargo_capacity}
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    Consumables : {starShipsUrl?.data.consumables}
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    Hyperdrive Rating : {starShipsUrl?.data.hyperdrive_rating}
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    MGLT : {starShipsUrl?.data.MGLT}
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    Starship Class : {starShipsUrl?.data.starship_class}
-                                </DefaultTextP>
-                            </PlanetContainerText>
+                        {starShipsUrl.map((starShipsUrl) => {
+                            return (
+                                <PlanetContainerText key={starShipsUrl.name}>
+                                    <TextTitle>
+                                        {starShipsUrl.name}
+                                    </TextTitle>
+                                    <DefaultTextP>
+                                        Model : {starShipsUrl?.model}
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        Manufacturer : {starShipsUrl?.manufacturer}
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        Cost in credits : {starShipsUrl?.cost_in_credits}
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        Length : {starShipsUrl?.length} Meters
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        Max atmosphering speed : {starShipsUrl?.max_atmosphering_speed}
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        Crew : {starShipsUrl?.crew}
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        Passengers : {starShipsUrl?.passengers}
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        Cargo Capacity : {starShipsUrl?.cargo_capacity}
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        Consumables : {starShipsUrl?.consumables}
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        Hyperdrive Rating : {starShipsUrl?.hyperdrive_rating}
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        MGLT : {starShipsUrl?.MGLT}
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        Starship Class : {starShipsUrl?.starship_class}
+                                    </DefaultTextP>
+                                </PlanetContainerText>
 
-                        ))}
+                            )
+                        })}
                     </DefaultSectionDiv>
                 </Content>
             </SectionBackground3>

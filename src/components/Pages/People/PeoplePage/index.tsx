@@ -42,7 +42,6 @@ export interface DataProps {
 export interface PeoplePageProps {
     index?: number,
     data: DataProps
-
 }
 
 export const PeoplePage = (

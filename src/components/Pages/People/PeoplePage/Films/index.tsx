@@ -62,13 +62,13 @@ export const Films = ({ data }: PeoplePageProps) => {
             films,
             data?.films,
         )
-    }
+    };
 
     const fetchMultipleFilm = (urlStrings: string[]) => {
 
-        let arrayLenght = urlStrings.length
+        let arrayLength = urlStrings.length
 
-        for (let i = 0; i < arrayLenght; i++) {
+        for (let i = 0; i < arrayLength; i++) {
             if (typeof urlStrings === 'string') return
 
             axios

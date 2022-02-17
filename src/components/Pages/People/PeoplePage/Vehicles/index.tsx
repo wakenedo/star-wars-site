@@ -39,8 +39,6 @@ interface VehiclesUrlProps {
     cargo_capacity: string;
     consumables: string;
     vehicle_class: string;
-    url: string;
-    data: data;
 }
 
 export const Vehicles = ({ data }: PeoplePageProps) => {
@@ -48,9 +46,20 @@ export const Vehicles = ({ data }: PeoplePageProps) => {
     const [vehiclesUrl, setVehiclesUrl] = useState<VehiclesUrlProps[]>([]);
 
     useEffect(() => {
+        if (!data || !data.vehicles) return
+
+        if (typeof data.vehicles === 'string') {
+            fetchSingleVehicle(data.vehicles)
+        } else {
+            fetchMultipleVehicle(data.vehicles)
+        }
+
+    }, [data])
+
+    const fetchSingleVehicle = (url: string) => {
         axios
             .get(
-                `${data?.vehicles}`
+                `${url}`
             )
             .then(response => {
                 setVehicles(response.data)
@@ -59,14 +68,17 @@ export const Vehicles = ({ data }: PeoplePageProps) => {
         console.log(
             'data 🚲 vehicles :',
             vehicles,
+            data?.vehicles
         )
-    }, []);
+    };
 
-    useEffect(async () => {
-        var urlStrings = data?.vehicles
+    const fetchMultipleVehicle = (urlStrings: string[]) => {
+
         var arrayLength = urlStrings.length
 
         for (var i = 0; i < arrayLength; i++) {
+            if (typeof urlStrings === 'string') return
+
             axios
                 .all(
                     urlStrings.map((urlStrings) =>
@@ -75,26 +87,18 @@ export const Vehicles = ({ data }: PeoplePageProps) => {
                 )
 
                 .then(
-                    (response) => setVehiclesUrl(response)
+                    (response) => {
+                        let _response: VehiclesUrlProps[] = []
+
+                        response.forEach(res => {
+                            _response.push(res.data)
+                        })
+
+                        setVehiclesUrl(_response)
+                    }
                 )
         }
-
-        axios
-            .get(
-                `${urlStrings}`
-            )
-            .then(response => {
-                setVehiclesUrl([response.data])
-            })
-        console.log(
-            'This is vehiclesUrl 🚲 response Data :',
-            vehiclesUrl,
-        )
-        console.log(
-            'data URLs :',
-            urlStrings,
-        )
-    }, []);
+    };
 
     if (vehicles) {
         return (
@@ -152,45 +156,47 @@ export const Vehicles = ({ data }: PeoplePageProps) => {
                 </Title>
                 <Content>
                     <DefaultSectionDiv>
-                        {vehiclesUrl.map((vehiclesUrl) => (
+                        {vehiclesUrl.map((vehiclesUrl) => {
+                            console.log("VehiclesUrl", vehiclesUrl)
+                            return (
+                                <PlanetContainerText key={vehiclesUrl?.name}>
+                                    <TextTitle>
+                                        {vehiclesUrl?.name}
+                                    </TextTitle>
+                                    <DefaultTextP>
+                                        Model : {vehiclesUrl?.model}
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        Manufacturer : {vehiclesUrl?.manufacturer}
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        Cost in Credits : {vehiclesUrl?.cost_in_credits}
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        Length : {vehiclesUrl?.length} Meters
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        Max Atmosphering Speed : {vehiclesUrl?.max_atmosphering_speed}
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        Crew : {vehiclesUrl?.crew}
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        Passengers : {vehiclesUrl?.passengers}
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        Cargo Capacity : {vehiclesUrl?.cargo_capacity}
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        Consumables : {vehiclesUrl?.consumables}
+                                    </DefaultTextP>
+                                    <DefaultTextP>
+                                        Vehicle Class : {vehiclesUrl?.vehicle_class}
+                                    </DefaultTextP>
+                                </PlanetContainerText>
 
-                            <PlanetContainerText key={vehiclesUrl?.data.name}>
-                                <TextTitle>
-                                    {vehiclesUrl?.data.name}
-                                </TextTitle>
-                                <DefaultTextP>
-                                    Model : {vehiclesUrl?.data.model}
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    Manufacturer : {vehiclesUrl?.data.manufacturer}
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    Cost in Credits : {vehiclesUrl?.data.cost_in_credits}
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    Length : {vehiclesUrl?.data.length} Meters
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    Max Atmosphering Speed : {vehiclesUrl?.data.max_atmosphering_speed}
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    Crew : {vehiclesUrl?.data.crew}
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    Passengers : {vehiclesUrl?.data.passengers}
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    Cargo Capacity : {vehiclesUrl?.data.cargo_capacity}
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    Consumables : {vehiclesUrl?.data.consumables}
-                                </DefaultTextP>
-                                <DefaultTextP>
-                                    Vehicle Class : {vehiclesUrl?.data.vehicle_class}
-                                </DefaultTextP>
-                            </PlanetContainerText>
-
-                        ))}
+                            )
+                        })}
                     </DefaultSectionDiv>
                 </Content>
             </SectionNoBackground>
