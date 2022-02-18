@@ -23,30 +23,46 @@ interface PlanetsUrlProps {
     rotation_period?: string;
     surface_water?: string;
     terrain?: string;
-    url: string;
-    data: data;
 }
 
 export const FilmPlanets = ({ data }: FilmsPageProps) => {
     const [planetsUrl, setPlanetsUrl] = useState<PlanetsUrlProps[]>([])
 
     useEffect(() => {
-        var urlStrings = data?.planets
+        if (!data || !data.planets) return
+
+        if (typeof data.planets === 'string') {
+            return
+        } else {
+            fetchMultiplePlanets(data.planets)
+        }
+
+    }, [data])
+
+    const fetchMultiplePlanets = (urlStrings: string[]) => {
         var arrayLenght = urlStrings.length
 
+
         for (var i = 0; i < arrayLenght; i++) {
-            for (var i = 0; i < arrayLenght; i++) {
-                axios
-                    .all(
-                        urlStrings.map((urlStrings) =>
-                            axios.get(urlStrings)
-                        )
+            axios
+                .all(
+                    urlStrings.map((urlStrings) =>
+                        axios.get(urlStrings)
                     )
-                    .then(
-                        (response) => setPlanetsUrl(response)
-                    )
-            }
+                )
+                .then(
+                    (response) => {
+                        let _response: PlanetsUrlProps[] = []
+
+                        response.forEach(res => {
+                            _response.push(res.data)
+                        })
+
+                        setPlanetsUrl(_response)
+                    }
+                )
         }
+
 
         console.log(
             'data 🌎  planetsUrl :',
@@ -56,7 +72,7 @@ export const FilmPlanets = ({ data }: FilmsPageProps) => {
             'data URLs : ',
             urlStrings,
         )
-    }, []);
+    }
     return (
         <SectionNoBackground>
             <Title>
@@ -64,37 +80,38 @@ export const FilmPlanets = ({ data }: FilmsPageProps) => {
             </Title>
             <Content>
                 <PlanetResidentsSectionDiv>
-                    {planetsUrl.map((planetsUrl) => (
+                    {planetsUrl.map((planetsUrl) => {
+                        return (
                         <PlanetContainerText>
                             <TextTitle>
-                                {planetsUrl?.data.name}
+                                {planetsUrl?.name}
                             </TextTitle>
                             <DefaultTextP>
-                                Climate : {planetsUrl?.data.climate}
+                                Climate : {planetsUrl?.climate}
                             </DefaultTextP>
                             <DefaultTextP>
-                                Diameter : {planetsUrl?.data.diameter} Km
+                                Diameter : {planetsUrl?.diameter} Km
                             </DefaultTextP>
                             <DefaultTextP>
-                                Gravity : {planetsUrl?.data.gravity}
+                                Gravity : {planetsUrl?.gravity}
                             </DefaultTextP>
                             <DefaultTextP>
-                                Orbital Period : {planetsUrl?.data.orbital_period} Days
+                                Orbital Period : {planetsUrl?.orbital_period} Days
                             </DefaultTextP>
                             <DefaultTextP>
-                                Population : {planetsUrl?.data.population}
+                                Population : {planetsUrl?.population}
                             </DefaultTextP>
                             <DefaultTextP>
-                                Rotation Period : {planetsUrl?.data.rotation_period} Hours
+                                Rotation Period : {planetsUrl?.rotation_period} Hours
                             </DefaultTextP>
                             <DefaultTextP>
-                                Surface Water : {planetsUrl?.data.surface_water} %
+                                Surface Water : {planetsUrl?.surface_water} %
                             </DefaultTextP>
                             <DefaultTextP>
-                                Terrain : {planetsUrl?.data.terrain}
+                                Terrain : {planetsUrl?.terrain}
                             </DefaultTextP>
                         </PlanetContainerText>
-                    ))}
+                    )})}
 
                 </PlanetResidentsSectionDiv>
             </Content>

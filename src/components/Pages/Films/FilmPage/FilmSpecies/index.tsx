@@ -12,7 +12,7 @@ import {
     PlanetResidentsSectionDiv,
 } from "../../../../../styles/global"
 
-import { FilmsPageProps } from ".."
+import { FilmsPageDataProps, FilmsPageProps } from ".."
 
 interface SpeciesUrlProps {
     name: string;
@@ -24,29 +24,46 @@ interface SpeciesUrlProps {
     average_lifespan: string;
     homeworld: string;
     language: string;
-    data: data;
+    data: FilmsPageDataProps
 }
 
 export const FilmSpecies = ({ data }: FilmsPageProps) => {
     const [speciesUrl, setSpeciesUrl] = useState<SpeciesUrlProps[]>([])
 
-    useEffect(async () => {
-        var urlStrings = data?.species
-        var arrayLenght = urlStrings.length
+    useEffect(() => {
+        if (!data || !data.species) return
 
-        for (var i = 0; i < arrayLenght; i++) {
-            for (var i = 0; i < arrayLenght; i++) {
-                axios
-                    .all(
-                        urlStrings.map((urlStrings) =>
-                            axios.get(urlStrings)
-                        )
-                    )
-                    .then(
-                        (response) => setSpeciesUrl(response)
-                    )
-            }
+        if (typeof data.species === 'string') {
+            return
+        } else {
+            fetchMultipleSpecies(data.species)
         }
+    }, [data])
+
+    const fetchMultipleSpecies = (urlStrings: string[]) => {
+        var arrayLength = urlStrings.length
+
+
+        for (var i = 0; i < arrayLength; i++) {
+            axios
+                .all(
+                    urlStrings.map((urlStrings) =>
+                        axios.get(urlStrings)
+                    )
+                )
+                .then(
+                    (response) => {
+                        let _response: SpeciesUrlProps[] = []
+
+                        response.forEach(res => {
+                            _response.push(res.data)
+                        })
+
+                        setSpeciesUrl(_response)
+                    }
+                )
+        }
+
 
         console.log(
             'data 🐛  :',
@@ -56,7 +73,7 @@ export const FilmSpecies = ({ data }: FilmsPageProps) => {
             'data URLs : ',
             urlStrings,
         )
-    }, []);
+    };
     return (
         <SectionBackground2>
             <Title>
@@ -64,34 +81,36 @@ export const FilmSpecies = ({ data }: FilmsPageProps) => {
             </Title>
             <Content>
                 <PlanetResidentsSectionDiv>
-                    {speciesUrl.map((speciesUrl) => (
-                        <PlanetContainerText>
-                            <TextTitle>
-                                {speciesUrl?.data.name}
-                            </TextTitle>
-                            <DefaultTextP>
-                                Classification : {speciesUrl?.data.classification}
-                            </DefaultTextP>
-                            <DefaultTextP>
-                                Average Height : {speciesUrl?.data.average_height} Cm
-                            </DefaultTextP>
-                            <DefaultTextP>
-                                Skin Colors : {speciesUrl?.data.skin_colors}
-                            </DefaultTextP>
-                            <DefaultTextP>
-                                Hair Colors : {speciesUrl?.data.hair_colors}
-                            </DefaultTextP>
-                            <DefaultTextP>
-                                Eye Colors : {speciesUrl?.data.eye_colors}
-                            </DefaultTextP>
-                            <DefaultTextP>
-                                Average Lifespan : {speciesUrl?.data.average_lifespan} Years
-                            </DefaultTextP>
-                            <DefaultTextP>
-                                Language : {speciesUrl?.data.language}
-                            </DefaultTextP>
-                        </PlanetContainerText>
-                    ))}
+                    {speciesUrl.map((speciesUrl) => {
+                        return (
+                            <PlanetContainerText>
+                                <TextTitle>
+                                    {speciesUrl?.name}
+                                </TextTitle>
+                                <DefaultTextP>
+                                    Classification : {speciesUrl?.classification}
+                                </DefaultTextP>
+                                <DefaultTextP>
+                                    Average Height : {speciesUrl?.average_height} Cm
+                                </DefaultTextP>
+                                <DefaultTextP>
+                                    Skin Colors : {speciesUrl?.skin_colors}
+                                </DefaultTextP>
+                                <DefaultTextP>
+                                    Hair Colors : {speciesUrl?.hair_colors}
+                                </DefaultTextP>
+                                <DefaultTextP>
+                                    Eye Colors : {speciesUrl?.eye_colors}
+                                </DefaultTextP>
+                                <DefaultTextP>
+                                    Average Lifespan : {speciesUrl?.average_lifespan} Years
+                                </DefaultTextP>
+                                <DefaultTextP>
+                                    Language : {speciesUrl?.language}
+                                </DefaultTextP>
+                            </PlanetContainerText>
+                        )
+                    })}
                 </PlanetResidentsSectionDiv>
             </Content>
         </SectionBackground2>

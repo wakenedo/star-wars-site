@@ -24,32 +24,47 @@ interface VehiclesUrlProps {
     cargo_capacity: string;
     consumables: string;
     vehicle_class: string;
-    url: string;
-    data: data;
+    data: FilmsPageDataProps
 }
 
 
-import { FilmsPageProps } from "..";
+import { FilmsPageDataProps, FilmsPageProps } from "..";
 
 export const FilmVehicles = ({ data }: FilmsPageProps) => {
     const [vehiclesUrl, setVehiclesUrl] = useState<VehiclesUrlProps[]>([])
 
-    useEffect(async() => {
-        var urlStrings = data?.vehicles
+    useEffect(() => {
+        if (!data || !data.vehicles) return
+
+        if (typeof data.vehicles === 'string') {
+            return
+        } else {
+            fetchMultipleVehicles(data.vehicles)
+        }
+    }, [data])
+
+    const fetchMultipleVehicles = (urlStrings: string[]) => {
         var arrayLenght = urlStrings.length
 
+
         for (var i = 0; i < arrayLenght; i++) {
-            for (var i = 0; i < arrayLenght; i++) {
-                axios
-                    .all(
-                        urlStrings.map((urlStrings) =>
-                            axios.get(urlStrings)
-                        )
+            axios
+                .all(
+                    urlStrings.map((urlStrings) =>
+                        axios.get(urlStrings)
                     )
-                    .then(
-                        (response) => setVehiclesUrl(response)
-                    )
-            }
+                )
+                .then(
+                    (response) => {
+                        let _response: VehiclesUrlProps[] = []
+
+                        response.forEach(res => {
+                            _response.push(res.data)
+                        })
+
+                        setVehiclesUrl(_response)
+                    }
+                )
         }
 
         console.log(
@@ -60,7 +75,7 @@ export const FilmVehicles = ({ data }: FilmsPageProps) => {
             'data URLs : ',
             urlStrings,
         )
-    }, []);
+    };
     return (
         <SectionNoBackground>
             <Title>
@@ -68,43 +83,44 @@ export const FilmVehicles = ({ data }: FilmsPageProps) => {
             </Title>
             <Content>
                 <PlanetResidentsSectionDiv>
-                    {vehiclesUrl.map((vehiclesUrl) => (
+                    {vehiclesUrl.map((vehiclesUrl) => {
+                        return (
                         <PlanetContainerText>
                             <TextTitle>
-                                {vehiclesUrl?.data.name}
+                                {vehiclesUrl?.name}
                             </TextTitle>
                             <DefaultTextP>
-                                Model : {vehiclesUrl?.data.model}
+                                Model : {vehiclesUrl?.model}
                             </DefaultTextP>
                             <DefaultTextP>
-                                Manufacturer : {vehiclesUrl?.data.manufacturer}
+                                Manufacturer : {vehiclesUrl?.manufacturer}
                             </DefaultTextP>
                             <DefaultTextP>
-                                Cost in Credits : {vehiclesUrl?.data.cost_in_credits}
+                                Cost in Credits : {vehiclesUrl?.cost_in_credits}
                             </DefaultTextP>
                             <DefaultTextP>
-                                Length : {vehiclesUrl?.data.length} Meters
+                                Length : {vehiclesUrl?.length} Meters
                             </DefaultTextP>
                             <DefaultTextP>
-                                Max Atmosphering Speed : {vehiclesUrl?.data.max_atmosphering_speed}
+                                Max Atmosphering Speed : {vehiclesUrl?.max_atmosphering_speed}
                             </DefaultTextP>
                             <DefaultTextP>
-                                Crew : {vehiclesUrl?.data.crew}
+                                Crew : {vehiclesUrl?.crew}
                             </DefaultTextP>
                             <DefaultTextP>
-                                Passengers : {vehiclesUrl?.data.passengers}
+                                Passengers : {vehiclesUrl?.passengers}
                             </DefaultTextP>
                             <DefaultTextP>
-                                Cargo Capacity : {vehiclesUrl?.data.cargo_capacity}
+                                Cargo Capacity : {vehiclesUrl?.cargo_capacity}
                             </DefaultTextP>
                             <DefaultTextP>
-                                Consumables : {vehiclesUrl?.data.consumables}
+                                Consumables : {vehiclesUrl?.consumables}
                             </DefaultTextP>
                             <DefaultTextP>
-                                Vehicle Class : {vehiclesUrl?.data.vehicle_class}
+                                Vehicle Class : {vehiclesUrl?.vehicle_class}
                             </DefaultTextP>
                         </PlanetContainerText>
-                    ))}
+                    )})}
                 </PlanetResidentsSectionDiv>
             </Content>
         </SectionNoBackground>

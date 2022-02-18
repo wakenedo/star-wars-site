@@ -25,7 +25,6 @@ interface FilmsProps {
 interface FilmsUrlProps {
     title: string
     episode_id: string
-    url: string
     data: DataProps;
 }
 

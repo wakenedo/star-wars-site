@@ -12,6 +12,8 @@ import {
     DefaultTextP,
 } from "../../../../../styles/global"
 
+import { FilmsPageDataProps, FilmsPageProps } from "..";
+
 interface StarShipsUrlProps {
     name?: string;
     model?: string;
@@ -26,31 +28,46 @@ interface StarShipsUrlProps {
     hyperdrive_rating?: string;
     MGLT?: string;
     starship_class?: string;
-    url: string;
-    data: data;
+    data: FilmsPageDataProps
 }
-import { FilmsPageProps } from "..";
 
 export const FilmStarShips = ({ data }: FilmsPageProps) => {
     const [starShipsUrl, setStarShipsUrl] = useState<StarShipsUrlProps[]>([])
 
-    useEffect( async() => {
-        var urlStrings = data?.starships
-        var arrayLenght = urlStrings.length
+    useEffect(() => {
+        if (!data || !data.starships) return
 
-        for (var i = 0; i < arrayLenght; i++) {
-            for (var i = 0; i < arrayLenght; i++) {
-                axios
-                    .all(
-                        urlStrings.map((urlStrings) =>
-                            axios.get(urlStrings)
-                        )
-                    )
-                    .then(
-                        (response) => setStarShipsUrl(response)
-                    )
-            }
+        if (typeof data.starships === 'string') {
+            return
+        } else {
+            fetchMultipleStarShips(data.starships)
         }
+    }, [data])
+
+    const fetchMultipleStarShips = (urlStrings: string[]) => {
+        var arrayLength = urlStrings.length
+
+
+        for (var i = 0; i < arrayLength; i++) {
+            axios
+                .all(
+                    urlStrings.map((urlStrings) =>
+                        axios.get(urlStrings)
+                    )
+                )
+                .then(
+                    (response) => {
+                        let _response: StarShipsUrlProps[] = []
+
+                        response.forEach(res => {
+                            _response.push(res.data)
+                        })
+
+                        setStarShipsUrl(_response)
+                    }
+                )
+        }
+
 
         console.log(
             'data 🛸 :',
@@ -60,7 +77,7 @@ export const FilmStarShips = ({ data }: FilmsPageProps) => {
             'data URLs : ',
             urlStrings,
         )
-    }, []);
+    };
     return (
         <SectionBackground3>
             <Title>
@@ -68,46 +85,48 @@ export const FilmStarShips = ({ data }: FilmsPageProps) => {
             </Title>
             <Content>
                 <PlanetResidentsSectionDiv>
-                    {starShipsUrl.map((starShipUrl) => (
-                        <PlanetContainerText>
-                            <TextTitle>
-                                {starShipUrl?.data.name}
-                            </TextTitle>
-                            <DefaultTextP>
-                                Model : {starShipUrl?.data.model}
-                            </DefaultTextP>
-                            <DefaultTextP>
-                                Cost In Credits : {starShipUrl?.data.cost_in_credits}
-                            </DefaultTextP>
-                            <DefaultTextP>
-                                Lenght : {starShipUrl?.data.lenght}
-                            </DefaultTextP>
-                            <DefaultTextP>
-                                Max Atmosphering Speed: {starShipUrl?.data.max_atmosphering_speed}
-                            </DefaultTextP>
-                            <DefaultTextP>
-                                Crew : {starShipUrl?.data.crew}
-                            </DefaultTextP>
-                            <DefaultTextP>
-                                Passengers : {starShipUrl?.data.passengers}
-                            </DefaultTextP>
-                            <DefaultTextP>
-                                Cargo Capacity: {starShipUrl?.data.cargo_capacity}
-                            </DefaultTextP>
-                            <DefaultTextP>
-                                Consumables: {starShipUrl?.data.consumables}
-                            </DefaultTextP>
-                            <DefaultTextP>
-                                Hyper Drive Rating: {starShipUrl?.data.hyperdrive_rating}
-                            </DefaultTextP>
-                            <DefaultTextP>
-                                MGLT: {starShipUrl?.data.MGLT}
-                            </DefaultTextP>
-                            <DefaultTextP>
-                                Star Ship Class: {starShipUrl?.data.starship_class}
-                            </DefaultTextP>
-                        </PlanetContainerText>
-                    ))}
+                    {starShipsUrl.map((starShipUrl) => {
+                        return (
+                            <PlanetContainerText>
+                                <TextTitle>
+                                    {starShipUrl?.name}
+                                </TextTitle>
+                                <DefaultTextP>
+                                    Model : {starShipUrl?.model}
+                                </DefaultTextP>
+                                <DefaultTextP>
+                                    Cost In Credits : {starShipUrl?.cost_in_credits}
+                                </DefaultTextP>
+                                <DefaultTextP>
+                                    Lenght : {starShipUrl?.lenght}
+                                </DefaultTextP>
+                                <DefaultTextP>
+                                    Max Atmosphering Speed: {starShipUrl?.max_atmosphering_speed}
+                                </DefaultTextP>
+                                <DefaultTextP>
+                                    Crew : {starShipUrl?.crew}
+                                </DefaultTextP>
+                                <DefaultTextP>
+                                    Passengers : {starShipUrl?.passengers}
+                                </DefaultTextP>
+                                <DefaultTextP>
+                                    Cargo Capacity: {starShipUrl?.cargo_capacity}
+                                </DefaultTextP>
+                                <DefaultTextP>
+                                    Consumables: {starShipUrl?.consumables}
+                                </DefaultTextP>
+                                <DefaultTextP>
+                                    Hyper Drive Rating: {starShipUrl?.hyperdrive_rating}
+                                </DefaultTextP>
+                                <DefaultTextP>
+                                    MGLT: {starShipUrl?.MGLT}
+                                </DefaultTextP>
+                                <DefaultTextP>
+                                    Star Ship Class: {starShipUrl?.starship_class}
+                                </DefaultTextP>
+                            </PlanetContainerText>
+                        )
+                    })}
                 </PlanetResidentsSectionDiv>
             </Content>
         </SectionBackground3>

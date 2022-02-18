@@ -1,6 +1,6 @@
 import axios from "axios"
 import { useEffect, useState } from "react"
-import { FilmsPageProps } from ".."
+import { FilmsPageDataProps, FilmsPageProps } from ".."
 import {
     Content,
     SectionBackground1,
@@ -16,31 +16,47 @@ import {
 import CharacterImg from '../../../../../assets/CharacterImg.png'
 
 
-interface CharacterUrlProps {
+interface FilmCharacterUrlProps {
     name: string;
-    url: string;
-    data: data;
+    data: FilmsPageDataProps
 }
 
 export const FilmCharacters = ({ data }: FilmsPageProps) => {
-    const [charactersUrl, setCharactersUrl] = useState<CharacterUrlProps[]>([])
+    const [charactersUrl, setCharactersUrl] = useState<FilmCharacterUrlProps[]>([])
 
-    useEffect(async () => {
-        var urlStrings = data?.characters
+    useEffect(() => {
+        if (!data || !data.characters) return
+
+        if (typeof data.characters === 'string') {
+            return
+        } else {
+            fetchMultipleFilm(data.characters)
+        }
+    }, [data])
+
+    const fetchMultipleFilm = (urlStrings: string[]) => {
         var arrayLenght = urlStrings.length
 
         for (var i = 0; i < arrayLenght; i++) {
-            for (var i = 0; i < arrayLenght; i++) {
-                axios
-                    .all(
-                        urlStrings.map((urlStrings) =>
-                            axios.get(urlStrings)
-                        )
+            if (typeof urlStrings === 'string') return
+
+            axios
+                .all(
+                    urlStrings.map((urlStrings) =>
+                        axios.get(urlStrings)
                     )
-                    .then(
-                        (response) => setCharactersUrl(response)
-                    )
-            }
+                )
+                .then(
+                    (response) => {
+                        let _response: FilmCharacterUrlProps[] = []
+
+                        response.forEach(res => {
+                            _response.push(res.data)
+                        })
+
+                        setCharactersUrl(_response)
+                    }
+                )
         }
 
         console.log(
@@ -51,7 +67,7 @@ export const FilmCharacters = ({ data }: FilmsPageProps) => {
             'data URLs : ',
             urlStrings,
         )
-    }, []);
+    };
 
     return (
         <SectionBackground1>
@@ -60,18 +76,20 @@ export const FilmCharacters = ({ data }: FilmsPageProps) => {
             </Title>
             <Content>
                 <PlanetResidentsSectionDiv>
-                    {charactersUrl.map((charactersUrl) => (
-                        <ResidentsBadge>
-                            <PlanetsResidentsBadgeContainerImage>
-                                <PlanetResidentsBadgeImage src={CharacterImg} />
-                            </PlanetsResidentsBadgeContainerImage>
-                            <PlanetResidentsBadgeTextContainer key={charactersUrl?.data.name}>
-                                <PlanetResidentsBadgeText key={charactersUrl?.data.name}>
-                                    {charactersUrl?.data.name}
-                                </PlanetResidentsBadgeText>
-                            </PlanetResidentsBadgeTextContainer>
-                        </ResidentsBadge>
-                    ))}
+                    {charactersUrl.map((charactersUrl) => {
+                        return (
+                            <ResidentsBadge>
+                                <PlanetsResidentsBadgeContainerImage>
+                                    <PlanetResidentsBadgeImage src={CharacterImg} />
+                                </PlanetsResidentsBadgeContainerImage>
+                                <PlanetResidentsBadgeTextContainer key={charactersUrl?.name}>
+                                    <PlanetResidentsBadgeText key={charactersUrl?.name}>
+                                        {charactersUrl?.name}
+                                    </PlanetResidentsBadgeText>
+                                </PlanetResidentsBadgeTextContainer>
+                            </ResidentsBadge>
+                        )
+                    })}
                 </PlanetResidentsSectionDiv>
             </Content>
         </SectionBackground1>

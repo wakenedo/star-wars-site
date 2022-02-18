@@ -22,19 +22,23 @@ import {
     IsLoadingImg,
 } from '../../../../styles/global'
 
+export interface FilmsPageDataProps {
+    title?: string;
+    episode_id?: string;
+    url?: string;
+    characters: [] | string; 
+    planets: [] | string;
+    starships: [] | string; 
+    vehicles: [] | string; 
+    species: [] | string; 
+
+}
+
 export interface FilmsPageProps {
     index?: number;
-    data: {
-        title?: string;
-        episode_id?: string;
-        url?: string;
-        characters: [] | string | Map;
-        planets: [] | string | Map;
-        starships: [] | string | Map;
-        vehicles: [] | string | Map;
-        species: [] | string | Map;
-    }
+    data: FilmsPageDataProps
 }
+
 
 export const FilmPage = (
     characters: string,
@@ -60,21 +64,21 @@ export const FilmPage = (
     }
 
     useEffect(() => {
-        if(!filmsUrl) return
+        if (!filmsUrl) return
         setLoading(true)
 
         api
-        .get(
-            `films/${filmsUrl}`
-        )
-        .then(response => {
-            setLoading(false)
-            setData(response.data)
-        })
-        
-    },[]);
+            .get(
+                `films/${filmsUrl}`
+            )
+            .then(response => {
+                setLoading(false)
+                setData(response.data)
+            })
 
-    if(!data) {
+    }, []);
+
+    if (!data) {
         return setLoading(true)
     }
 
@@ -90,12 +94,12 @@ export const FilmPage = (
             <PageContainer>
                 <NavBar toggle={toggle} />
                 <SideBar isOpen={isOpen} toggle={toggle} />
-                <FilmCover data={data}/>
-                <FilmCharacters data={data}/>
-                <FilmPlanets data={data}/>
-                <FilmStarShips data={data}/>
-                <FilmVehicles data={data}/>
-                <FilmSpecies data={data}/>
+                <FilmCover data={data} />
+                <FilmCharacters data={data} />
+                <FilmPlanets data={data} />
+                <FilmStarShips data={data} />
+                <FilmVehicles data={data} />
+                <FilmSpecies data={data} />
             </PageContainer>
         )
     }
