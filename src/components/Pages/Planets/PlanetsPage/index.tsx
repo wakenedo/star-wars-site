@@ -19,23 +19,25 @@ import {
     IsLoadingImg,
 } from '../../../../styles/global';
 
+export interface PlanetPageDataProps {
+    name?: string;
+    climate?: string;
+    diameter?: string;
+    gravity?: string;
+    orbital_period?: string;
+    population?: string;
+    rotation_period?: string;
+    surface_water?: string;
+    terrain?: string;
+    residents: [] | string;
+    films: [] | string;
+}
+
 export interface PlanetPageProps {
     index?: number,
-    data: 
-    {
-        name?: string;
-        climate?: string;
-        diameter?: string;
-        gravity?: string;
-        orbital_period?: string;
-        population?: string;
-        rotation_period?: string;
-        surface_water?: string;
-        terrain?: string;
-        residents: [] | string;
-        films: [] | string;
-    }
+    data: PlanetPageDataProps
 }
+
 
 
 export const PlanetsPage = (
@@ -81,14 +83,14 @@ export const PlanetsPage = (
 
     if (data) {
         return (
-        <PageContainer>
-            <NavBar toggle={toggle} />
-            <SideBar isOpen={isOpen} toggle={toggle} />
-            <Planet data={data}/>
-            <Residents data={data} />
-            <Films data={data} />
-        </PageContainer>
-            
+            <PageContainer>
+                <NavBar toggle={toggle} />
+                <SideBar isOpen={isOpen} toggle={toggle} />
+                <Planet data={data} />
+                <Residents data={data} />
+                <Films data={data} />
+            </PageContainer>
+
         )
     }
 }

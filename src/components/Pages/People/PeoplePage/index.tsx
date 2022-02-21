@@ -32,11 +32,10 @@ export interface DataProps {
     birth_year?: string;
     gender?: string;
     homeworld: string;
-    starships: [] | string;
-    vehicles: [] | string;
-    films: [] | string;
-    species: string,
-
+    starships: string | string[];
+    vehicles: string | string[];
+    films: string | string[];
+    species: string | string[],
 }
 
 export interface PeoplePageProps {
@@ -45,11 +44,11 @@ export interface PeoplePageProps {
 }
 
 export const PeoplePage = (
-    species: string,
-    vehicles: string,
-    homeworld: string,
-    starships: string,
-    films: string,
+    species: string | string[],
+    vehicles: string | string[],
+    homeworld: string ,
+    starships: string | string[],
+    films: string | string[],
 ) => {
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState({

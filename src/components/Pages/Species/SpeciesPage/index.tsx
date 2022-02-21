@@ -20,22 +20,23 @@ import {
     IsLoadingImg,
 } from '../../../../styles/global';
 
+export interface SpeciesPageDataProps {
+    name?: string;
+    classification?: string;
+    average_height?: string;
+    skin_colors?: string;
+    hair_colors?: string;
+    eye_colors?: string;
+    average_lifespan?: string;
+    homeworld?: string;
+    language?: string;
+    people: [] | string;
+    films: [] | string;
+}
+
 export interface SpeciesPageProps {
     index?: number,
-    data: 
-    {
-        name?: string;
-        classification?: string;
-        average_height?: string;
-        skin_colors?: string;
-        hair_colors?: string;
-        eye_colors?: string;
-        average_lifespan?: string;
-        homeworld?: string;
-        language?: string;
-        people: [] | string;
-        films: [] | string;
-    }
+    data: SpeciesPageDataProps  
 }
 
 
@@ -82,14 +83,14 @@ export const SpeciesPage = (
 
     if (data) {
         return (
-        <PageContainer>
-            <NavBar toggle={toggle} />
-            <SideBar isOpen={isOpen} toggle={toggle} />
-            <Species data={data} />
-            <HomeWorld data={data} />
-            <Films data={data} />
-        </PageContainer>
-            
+            <PageContainer>
+                <NavBar toggle={toggle} />
+                <SideBar isOpen={isOpen} toggle={toggle} />
+                <Species data={data} />
+                <HomeWorld data={data} />
+                <Films data={data} />
+            </PageContainer>
+
         )
     }
 }

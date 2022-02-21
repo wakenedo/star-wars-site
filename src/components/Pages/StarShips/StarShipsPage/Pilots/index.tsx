@@ -14,7 +14,7 @@ import {
     PlanetResidentsBadgeImage,
 } from "../../../../../styles/global"
 
-import { StarShipsPageProps } from '..';
+import { StarShipsDataProps, StarShipsPageProps } from '..';
 
 import CharacterImg from '../../../../../assets/CharacterImg.png'
 
@@ -23,8 +23,7 @@ interface PilotsProps {
 }
 interface PilotsUrlProps {
     name: string;
-    url: string;
-    data: data;
+    data: StarShipsDataProps;
 }
 
 export const Pilots = ({ data }: StarShipsPageProps) => {
@@ -32,9 +31,20 @@ export const Pilots = ({ data }: StarShipsPageProps) => {
     const [pilotsUrl, setPilotsUrl] = useState<PilotsUrlProps[]>([])
 
     useEffect(() => {
+        if (!data || !data.pilots) return
+
+        if (typeof data.pilots === 'string') {
+            fetchSinglePilot(data.pilots)
+        } else {
+            fetchMultiplePilot(data.pilots)
+        }
+
+    }, [data])
+
+    const fetchSinglePilot = (url: string) => {
         axios
             .get(
-                `${data?.pilots}`
+                `${url}`
             )
             .then(response => {
                 setPilots(response.data)
@@ -44,13 +54,14 @@ export const Pilots = ({ data }: StarShipsPageProps) => {
             'data 😋 Pilots :',
             pilots,
         )
-    }, []);
+    };
 
-    useEffect(async () => {
-        var urlStrings = data?.pilots
-        var arrayLenght = urlStrings.length
+    const fetchMultiplePilot = (urlStrings: string[]) => {
+        var arrayLength = urlStrings.length
 
-        for (var i = 0; i < arrayLenght; i++) {
+        for (var i = 0; i < arrayLength; i++) {
+            if (typeof urlStrings === 'string') return
+
             axios
                 .all(
                     urlStrings.map((urlStrings) =>
@@ -58,26 +69,18 @@ export const Pilots = ({ data }: StarShipsPageProps) => {
                     )
                 )
                 .then(
-                    (response) => setPilotsUrl(response)
+                    (response) => {
+                        let _response: PilotsUrlProps[] = []
+
+                        response.forEach(res => {
+                            _response.push(res.data)
+                        })
+
+                        setPilotsUrl(_response)
+                    }
                 )
         }
-
-        axios
-            .get(
-                `${urlStrings}`
-            )
-            .then(response => {
-                setPilotsUrl([response.data])
-            })
-        console.log(
-            'This is PilotsUrl 😋 response Data : ',
-            pilotsUrl,
-        )
-        console.log(
-            'data URLs : ',
-            urlStrings,
-        )
-    }, []);
+    };
 
     if (pilots) {
         return (
@@ -89,7 +92,7 @@ export const Pilots = ({ data }: StarShipsPageProps) => {
                     <PlanetResidentsSectionDiv>
                         <ResidentsBadge>
                             <PlanetsResidentsBadgeContainerImage>
-                                <PlanetResidentsBadgeImage src={CharacterImg}/>
+                                <PlanetResidentsBadgeImage src={CharacterImg} />
                             </PlanetsResidentsBadgeContainerImage>
                             <PlanetResidentsBadgeTextContainer>
                                 <PlanetResidentsBadgeText>
@@ -102,29 +105,31 @@ export const Pilots = ({ data }: StarShipsPageProps) => {
             </SectionNoBackground>
         )
     } else {
-        return (
+        return <>(
             <SectionNoBackground>
                 <Title>
                     Pilots
                 </Title>
                 <Content>
                     <PlanetResidentsSectionDiv>
-                        {pilotsUrl.map((pilotsUrl) => (
-                            <ResidentsBadge>
-                                <PlanetsResidentsBadgeContainerImage>
-                                    <PlanetResidentsBadgeImage src={CharacterImg} />
-                                </PlanetsResidentsBadgeContainerImage>
-                                <PlanetResidentsBadgeTextContainer key={pilotsUrl?.data.name}>
-                                    <PlanetResidentsBadgeText key={pilotsUrl?.data.name}>
-                                        {pilotsUrl?.data.name}
-                                    </PlanetResidentsBadgeText>
-                                </PlanetResidentsBadgeTextContainer>
-                            </ResidentsBadge>
-                        ))}
+                        {pilotsUrl.map((pilotsUrl) => {
+                            return (
+                                <ResidentsBadge>
+                                    <PlanetsResidentsBadgeContainerImage>
+                                        <PlanetResidentsBadgeImage src={CharacterImg} />
+                                    </PlanetsResidentsBadgeContainerImage>
+                                    <PlanetResidentsBadgeTextContainer key={pilotsUrl.name}>
+                                        <PlanetResidentsBadgeText key={pilotsUrl.name}>
+                                            {pilotsUrl.name}
+                                        </PlanetResidentsBadgeText>
+                                    </PlanetResidentsBadgeTextContainer>
+                                </ResidentsBadge>
+                            )
+                        })}
                     </PlanetResidentsSectionDiv>
                 </Content>
             </SectionNoBackground>
-        )
+        )</>
     }
 
 }

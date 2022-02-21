@@ -39,13 +39,13 @@ export const Films = ({ data }: PeoplePageProps) => {
     useEffect(() => {
         if (!data || !data.films) return
 
-        if(typeof data.films === 'string') {
+        if (typeof data.films === 'string') {
             fetchSingleFilm(data.films)
         } else {
             fetchMultipleFilm(data.films)
         }
 
-    },[data])
+    }, [data])
 
     const fetchSingleFilm = (url: string) => {
         axios
@@ -121,19 +121,21 @@ export const Films = ({ data }: PeoplePageProps) => {
                         {filmsUrl.map((filmsUrl) => {
                             console.log("FilmsUrl", filmsUrl)
                             return (
-                            <BadgePlanetFilmsContainer>
-                                <FilmsBadgeContainer>
-                                    <FilmsBadgeTitle>
-                                        Star Wars - Episode {filmsUrl.episode_id} - {filmsUrl.title}
-                                    </FilmsBadgeTitle>
-                                    <FilmsBadgeImg src={Episode1} />
-                                </FilmsBadgeContainer>
-                            </BadgePlanetFilmsContainer>
-                        )})}
+
+                                <BadgePlanetFilmsContainer>
+                                    <FilmsBadgeContainer>
+                                        <FilmsBadgeTitle>
+                                            Star Wars - Episode {filmsUrl.episode_id} - {filmsUrl.title}
+                                        </FilmsBadgeTitle>
+                                        <FilmsBadgeImg src={Episode1} />
+                                    </FilmsBadgeContainer>
+                                </BadgePlanetFilmsContainer>
+
+                            )
+                        })}
                     </PlanetFilmSectionDiv>
                 </Content>
             </SectionNoBackground>
         )
-
     }
 }

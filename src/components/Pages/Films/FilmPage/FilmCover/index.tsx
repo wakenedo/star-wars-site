@@ -1,3 +1,4 @@
+import { FilmsPageDataProps, FilmsPageProps } from '..'
 import Episode1 from '../../../../../assets/moviescover/star-wars-episode-i-the-phantom-menace_v2.jpg'
 
 import {
@@ -13,7 +14,7 @@ import {
     FilmImg,
 } from "../../../../../styles/global"
 
-export const FilmCover = ({ data }) => {
+export const FilmCover = ({ data } : FilmsPageProps) => {
     console.log(data)
     return (
         <SectionNoBackgroundNoVh>

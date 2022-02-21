@@ -24,6 +24,10 @@ import {
 
 export interface FilmsPageDataProps {
     title?: string;
+    director?: string;
+    producer?: string;
+    opening_crawl?: string;
+    release_date?: string;
     episode_id?: string;
     url?: string;
     characters: [] | string; 
@@ -31,7 +35,7 @@ export interface FilmsPageDataProps {
     starships: [] | string; 
     vehicles: [] | string; 
     species: [] | string; 
-
+    
 }
 
 export interface FilmsPageProps {

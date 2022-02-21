@@ -10,6 +10,9 @@ import {
     SmallDefaultTextP,
 } from "../../../../../styles/global"
 
+import { 
+    TextContainerB 
+} from "../../../People/PeoplePage/style"
 
 interface HomeWorldProps {
     name: string;
@@ -24,7 +27,6 @@ interface HomeWorldProps {
 }
 
 import { SpeciesPageProps } from ".."
-import { TextContainerB } from "../../../People/PeoplePage/style"
 
 export const HomeWorld = ({ data }: SpeciesPageProps) => {
     const [homeWorld, setHomeWorld] = useState<HomeWorldProps>()

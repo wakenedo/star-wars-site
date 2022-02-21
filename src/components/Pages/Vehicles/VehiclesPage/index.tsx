@@ -20,24 +20,25 @@ import {
     IsLoadingImg,
 } from '../../../../styles/global';
 
+export interface VehiclesPageDataProps {
+    name?: string;
+    model?: string;
+    manufacturer?: string;
+    cost_in_credits?: string;
+    lenght?: string;
+    max_atmosphering_speed?: string;
+    crew?: string;
+    passengers?: string;
+    cargo_capacity?: string;
+    consumables?: string;
+    vehicle_class?: string;
+    pilots: [] | string;
+    films: [] | string;
+}
+
 export interface VehiclesPageProps {
     index?: number,
-    data: 
-    {
-        name?: string;
-        model?: string;
-        manufacturer?: string;
-        cost_in_credits?: string;
-        lenght?: string;
-        max_atmosphering_speed?: string;
-        crew?: string;
-        passengers?: string;
-        cargo_capacity?: string;
-        consumables?: string;
-        vehicle_class?: string;
-        pilots: [] | string;
-        films: [] | string;
-    }
+    data: VehiclesPageDataProps
 }
 
 
@@ -84,14 +85,14 @@ export const VehiclesPage = (
 
     if (data) {
         return (
-        <PageContainer>
-            <NavBar toggle={toggle} />
-            <SideBar isOpen={isOpen} toggle={toggle} />
-            <Vehicle data={data} />
-            <Pilots data={data} />
-            <Films data={data} />
-        </PageContainer>
-            
+            <PageContainer>
+                <NavBar toggle={toggle} />
+                <SideBar isOpen={isOpen} toggle={toggle} />
+                <Vehicle data={data} />
+                <Pilots data={data} />
+                <Films data={data} />
+            </PageContainer>
+
         )
     }
 }

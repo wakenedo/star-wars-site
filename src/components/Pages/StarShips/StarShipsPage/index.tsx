@@ -20,26 +20,27 @@ import {
     IsLoadingImg,
 } from '../../../../styles/global';
 
+export interface StarShipsDataProps {
+    name?: string;
+    model?: string;
+    manufacturer?: string;
+    cost_in_credits?: string;
+    lenght?: string;
+    max_atmosphering_speed?: string;
+    crew?: string;
+    passengers?: string;
+    cargo_capacity?: string;
+    consumables?: string;
+    hyperdrive_rating?: string;
+    MGLT?: string;
+    starship_class?: string;
+    pilots: [] | string;
+    films: [] | string;
+}
+
 export interface StarShipsPageProps {
     index?: number,
-    data: 
-    {
-        name?: string;
-        model?: string;
-        manufacturer?: string;
-        cost_in_credits?: string;
-        lenght?: string;
-        max_atmosphering_speed?: string;
-        crew?: string;
-        passengers?: string;
-        cargo_capacity?: string;
-        consumables?: string;
-        hyperdrive_rating?: string;
-        MGLT?: string;
-        starship_class?: string;
-        pilots: [] | string;
-        films: [] | string;
-    }
+    data: StarShipsDataProps
 }
 
 
@@ -85,15 +86,14 @@ export const StarShipsPage = (
     }
 
     if (data) {
-        return (
-        <PageContainer>
-            <NavBar toggle={toggle} />
-            <SideBar isOpen={isOpen} toggle={toggle} />
-            <StarShip data={data} />
-            <Pilots data={data} />
-            <Films data={data} />
-        </PageContainer>
-            
-        )
+        return <>(
+            <PageContainer>
+                <NavBar toggle={toggle} />
+                <SideBar isOpen={isOpen} toggle={toggle} />
+                <StarShip data={data} />
+                <Pilots data={data} />
+                <Films data={data} />
+            </PageContainer>
+        )</>
     }
 }

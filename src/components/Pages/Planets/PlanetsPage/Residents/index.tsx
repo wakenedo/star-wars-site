@@ -14,7 +14,7 @@ import {
     PlanetResidentsBadgeImage,
 } from "../../../../../styles/global"
 
-import { PlanetPageProps } from '..';
+import { PlanetPageDataProps, PlanetPageProps } from '..';
 
 import CharacterImg from '../../../../../assets/CharacterImg.png'
 
@@ -24,7 +24,7 @@ interface ResidentsProps {
 interface ResidentsUrlProps {
     name: string;
     url: string;
-    data: data;
+    data: PlanetPageDataProps;
 }
 
 export const Residents = ({ data }: PlanetPageProps) => {
@@ -32,9 +32,20 @@ export const Residents = ({ data }: PlanetPageProps) => {
     const [residentsUrl, setResidentsUrl] = useState<ResidentsUrlProps[]>([])
 
     useEffect(() => {
+        if (!data || !data.residents) return
+
+        if (typeof data.residents === 'string') {
+            fetchSingleResident(data.residents)
+        } else {
+            fetchMultipleResident(data.residents)
+        }
+
+    }, [data])
+
+    const fetchSingleResident = (url: string) => {
         axios
             .get(
-                `${data?.residents}`
+                `${url}`
             )
             .then(response => {
                 setResidents(response.data)
@@ -44,13 +55,14 @@ export const Residents = ({ data }: PlanetPageProps) => {
             'data 😋 residents :',
             residents,
         )
-    }, []);
+    };
 
-    useEffect(async () => {
-        var urlStrings = data?.residents
-        var arrayLenght = urlStrings.length
+    const fetchMultipleResident = (urlStrings: string[]) => {
+        var arrayLength = urlStrings.length
 
-        for (var i = 0; i < arrayLenght; i++) {
+        for (var i = 0; i < arrayLength; i++) {
+            if (typeof urlStrings === 'string') return
+
             axios
                 .all(
                     urlStrings.map((urlStrings) =>
@@ -58,27 +70,19 @@ export const Residents = ({ data }: PlanetPageProps) => {
                     )
                 )
                 .then(
-                    (response) => setResidentsUrl(response)
+                    (response) => {
+                        let _response: ResidentsUrlProps[] = []
+
+                        response.forEach(res => {
+                            _response.push(res.data)
+                        })
+
+                        setResidentsUrl(_response)
+                    }
                 )
         }
-
-        axios
-            .get(
-                `${urlStrings}`
-            )
-            .then(response => {
-                setResidentsUrl([response.data])
-            })
-        console.log(
-            'This is residentsUrl 😋 response Data : ',
-            residentsUrl,
-        )
-        console.log(
-            'data URLs : ',
-            urlStrings,
-        )
-    }, []);
-
+    }
+        
     if (residents) {
         return (
             <SectionNoBackground>
@@ -89,7 +93,7 @@ export const Residents = ({ data }: PlanetPageProps) => {
                     <PlanetResidentsSectionDiv>
                         <ResidentsBadge>
                             <PlanetsResidentsBadgeContainerImage>
-                                <PlanetResidentsBadgeImage src={CharacterImg}/>
+                                <PlanetResidentsBadgeImage src={CharacterImg} />
                             </PlanetsResidentsBadgeContainerImage>
                             <PlanetResidentsBadgeTextContainer>
                                 <PlanetResidentsBadgeText>
@@ -109,18 +113,19 @@ export const Residents = ({ data }: PlanetPageProps) => {
                 </Title>
                 <Content>
                     <PlanetResidentsSectionDiv>
-                        {residentsUrl.map((residentsUrl) => (
+                        {residentsUrl.map((residentsUrl) => {
+                            return (
                             <ResidentsBadge>
                                 <PlanetsResidentsBadgeContainerImage>
                                     <PlanetResidentsBadgeImage src={CharacterImg} />
                                 </PlanetsResidentsBadgeContainerImage>
-                                <PlanetResidentsBadgeTextContainer key={residentsUrl?.data.name}>
-                                    <PlanetResidentsBadgeText key={residentsUrl?.data.name}>
-                                        {residentsUrl?.data.name}
+                                <PlanetResidentsBadgeTextContainer key={residentsUrl?.name}>
+                                    <PlanetResidentsBadgeText key={residentsUrl?.name}>
+                                        {residentsUrl?.name}
                                     </PlanetResidentsBadgeText>
                                 </PlanetResidentsBadgeTextContainer>
                             </ResidentsBadge>
-                        ))}
+                        )})}
                     </PlanetResidentsSectionDiv>
                 </Content>
             </SectionNoBackground>
