@@ -21,6 +21,7 @@ import {
     //Loading SVG
     IsLoadingImg,
 } from '../../../../styles/global'
+import React from "react";
 
 export interface FilmsPageDataProps {
     title?: string;
@@ -29,13 +30,12 @@ export interface FilmsPageDataProps {
     opening_crawl?: string;
     release_date?: string;
     episode_id?: string;
-    url?: string;
-    characters: [] | string; 
+    characters: [] | string;
     planets: [] | string;
-    starships: [] | string; 
-    vehicles: [] | string; 
-    species: [] | string; 
-    
+    starships: [] | string;
+    vehicles: [] | string;
+    species: [] | string;
+
 }
 
 export interface FilmsPageProps {
@@ -99,7 +99,9 @@ export const FilmPage = (
                 <NavBar toggle={toggle} />
                 <SideBar isOpen={isOpen} toggle={toggle} />
                 <FilmCover data={data} />
-                <FilmCharacters data={data} />
+                <React.Fragment>
+                    <FilmCharacters data={data} />
+                </React.Fragment>
                 <FilmPlanets data={data} />
                 <FilmStarShips data={data} />
                 <FilmVehicles data={data} />

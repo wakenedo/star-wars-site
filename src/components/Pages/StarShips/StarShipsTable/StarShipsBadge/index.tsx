@@ -57,7 +57,7 @@ export const StarShipsBadge = () => {
         setLoading(true)
 
         let page = 1
-        let arr = []
+        let arr : StarShipsTableBadgeProps[] = []
 
         const fetchItems = () => {
 

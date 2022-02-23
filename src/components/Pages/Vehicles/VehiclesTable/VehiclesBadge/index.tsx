@@ -55,7 +55,7 @@ export const VehiclesBadge = () => {
         setLoading(true)
 
         let page = 1
-        let arr = []
+        let arr : VehiclesTableBadgeProps[] = []
 
         const fetchItems = () => {
 

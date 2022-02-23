@@ -54,7 +54,7 @@ export const SpeciesBadge = () => {
         setLoading(true)
 
         let page = 1
-        let arr = []
+        let arr : SpeciesTableBadgeProps[] = []
 
         const fetchItems = () => {
 

@@ -57,7 +57,7 @@ export const PeopleBadge = () => {
         setLoading(true)
 
         let page = 1
-        let arr  = []
+        let arr: PeopleTableBadgeProps[]  = []
         
         const fetchItems = () => {
             

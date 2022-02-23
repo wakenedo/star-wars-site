@@ -33,7 +33,7 @@ function App() {
         <Route path='/Vehicles' element={ <VehiclesTable /> } />
         <Route path='/StarShips' element={ <StarShipsTable /> } />
 
-        <Route path='/PeoplePage/:url' element={ <PeoplePage />} />
+        <Route path='/PeoplePage/:url' element={ <PeoplePage />}  />
         <Route path='/PlanetsPage/:planetsUrl' element={ <PlanetsPage />} />
         <Route path='/FilmsPage/:filmsUrl' element={ <FilmPage />} />
         <Route path='/SpeciesPage/:speciesUrl' element={ <SpeciesPage />} />

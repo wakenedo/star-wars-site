@@ -53,7 +53,7 @@ export const PlanetBadge = () => {
         setLoading(true)
 
         let page = 1
-        let arr = []
+        let arr : PlanetsTableBadgeProps[] = []
 
         const fetchItems = () => {
 
