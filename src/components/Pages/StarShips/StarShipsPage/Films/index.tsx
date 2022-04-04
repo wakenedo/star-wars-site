@@ -19,15 +19,17 @@ import { StarShipsDataProps, StarShipsPageProps } from '..';
 
 
 
-interface FilmsProps {
+export interface FilmsProps {
     title: string
     episode_id: string
 }
-interface FilmsUrlProps {
+export interface FilmsUrlProps  {
     title: string
     episode_id: string
     data: StarShipsDataProps;
 }
+
+
 
 export const Films = ({ data }: StarShipsPageProps) => {
     const [films, setFilms] = useState<FilmsProps>()
@@ -39,7 +41,7 @@ export const Films = ({ data }: StarShipsPageProps) => {
         if (typeof data.films === 'string') {
             fetchSingleFilm(data.films)
         } else {
-            fetchMultipleFilm(data.films)
+            fetchMultipleFilm(data.films as string[])
         }
 
     }, [data])

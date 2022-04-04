@@ -30,7 +30,7 @@ export const FilmCharacters = ({ data }: FilmsPageProps) => {
         if (typeof data.characters === 'string') {
             return
         } else {
-            fetchMultipleFilm(data.characters)
+            fetchMultipleFilm(data.characters as string[])
         }
     }, [data])
 

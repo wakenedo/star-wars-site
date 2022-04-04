@@ -40,7 +40,7 @@ export const FilmStarShips = ({ data }: FilmsPageProps) => {
         if (typeof data.starships === 'string') {
             return
         } else {
-            fetchMultipleStarShips(data.starships)
+            fetchMultipleStarShips(data.starships as string[])
         }
     }, [data])
 

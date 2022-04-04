@@ -36,7 +36,7 @@ export const Pilots = ({ data }: StarShipsPageProps) => {
         if (typeof data.pilots === 'string') {
             fetchSinglePilot(data.pilots)
         } else {
-            fetchMultiplePilot(data.pilots)
+            fetchMultiplePilot(data.pilots as string[])
         }
 
     }, [data])

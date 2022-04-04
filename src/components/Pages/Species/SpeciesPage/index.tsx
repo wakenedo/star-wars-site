@@ -30,19 +30,18 @@ export interface SpeciesPageDataProps {
     average_lifespan?: string;
     homeworld?: string;
     language?: string;
-    people: [] | string;
-    films: [] | string;
+    people: {} | string[];
+    films: {} | string[];
 }
 
 export interface SpeciesPageProps {
-    index?: number,
-    data: SpeciesPageDataProps  
+    data: SpeciesPageDataProps
 }
 
 
 export const SpeciesPage = (
-    people: string,
-    films: string,
+    people: {} | string[],
+    films: {} | string[],
 ) => {
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState({
@@ -69,10 +68,6 @@ export const SpeciesPage = (
             })
     }, []);
 
-    if (!data) {
-        return setLoading(true)
-    }
-
     if (loading) {
         return (
             <>
@@ -81,16 +76,14 @@ export const SpeciesPage = (
         )
     }
 
-    if (data) {
-        return (
-            <PageContainer>
-                <NavBar toggle={toggle} />
-                <SideBar isOpen={isOpen} toggle={toggle} />
-                <Species data={data} />
-                <HomeWorld data={data} />
-                <Films data={data} />
-            </PageContainer>
 
-        )
-    }
+    return (
+        <PageContainer>
+            <NavBar toggle={toggle} />
+            <SideBar isOpen={isOpen} toggle={toggle} />
+            <Species data={data} />
+            <HomeWorld data={data} />
+            <Films data={data} />
+        </PageContainer>
+    )
 }

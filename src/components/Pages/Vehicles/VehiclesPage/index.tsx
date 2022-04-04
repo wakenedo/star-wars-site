@@ -32,19 +32,18 @@ export interface VehiclesPageDataProps {
     cargo_capacity?: string;
     consumables?: string;
     vehicle_class?: string;
-    pilots: [] | string;
-    films: [] | string;
+    pilots: {} | string[];
+    films: {} | string[];
 }
 
 export interface VehiclesPageProps {
-    index?: number,
     data: VehiclesPageDataProps
 }
 
 
 export const VehiclesPage = (
-    pilots: string,
-    films: string,
+    pilots: {} | string[],
+    films: {} | string[],
 ) => {
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState({
@@ -71,10 +70,6 @@ export const VehiclesPage = (
             })
     }, []);
 
-    if (!data) {
-        return setLoading(true)
-    }
-
     if (loading) {
         return (
             <>
@@ -83,16 +78,14 @@ export const VehiclesPage = (
         )
     }
 
-    if (data) {
-        return (
-            <PageContainer>
-                <NavBar toggle={toggle} />
-                <SideBar isOpen={isOpen} toggle={toggle} />
-                <Vehicle data={data} />
-                <Pilots data={data} />
-                <Films data={data} />
-            </PageContainer>
 
-        )
-    }
+    return (
+        <PageContainer>
+            <NavBar toggle={toggle} />
+            <SideBar isOpen={isOpen} toggle={toggle} />
+            <Vehicle data={data} />
+            <Pilots data={data} />
+            <Films data={data} />
+        </PageContainer>
+    )
 }

@@ -36,7 +36,7 @@ export const FilmSpecies = ({ data }: FilmsPageProps) => {
         if (typeof data.species === 'string') {
             return
         } else {
-            fetchMultipleSpecies(data.species)
+            fetchMultipleSpecies(data.species as string[])
         }
     }, [data])
 

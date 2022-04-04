@@ -21,7 +21,7 @@ import {
     //Loading SVG
     IsLoadingImg,
 } from '../../../../styles/global'
-import React from "react";
+
 
 export interface FilmsPageDataProps {
     title?: string;
@@ -30,26 +30,25 @@ export interface FilmsPageDataProps {
     opening_crawl?: string;
     release_date?: string;
     episode_id?: string;
-    characters: [] | string;
-    planets: [] | string;
-    starships: [] | string;
-    vehicles: [] | string;
-    species: [] | string;
+    characters: {} | string[];
+    planets: {} | string[];
+    starships: {} | string[];
+    vehicles: {} | string[];
+    species: {} | string[];
 
 }
 
 export interface FilmsPageProps {
-    index?: number;
     data: FilmsPageDataProps
 }
 
 
 export const FilmPage = (
-    characters: string,
-    planets: string,
-    starships: string,
-    vehicles: string,
-    species: string,
+    characters: {} | string[],
+    planets: {} | string[],
+    starships: {} | string[],
+    vehicles: {} | string[],
+    species: {} | string[],
 ) => {
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState({
@@ -80,11 +79,7 @@ export const FilmPage = (
                 setData(response.data)
             })
 
-    }, []);
-
-    if (!data) {
-        return setLoading(true)
-    }
+    }, [data]);
 
     if (loading) {
         return (
@@ -93,20 +88,20 @@ export const FilmPage = (
             </>
         )
     }
-    if (data) {
-        return (
+
+    return (
+        <>
             <PageContainer>
                 <NavBar toggle={toggle} />
                 <SideBar isOpen={isOpen} toggle={toggle} />
                 <FilmCover data={data} />
-                <React.Fragment>
-                    <FilmCharacters data={data} />
-                </React.Fragment>
+                <FilmCharacters data={data} />
                 <FilmPlanets data={data} />
                 <FilmStarShips data={data} />
                 <FilmVehicles data={data} />
                 <FilmSpecies data={data} />
             </PageContainer>
-        )
-    }
+        </>
+    )
+
 }

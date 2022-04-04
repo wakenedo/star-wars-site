@@ -39,7 +39,7 @@ export const FilmVehicles = ({ data }: FilmsPageProps) => {
         if (typeof data.vehicles === 'string') {
             return
         } else {
-            fetchMultipleVehicles(data.vehicles)
+            fetchMultipleVehicles(data.vehicles as string[])
         }
     }, [data])
 

@@ -34,20 +34,20 @@ export interface StarShipsDataProps {
     hyperdrive_rating?: string;
     MGLT?: string;
     starship_class?: string;
-    pilots: [] | string;
-    films: [] | string;
+    pilots: {} | string[];
+    films: {} | string[];
 }
 
 export interface StarShipsPageProps {
-    index?: number,
     data: StarShipsDataProps
 }
 
 
 export const StarShipsPage = (
-    pilots: string,
-    films: string,
+    pilots: {} | string[],
+    films: {} | string[],
 ) => {
+
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState({
         pilots,
@@ -73,10 +73,6 @@ export const StarShipsPage = (
             })
     }, []);
 
-    if (!data) {
-        return setLoading(true)
-    }
-
     if (loading) {
         return (
             <>
@@ -85,8 +81,8 @@ export const StarShipsPage = (
         )
     }
 
-    if (data) {
-        return <>(
+    return (
+        <>
             <PageContainer>
                 <NavBar toggle={toggle} />
                 <SideBar isOpen={isOpen} toggle={toggle} />
@@ -94,6 +90,6 @@ export const StarShipsPage = (
                 <Pilots data={data} />
                 <Films data={data} />
             </PageContainer>
-        )</>
-    }
+        </>
+    )
 }

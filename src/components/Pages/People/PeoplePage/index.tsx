@@ -31,24 +31,23 @@ export interface DataProps {
     eye_color?: string;
     birth_year?: string;
     gender?: string;
-    homeworld: string;
-    starships: string | string[];
-    vehicles: string | string[];
-    films: string | string[];
-    species: string | string[],
+    homeworld: {} | string;
+    starships: {} | string[];
+    vehicles: {} | string[];
+    films: {} | string[];
+    species: {} | string[],
 }
 
 export interface PeoplePageProps {
-    index?: number,
     data: DataProps
 }
 
 export const PeoplePage = (
-    species: string | string[],
-    vehicles: string | string[],
-    homeworld: string ,
-    starships: string | string[],
-    films: string | string[],
+    homeworld: {} | string,
+    species: {} | string[],
+    vehicles: {} | string[],
+    starships: {} | string[],
+    films: {} | string[],
 ) => {
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState({
@@ -77,8 +76,7 @@ export const PeoplePage = (
                 setLoading(false)
                 setData(response.data)
             })
-    }, []);
-
+    }, [url]);
 
     if (loading) {
         return (
@@ -87,25 +85,19 @@ export const PeoplePage = (
             </>
         )
     }
-    if (!data) {
-        return (
-            setLoading(true)
-        )
-    }
-    else {
-        return (
-            <PageContainer >
-                <NavBar toggle={toggle} />
-                <SideBar isOpen={isOpen} toggle={toggle} />
-                <Character data={data} />
-                <HomeWorld data={data} />
-                <Species data={data} />
-                <Films data={data} />
-                <StarShips data={data} />
-                <Vehicles data={data} />
-            </PageContainer>
-        )
 
-    }
+    return (
+        <PageContainer >
+            <NavBar toggle={toggle} />
+            <SideBar isOpen={isOpen} toggle={toggle} />
+            <Character data={data} />
+            <HomeWorld data={data} />
+            <Species data={data} />
+            <Films data={data} />
+            <StarShips data={data} />
+            <Vehicles data={data} />
+        </PageContainer>
+    )
 
 }
+

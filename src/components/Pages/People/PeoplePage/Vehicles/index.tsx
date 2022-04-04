@@ -51,7 +51,7 @@ export const Vehicles = ({ data }: PeoplePageProps) => {
         if (typeof data.vehicles === 'string') {
             fetchSingleVehicle(data.vehicles)
         } else {
-            fetchMultipleVehicle(data.vehicles)
+            fetchMultipleVehicle(data.vehicles as string[])
         }
 
     }, [data])

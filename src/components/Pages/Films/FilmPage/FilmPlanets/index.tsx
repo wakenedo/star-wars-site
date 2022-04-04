@@ -34,7 +34,7 @@ export const FilmPlanets = ({ data }: FilmsPageProps) => {
         if (typeof data.planets === 'string') {
             return
         } else {
-            fetchMultiplePlanets(data.planets)
+            fetchMultiplePlanets(data.planets as string[])
         }
 
     }, [data])

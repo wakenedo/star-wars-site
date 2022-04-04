@@ -29,20 +29,19 @@ export interface PlanetPageDataProps {
     rotation_period?: string;
     surface_water?: string;
     terrain?: string;
-    residents: [] | string;
-    films: [] | string;
+    residents: {} | string[];
+    films: {} | string[];
 }
 
 export interface PlanetPageProps {
-    index?: number,
     data: PlanetPageDataProps
 }
 
 
 
 export const PlanetsPage = (
-    residents: string,
-    films: string,
+    residents: {} | string[],
+    films: {} | string[],
 ) => {
     const [loading, setLoading] = useState(false)
     const [data, setData] = useState({
@@ -69,10 +68,6 @@ export const PlanetsPage = (
             })
     }, []);
 
-    if (!data) {
-        return setLoading(true)
-    }
-
     if (loading) {
         return (
             <>
@@ -81,16 +76,14 @@ export const PlanetsPage = (
         )
     }
 
-    if (data) {
-        return (
-            <PageContainer>
-                <NavBar toggle={toggle} />
-                <SideBar isOpen={isOpen} toggle={toggle} />
-                <Planet data={data} />
-                <Residents data={data} />
-                <Films data={data} />
-            </PageContainer>
+    return (
+        <PageContainer>
+            <NavBar toggle={toggle} />
+            <SideBar isOpen={isOpen} toggle={toggle} />
+            <Planet data={data} />
+            <Residents data={data} />
+            <Films data={data} />
+        </PageContainer>
 
-        )
-    }
+    )
 }

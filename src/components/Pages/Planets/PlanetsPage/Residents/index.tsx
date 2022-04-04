@@ -37,7 +37,7 @@ export const Residents = ({ data }: PlanetPageProps) => {
         if (typeof data.residents === 'string') {
             fetchSingleResident(data.residents)
         } else {
-            fetchMultipleResident(data.residents)
+            fetchMultipleResident(data.residents as string[])
         }
 
     }, [data])

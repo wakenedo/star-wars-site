@@ -58,7 +58,7 @@ export const StarShips = ({ data }: PeoplePageProps) => {
         if (typeof data.starships === 'string') {
             fetchSingleStarship(data.starships)
         } else {
-            fetchMultipleStarship(data.starships)
+            fetchMultipleStarship(data.starships as string[])
         }
 
     }, [data])
