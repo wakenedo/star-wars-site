@@ -78,12 +78,12 @@ export const FilmCharacters = ({ data }: FilmsPageProps) => {
                 <PlanetResidentsSectionDiv>
                     {charactersUrl.map((charactersUrl) => {
                         return (
-                            <ResidentsBadge>
+                            <ResidentsBadge key={charactersUrl?.name}>
                                 <PlanetsResidentsBadgeContainerImage>
                                     <PlanetResidentsBadgeImage src={CharacterImg} />
                                 </PlanetsResidentsBadgeContainerImage>
-                                <PlanetResidentsBadgeTextContainer key={charactersUrl?.name}>
-                                    <PlanetResidentsBadgeText key={charactersUrl?.name}>
+                                <PlanetResidentsBadgeTextContainer >
+                                    <PlanetResidentsBadgeText>
                                         {charactersUrl?.name}
                                     </PlanetResidentsBadgeText>
                                 </PlanetResidentsBadgeTextContainer>

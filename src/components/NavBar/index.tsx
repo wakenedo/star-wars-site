@@ -12,18 +12,18 @@ interface NavBarProps {
     toggle: () => void;
 }
 
-export const NavBar = ({ toggle } : NavBarProps ) => {
+export const NavBar = ({ toggle }: NavBarProps) => {
     return (
         <>
             <Nav>
                 <NavLink to='/'>
-                    <NavBarLogo src={NavBarLogoSVG}/>
+                    <NavBarLogo src={NavBarLogoSVG} />
                 </NavLink>
                 <NavIcon onClick={toggle}>
                     <p>Menu</p>
                     <Bars />
                 </NavIcon>
-        </Nav>
+            </Nav>
         </>
     )
 

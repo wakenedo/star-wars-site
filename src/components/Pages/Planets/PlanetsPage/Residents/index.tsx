@@ -90,13 +90,13 @@ export const Residents = ({ data }: PlanetPageProps) => {
                     Residents
                 </Title>
                 <Content>
-                    <PlanetResidentsSectionDiv>
-                        <ResidentsBadge>
+                    <PlanetResidentsSectionDiv >
+                        <ResidentsBadge >
                             <PlanetsResidentsBadgeContainerImage>
                                 <PlanetResidentsBadgeImage src={CharacterImg} />
                             </PlanetsResidentsBadgeContainerImage>
                             <PlanetResidentsBadgeTextContainer>
-                                <PlanetResidentsBadgeText>
+                                <PlanetResidentsBadgeText  >
                                     {residents?.name}
                                 </PlanetResidentsBadgeText>
                             </PlanetResidentsBadgeTextContainer>
@@ -115,12 +115,12 @@ export const Residents = ({ data }: PlanetPageProps) => {
                     <PlanetResidentsSectionDiv>
                         {residentsUrl.map((residentsUrl) => {
                             return (
-                            <ResidentsBadge>
+                            <ResidentsBadge key={residentsUrl?.name}>
                                 <PlanetsResidentsBadgeContainerImage>
                                     <PlanetResidentsBadgeImage src={CharacterImg} />
                                 </PlanetsResidentsBadgeContainerImage>
-                                <PlanetResidentsBadgeTextContainer key={residentsUrl?.name}>
-                                    <PlanetResidentsBadgeText key={residentsUrl?.name}>
+                                <PlanetResidentsBadgeTextContainer >
+                                    <PlanetResidentsBadgeText >
                                         {residentsUrl?.name}
                                     </PlanetResidentsBadgeText>
                                 </PlanetResidentsBadgeTextContainer>

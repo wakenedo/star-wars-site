@@ -8,6 +8,17 @@ export const FilmsBadgeContainer = styled.div`
     margin: 0.5rem;
     display: flex;
     flex-direction: column;
+
+    @media screen and (min-width: 350px) and (max-width: 375px) {
+        width: 295px;
+        margin-bottom: 1.5rem;
+        
+    };
+    @media screen and (min-width: 400px) and (max-width: 500px) {
+        width: 335px;
+        height: 390px
+              
+    }    
     
 
     svg {
@@ -25,5 +36,5 @@ export const FilmsBadgeTitle = styled.h3`
 `
 
 export const FilmsBadgeImg = styled.img` 
-    
+
 `

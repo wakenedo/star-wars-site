@@ -117,9 +117,9 @@ export const Pilots = ({ data }: VehiclesPageProps) => {
                                 <PlanetsResidentsBadgeContainerImage>
                                     <PlanetResidentsBadgeImage src={CharacterImg} />
                                 </PlanetsResidentsBadgeContainerImage>
-                                <PlanetResidentsBadgeTextContainer key={pilotsUrl?.data.name}>
-                                    <PlanetResidentsBadgeText key={pilotsUrl?.data.name}>
-                                        {pilotsUrl?.data.name}
+                                <PlanetResidentsBadgeTextContainer key={pilotsUrl?.name}>
+                                    <PlanetResidentsBadgeText key={pilotsUrl?.name}>
+                                        {pilotsUrl?.name}
                                     </PlanetResidentsBadgeText>
                                 </PlanetResidentsBadgeTextContainer>
                             </ResidentsBadge>

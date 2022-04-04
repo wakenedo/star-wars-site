@@ -64,6 +64,15 @@ export const Title = styled.h1`
     text-transform: uppercase;
     font-size: clamp(1.5rem, 10vw, 2.5rem);
     box-shadow: 1.5px 1.5px var(--yellow);
+
+    @media screen and (min-width: 350px) and (max-width: 375px) {
+        border-bottom: 1.5px solid var(--yellow);
+        box-shadow: none;
+    };
+    @media screen and (min-width: 400px) and (max-width: 500px) {
+        border-bottom: 1.5px solid var(--yellow);
+        box-shadow: none;     
+    }
 `
 //-----------------------------------------------//
 
@@ -127,6 +136,13 @@ export const Content = styled.div`
 export const DefaultSectionDiv = styled.div`
     display: flex;
     margin: 0 auto;
+
+    @media screen and (min-width: 350px) and (max-width: 375px) {
+        flex-direction: column;
+    };
+    @media screen and (min-width: 400px) and (max-width: 500px) {
+        flex-direction: column;    
+    }
 `
 
 // Default Div for Sections
@@ -178,8 +194,21 @@ export const SectionBackground3 = styled.div`
 export const FilmCoverContainer = styled.div`
     background: var(--background-light);
     width: 685px;
-    height: 800px;
+    height: 900px;
     margin-left: 1.5rem;
+
+    @media screen and (min-width: 350px) and (max-width: 375px) {
+        width: 375px;
+        height: 700px;
+        margin-left: 0;
+        margin-bottom: 0.5rem;
+    };
+    @media screen and (min-width: 400px) and (max-width: 500px) {
+        width: 375px;
+        height: 800px;
+        margin-left: 0;     
+    }
+    
 `
 //FilmCover Components of FilmPageEP1-6 
 //Container Text P 
@@ -197,12 +226,31 @@ export const CrawlTextP = styled.p`
     color: var(--yellow);
     text-align: justify;
     margin: 2.5rem;
+
+    @media screen and (min-width: 350px) and (max-width: 375px) {
+        font-size: 1.5rem;
+    };
+    @media screen and (min-width: 400px) and (max-width: 500px) {
+        font-size: 1.5rem;   
+    }
+    
 `
 //FilmCover Components of FilmPageEP1-6 
 //Image Cover
 export const FilmImg = styled.img`
     width: 685px;
     height: 800px;
+
+    @media screen and (min-width: 350px) and (max-width: 375px) {
+        width: 375px;
+        height: 600px;
+        margin-bottom: 1.5rem;
+
+    };
+    @media screen and (min-width: 400px) and (max-width: 500px) {
+        width: 685px;
+        height: 800px;      
+    }
 `
 
 //PlanetPage Default Styles
@@ -215,7 +263,17 @@ export const PlanetContainerText = styled.div`
     flex-direction: column;
     margin-bottom: 1.5rem;
     margin-left: 1.5rem;
-    min-height: 485px;
+    height: 465px;
+
+    @media screen and (min-width: 350px) and (max-width: 375px) {
+        width: 320px;
+        margin-left: 0.5rem;
+        height: 450px;
+    };
+    @media screen and (min-width: 400px) and (max-width: 500px) {
+        width: 335px;
+              
+    }
 `
 //PlanetPage Planet Component Image
 export const PlanetImage = styled.img`
@@ -223,6 +281,18 @@ export const PlanetImage = styled.img`
     height: 375px;
     background: var(--background-light);
     padding: 2rem;
+
+    @media screen and (min-width: 350px) and (max-width: 375px) {
+        width: 320px;
+        height: 320px;
+        margin-left: 0.5rem;
+        margin-bottom: 1rem;
+    };
+    @media screen and (min-width: 400px) and (max-width: 500px) {
+        width: 335px;
+        height: 335px
+              
+    }    
 `
 
 //PlanetPage Default Styles
@@ -368,6 +438,13 @@ export const FilmsBadgeContainer = styled.div`
     display: flex;
     flex-direction: column;
     
+    @media screen and (min-width: 350px) and (max-width: 375px) {
+        width: 320px
+    };
+    @media screen and (min-width: 400px) and (max-width: 500px) {
+        width: 335px;
+              
+    }
 
     svg {
         color: var(--yellow);
@@ -389,7 +466,7 @@ export const FilmsBadgeImg = styled.img`
 export const DescriptionText = styled.p`
     font-size: clamp(1rem, 10vw, 1.5rem);
     font-weight: 100;
-` 
+`
 
 //-----------------------------------------------//
 

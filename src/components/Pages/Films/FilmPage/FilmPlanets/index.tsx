@@ -82,7 +82,7 @@ export const FilmPlanets = ({ data }: FilmsPageProps) => {
                 <PlanetResidentsSectionDiv>
                     {planetsUrl.map((planetsUrl) => {
                         return (
-                        <PlanetContainerText>
+                        <PlanetContainerText key={planetsUrl?.name}>
                             <TextTitle>
                                 {planetsUrl?.name}
                             </TextTitle>

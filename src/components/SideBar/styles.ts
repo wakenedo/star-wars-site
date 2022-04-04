@@ -19,14 +19,19 @@ export const SidebarContainer = styled.aside`
     
     .sideBarLogo {
         margin-top: 4.5rem
+        
     }
 
     img {
         width: 250px;
+        
     }
     
-    @media screen and (max-width:400px) {
+    @media screen and (min-width: 350px) and (max-width: 375px) {
         width: 100%;
+    };
+    @media screen and (min-width: 400px) and (max-width: 500px) {
+        width: 100%;     
     }
 `
 
@@ -37,9 +42,13 @@ export const SidebarMenu = styled.div`
     grid-template-columns: 1fr;
     grid-template-rows: repeat(6, 80px);
     text-align: center;
-    @media screen and (max-width:480px) {
-        grid-template-rows: repeat(3, 60px);
-    }
+    @media screen and (min-width: 350px) and (max-width: 375px) {
+        grid-template-rows: repeat(6, 60px);
+        margin-top: 5rem
+    };
+    @media screen and (min-width: 400px) and (max-width: 500px) {
+        grid-template-rows: repeat(6, 60px);
+        margin-top: 5rem    
 `
 
 export const SidebarLink = styled(Link)`

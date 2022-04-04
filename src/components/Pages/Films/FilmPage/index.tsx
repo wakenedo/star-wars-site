@@ -79,7 +79,7 @@ export const FilmPage = (
                 setData(response.data)
             })
 
-    }, [data]);
+    }, []);
 
     if (loading) {
         return (

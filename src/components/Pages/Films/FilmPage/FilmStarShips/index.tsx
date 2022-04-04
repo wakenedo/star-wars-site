@@ -87,7 +87,7 @@ export const FilmStarShips = ({ data }: FilmsPageProps) => {
                 <PlanetResidentsSectionDiv>
                     {starShipsUrl.map((starShipUrl) => {
                         return (
-                            <PlanetContainerText>
+                            <PlanetContainerText key={starShipUrl?.name}>
                                 <TextTitle>
                                     {starShipUrl?.name}
                                 </TextTitle>

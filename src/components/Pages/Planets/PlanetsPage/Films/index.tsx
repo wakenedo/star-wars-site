@@ -118,7 +118,7 @@ export const Films = ({ data }: PlanetPageProps) => {
                     <PlanetFilmSectionDiv>
                         {filmsUrl.map((filmsUrl) => {
                             return (
-                            <BadgePlanetFilmsContainer>
+                            <BadgePlanetFilmsContainer key={filmsUrl?.episode_id}>
                                 <FilmsBadgeContainer>
                                     <FilmsBadgeTitle>
                                         Star Wars - Episode {filmsUrl.episode_id} - {filmsUrl.title}
