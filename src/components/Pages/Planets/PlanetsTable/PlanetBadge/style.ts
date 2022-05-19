@@ -7,8 +7,8 @@ export const PlanetsBadgeTextContainer = styled.div`
     min-height: 335px;
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.5rem;
-    margin-right: 1.5rem;
+    margin: 1.5rem auto;
+    border-radius: 5px;
     
     svg {
         color: var(--yellow);

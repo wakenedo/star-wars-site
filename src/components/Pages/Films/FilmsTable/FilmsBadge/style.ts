@@ -5,12 +5,13 @@ export const FilmsBadgeContainer = styled.div`
     color: var(--text-body);
     background: var(--background-light);
     width: 400px;
-    margin: 0.5rem;
     display: flex;
     flex-direction: column;
+    margin: 0.5rem auto;
+    border-radius: 5px;
 
     @media screen and (min-width: 350px) and (max-width: 375px) {
-        width: 295px;
+        width: 332px;
         margin-bottom: 1.5rem;
         
     };

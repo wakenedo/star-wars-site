@@ -194,7 +194,7 @@ export const SectionBackground3 = styled.div`
 export const FilmCoverContainer = styled.div`
     background: var(--background-light);
     width: 685px;
-    height: 900px;
+    height: 826px;
     margin-left: 1.5rem;
 
     @media screen and (min-width: 350px) and (max-width: 375px) {
@@ -217,6 +217,14 @@ export const FilmCoverContainerTextP = styled.p`
     font-weight: 100;
     color : var(--text-body);
     margin: 0.5rem 1.5rem;
+
+    &:last-child {
+        margin-top: 8rem !important;
+
+        @media screen and (min-width: 350px) and (max-width: 375px) {
+        margin-top: 1.25rem !important;
+        };        
+    }
 `
 //FilmCover Components of FilmPageEP1-6 
 //Container Text CrawP
@@ -239,7 +247,7 @@ export const CrawlTextP = styled.p`
 //Image Cover
 export const FilmImg = styled.img`
     width: 685px;
-    height: 800px;
+    height: 826px;
 
     @media screen and (min-width: 350px) and (max-width: 375px) {
         width: 375px;
@@ -263,7 +271,8 @@ export const PlanetContainerText = styled.div`
     flex-direction: column;
     margin-bottom: 1.5rem;
     margin-left: 1.5rem;
-    height: 465px;
+    height: 495px;
+    border-radius: 5px;
 
     @media screen and (min-width: 350px) and (max-width: 375px) {
         width: 320px;
@@ -302,8 +311,9 @@ export const PlanetResidentsSectionDiv = styled.div`
     width: 66%;
     //justify-content: space-between; 
     flex-wrap: wrap;
-    margin: 0 auto;
+    margin: 4rem auto;
     align-items: center;
+    
     
 `
 
@@ -361,7 +371,8 @@ export const BadgeTextContainer = styled.div`
     display: flex;
     flex-direction: column;
     margin-bottom: 1.5rem;
-    margin-right: 1.5rem;
+    margin: 1.5rem auto;
+    border-radius: 5px;
     
     svg {
         color: var(--yellow);
@@ -388,11 +399,14 @@ export const ResidentsBadge = styled.div`
     flex-direction: column;
     align-items: center;
     margin: 1.5rem auto;
+    border: 2px solid var(--background-light);
+    border-radius: 5px;
+    background: var(--yellow);
 `
 //Badge Text Container
 export const PlanetResidentsBadgeTextContainer = styled.div`
     background: var(--background-light);
-    margin: 1.25rem 0;
+    margin: 1.25rem 0 0 0;
     width: 240px;
     border-radius : 50% 50% 0 0;
 `
@@ -411,6 +425,7 @@ export const PlanetsResidentsBadgeContainerImage = styled.div`
     height: 120px;
     background-color: var(--background-light);
     border-radius: 50%;
+    margin-top: 1rem;
 `
 //Badge Default Image
 export const PlanetResidentsBadgeImage = styled.img`
@@ -437,6 +452,7 @@ export const FilmsBadgeContainer = styled.div`
     margin: 0.5rem;
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
     
     @media screen and (min-width: 350px) and (max-width: 375px) {
         width: 320px

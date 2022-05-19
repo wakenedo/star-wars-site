@@ -12,6 +12,7 @@ export const TextContainerA = styled.div`
     margin: 1.5rem auto;
     display: flex;
     flex-direction: column;
+    border-radius: 5px;
 
     svg {
         color: var(--yellow);
@@ -27,6 +28,7 @@ export const TextContainerB = styled.div`
     flex-direction: column;
     margin: 1.5rem auto;
     max-height: 400px;
+    border-radius: 5px;
 `
 export const TextContainerLarge = styled.div`
     color: var(--text-body);
@@ -41,6 +43,7 @@ export const CharacterPlaceholderImg = styled.img`
     background: var(--background-light);
     padding: 2rem;
     margin: 1.5rem ;
+    border-radius: 5px;
 `
 
 export const SpeciesText = styled.p`
