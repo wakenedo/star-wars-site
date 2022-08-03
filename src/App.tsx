@@ -4,19 +4,19 @@ import { GlobalStyle } from './styles/global'
 import { Hero } from './components/Hero';
 
 
-import { PeoplePage, PeoplePageProps } from './components/Pages/People/PeoplePage';
-import { PlanetPageProps, PlanetsPage } from './components/Pages/Planets/PlanetsPage';
-import { FilmPage, FilmsPageProps } from './components/Pages/Films/FilmPage';
-import { SpeciesPage, SpeciesPageProps } from './components/Pages/Species/SpeciesPage';
-import { VehiclesPage, VehiclesPageProps } from './components/Pages/Vehicles/VehiclesPage';
-import { StarShipsPage, StarShipsPageProps } from './components/Pages/StarShips/StarShipsPage';
+import { PeoplePage, PeoplePageProps } from './Pages/People/PeoplePage';
+import { PlanetPageProps, PlanetsPage } from './Pages/Planets/PlanetsPage';
+import { FilmPage, FilmsPageProps } from './Pages/Films/FilmPage';
+import { SpeciesPage, SpeciesPageProps } from './Pages/Species/SpeciesPage';
+import { VehiclesPage, VehiclesPageProps } from './Pages/Vehicles/VehiclesPage';
+import { StarShipsPage, StarShipsPageProps } from './Pages/StarShips/StarShipsPage';
 
-import { PeopleTable } from './components/Pages/People/PeopleTable';
-import { FilmsTable } from './components/Pages/Films/FilmsTable';
-import { PlanetsTable } from './components/Pages/Planets/PlanetsTable';
-import { SpeciesTable } from './components/Pages/Species/SpeciesTable';
-import { VehiclesTable } from './components/Pages/Vehicles/VehiclesTable';
-import { StarShipsTable } from './components/Pages/StarShips/StarShipsTable';
+import { PeopleTable } from './Pages/People/PeopleTable';
+import { FilmsTable } from './Pages/Films/FilmsTable';
+import { PlanetsTable } from './Pages/Planets/PlanetsTable';
+import { SpeciesTable } from './Pages/Species/SpeciesTable';
+import { VehiclesTable } from './Pages/Vehicles/VehiclesTable';
+import { StarShipsTable } from './Pages/StarShips/StarShipsTable';
 
 
 function App () {
